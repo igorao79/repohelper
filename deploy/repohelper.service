@@ -1,0 +1,9 @@
+[Unit]
+Description=repohelper: дайджест трендовых репозиториев GitHub в Telegram
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+WorkingDirectory=/opt/repohelper
+ExecStart=/opt/repohelper/.venv/bin/python bot.py
