@@ -1,8 +1,9 @@
 """Ежедневный дайджест трендовых репозиториев GitHub в Telegram.
 
 Запуск:
-    python bot.py            — собрать и отправить дайджест
+    python bot.py            — собрать, отправить и сохранить выпуск в data/
     python bot.py --dry-run  — только напечатать, ничего не отправлять
+    python bot.py --no-send  — собрать и сохранить в data/, не отправляя в Telegram
 """
 import argparse
 import html
@@ -14,12 +15,14 @@ from pathlib import Path
 
 from dotenv import load_dotenv
 
+from archive import push_data, save_issue
 from sources import Repo, fetch_new_ai_repos, fetch_readme, fetch_trending
 from summarizer import DeepSeek
 from telegram import Telegram
 
 BASE_DIR = Path(__file__).resolve().parent
 STATE_FILE = BASE_DIR / "seen.json"
+DATA_DIR = BASE_DIR / "data"
 TRENDING_LANGUAGES = ["", "python", "typescript", "javascript", "rust", "go"]  # "" — все языки
 MONTHS = ["января", "февраля", "марта", "апреля", "мая", "июня",
           "июля", "августа", "сентября", "октября", "ноября", "декабря"]
@@ -122,6 +125,7 @@ def build_digest(ai: list[Item], hot: list[Item]) -> list[str]:
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument("--dry-run", action="store_true", help="напечатать дайджест вместо отправки")
+    parser.add_argument("--no-send", action="store_true", help="сохранить выпуск в data/, не отправляя в Telegram")
     args = parser.parse_args()
 
     load_dotenv(BASE_DIR / ".env")
@@ -149,11 +153,16 @@ def main() -> None:
         print("\n\n".join(blocks))
         return
 
-    Telegram(os.environ["TELEGRAM_BOT_TOKEN"], os.environ["TELEGRAM_CHAT_ID"]).send_blocks(blocks)
+    if not args.no_send:
+        Telegram(os.environ["TELEGRAM_BOT_TOKEN"], os.environ["TELEGRAM_CHAT_ID"]).send_blocks(blocks)
+        log.info("Отправлено: %d ИИ + %d популярных (%s)", len(ai), len(hot), datetime.now().isoformat(timespec="seconds"))
     stamp = date.today().isoformat()
     seen.update({repo.full_name: stamp for repo, _ in ai + hot})
     save_seen(seen, repeat_days)
-    log.info("Отправлено: %d ИИ + %d популярных (%s)", len(ai), len(hot), datetime.now().isoformat(timespec="seconds"))
+
+    log.info("Выпуск сохранён: %s", save_issue(DATA_DIR, {"ai": ai, "hot": hot}).relative_to(BASE_DIR))
+    if os.getenv("GIT_PUSH") == "1":
+        push_data(BASE_DIR)
 
 
 if __name__ == "__main__":

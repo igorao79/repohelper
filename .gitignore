@@ -3,3 +3,5 @@
 __pycache__/
 seen.json
 *.log
+.claude/
+.hallmark/

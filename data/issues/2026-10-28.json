@@ -1,0 +1,128 @@
+{
+  "date": "2026-10-28",
+  "generated_at": "2026-10-28T06:04:31+07:00",
+  "sections": [
+    {
+      "id": "ai",
+      "title": "ИИ",
+      "repos": [
+        {
+          "full_name": "Nutlope/hallmark",
+          "description": "Anti-AI-slop design skill for Claude Code, Cursor, and Codex.",
+          "language": "CSS",
+          "stars": 38904,
+          "stars_gained": 2859,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/Nutlope/hallmark",
+          "summary": "Навык дизайна для Claude Code, Cursor и Codex, который генерирует страницы по 50 темам-материалам и проверяет результат в браузере, отсекая типичные признаки машинной вёрстки. Полезен для быстрого прототипирования и аудита интерфейсов без шаблонного вида."
+        },
+        {
+          "full_name": "debpalash/VoiceStudio",
+          "description": "VoiceStudio is the open-source, fully-local ElevenLabs alternative — voice cloning, voice design, video dubbing, dictation, transcription & audiobook creation in 646 languages.",
+          "language": "Python",
+          "stars": 91249,
+          "stars_gained": 2601,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/debpalash/VoiceStudio",
+          "summary": "Локальная альтернатива ElevenLabs: клонирование и дизайн голоса, дубляж видео, диктовка, транскрипция и озвучка книг на 646 языках, работает на своём устройстве без аккаунтов и API-ключей. Есть локальный API и MCP для агентов."
+        },
+        {
+          "full_name": "TauricResearch/TradingAgents",
+          "description": "TradingAgents: Multi-Agents LLM Financial Trading Framework",
+          "language": "Python",
+          "stars": 117281,
+          "stars_gained": 1702,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/TauricResearch/TradingAgents",
+          "summary": "Многoагентный фреймворк для трейдинга: LLM-агенты (фундаментальный, сентимент, новостной, технический аналитики, трейдер и риск-менеджмент) обсуждают рынок и формируют торговые решения. Полезен для исследований и бэктестов торговых стратегий на разных LLM-провайдерах."
+        },
+        {
+          "full_name": "Panniantong/Agent-Reach",
+          "description": "Give your AI agent eyes to see the entire internet. Read & search Twitter, Reddit, YouTube, GitHub, Bilibili, XiaoHongShu — one CLI, zero API fees.",
+          "language": "Python",
+          "stars": 104884,
+          "stars_gained": 1623,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/Panniantong/Agent-Reach",
+          "summary": "CLI-инструмент, дающий AI-агентам доступ к платформам за логином и без API: Twitter, Reddit, YouTube, GitHub, Bilibili, XiaoHongShu — поиск, чтение и субтитры одной командой."
+        },
+        {
+          "full_name": "HKUDS/DeepTutor",
+          "description": "DeepTutor: Lifelong Personalized Tutoring. https://deeptutor.info/ .",
+          "language": "Python",
+          "stars": 45770,
+          "stars_gained": 1587,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/HKUDS/DeepTutor",
+          "summary": "Персонализированная обучающая платформа на базе ИИ: агенты-репетиторы, работа с базами знаний, генерация книг и практических заданий, поддержка LLM-провайдеров и RAG."
+        }
+      ]
+    },
+    {
+      "id": "hot",
+      "title": "Набирают популярность",
+      "repos": [
+        {
+          "full_name": "hmjz100/LinkSwift",
+          "description": "一个基于 JavaScript 的网盘文件下载地址获取工具。基于【网盘直链下载助手】修改 ，支持 百度网盘 / 阿里云盘 / 中国移动云盘 / 天翼云盘 / 迅雷云盘 / 夸克网盘 / UC网盘 / 123云盘 八大网盘",
+          "language": "JavaScript",
+          "stars": 32973,
+          "stars_gained": 4011,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/hmjz100/LinkSwift",
+          "summary": "Пользовательский скрипт на JavaScript, который получает прямые ссылки для скачивания файлов с девяти китайских облачных хранилищ (Baidu, Aliyun, Quark, UC и др.) и передаёт их в IDM, Aria2 и другие загрузчики."
+        },
+        {
+          "full_name": "pbakaus/impeccable",
+          "description": "The design language that makes your AI harness better at design.",
+          "language": "Rust",
+          "stars": 90443,
+          "stars_gained": 1458,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/pbakaus/impeccable",
+          "summary": "Набор команд и правил-детекторов для AI-агентов, помогающий избегать шаблонного фронтенд-дизайна: аудит, критика, полировка и живая итерация в браузере. Полезен разработчикам, генерирующим UI через LLM."
+        },
+        {
+          "full_name": "makecindy/cindy",
+          "description": "Consider it done. The open-source AI agent that works out of the box · 想到，就能做到。开源、开箱即用的 AI Agent。",
+          "language": "TypeScript",
+          "stars": 7431,
+          "stars_gained": 1446,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/makecindy/cindy",
+          "summary": "Открытый AI-агент с десктопным и мобильным клиентами, объединяющий Claude Code, Codex и Pi в едином интерфейсе с доступом с разных устройств, автоматизациями и поддержкой Skills, плагинов и MCP."
+        },
+        {
+          "full_name": "elayadesign/ai-design-skills",
+          "description": "",
+          "language": "",
+          "stars": 9227,
+          "stars_gained": 1395,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/elayadesign/ai-design-skills",
+          "summary": "Набор скиллов для ИИ-инструментов разработки (Claude Code, Cursor, Codex, Windsurf): готовые markdown-правила, например для сборки лендинга со структурой, копирайтингом и визуальной системой."
+        },
+        {
+          "full_name": "JetBrains/thinkrail",
+          "description": "Vibe code with pi in a lightweight, real IDE that customises itself around the way you work — The Vibe You Need",
+          "language": "TypeScript",
+          "stars": 3929,
+          "stars_gained": 1211,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/JetBrains/thinkrail",
+          "summary": "Агентная IDE от JetBrains на базе pi-агента: изолированные git-worktree воркспейсы, Monaco-редактор, чаты с параллельными сессиями, живые спецификации и навыки. Полезно разработчикам, которым нужен ИИ-агент прямо в полноценной среде с контролем изменений и PR."
+        }
+      ]
+    }
+  ]
+}

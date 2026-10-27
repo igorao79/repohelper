@@ -1,0 +1,73 @@
+import { createJSONStorage, persist } from "zustand/middleware";
+import { createStore } from "zustand/vanilla";
+
+import type { SectionId } from "@/lib/types";
+
+export type SectionFilter = "all" | SectionId;
+
+export type SavedRepo = {
+  full_name: string;
+  url: string;
+  summary: string;
+  language: string;
+  stars: number;
+  issue: string; // дата выпуска, из которого отложен
+  saved_at: string;
+};
+
+export type Filters = {
+  section: SectionFilter;
+  language: string; // "" — все языки
+  query: string;
+  onlySaved: boolean;
+};
+
+export type AppState = Filters & {
+  saved: Record<string, SavedRepo>;
+};
+
+export type AppActions = {
+  setFilters: (patch: Partial<Filters>) => void;
+  resetFilters: () => void;
+  toggleSaved: (repo: Omit<SavedRepo, "saved_at">) => void;
+  removeSaved: (fullName: string) => void;
+  restoreSaved: (repo: SavedRepo) => void;
+};
+
+export type AppStore = AppState & AppActions;
+
+export const defaultFilters: Filters = { section: "all", language: "", query: "", onlySaved: false };
+
+// Фабрика, а не глобальный стор: в Next.js стор создаётся на каждый запрос (см. гайд Zustand).
+// Отложенные хранятся в localStorage; фильтры — только в памяти и в адресной строке.
+export const createAppStore = () =>
+  createStore<AppStore>()(
+    persist(
+      (set) => ({
+        ...defaultFilters,
+        saved: {},
+        setFilters: (patch) => set(patch),
+        resetFilters: () => set(defaultFilters),
+        toggleSaved: (repo) =>
+          set((state) => {
+            const saved = { ...state.saved };
+            if (saved[repo.full_name]) delete saved[repo.full_name];
+            else saved[repo.full_name] = { ...repo, saved_at: new Date().toISOString() };
+            return { saved };
+          }),
+        removeSaved: (fullName) =>
+          set((state) => {
+            const saved = { ...state.saved };
+            delete saved[fullName];
+            return { saved };
+          }),
+        restoreSaved: (repo) => set((state) => ({ saved: { ...state.saved, [repo.full_name]: repo } })),
+      }),
+      {
+        name: "repohelper-saved",
+        storage: createJSONStorage(() => window.localStorage), // на сервере window нет — persist молча выключается
+        partialize: (state) => ({ saved: state.saved }),
+        skipHydration: true, // читаем localStorage после монтирования, чтобы не было расхождения с SSR
+      },
+    ),
+  );
