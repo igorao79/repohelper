@@ -1,65 +1,65 @@
 {
   "date": "2026-10-28",
-  "generated_at": "2026-10-28T06:04:31+07:00",
+  "generated_at": "2026-10-28T08:01:27+01:00",
   "sections": [
     {
       "id": "ai",
       "title": "ИИ",
       "repos": [
         {
-          "full_name": "Nutlope/hallmark",
-          "description": "Anti-AI-slop design skill for Claude Code, Cursor, and Codex.",
-          "language": "CSS",
-          "stars": 38904,
-          "stars_gained": 2859,
+          "full_name": "YuJunZhiXue/dsh-purge",
+          "description": "DeepSeek Harness 破甲：让所有模型都能破甲，不同模型可换不同提示词；默认提示词面向国模「小码酱」。Jailbreak for every model — swap prompts per model. 求 Star 收藏 ⭐ 如要二开，请查看署名要求部分",
+          "language": "JavaScript",
+          "stars": 11399,
+          "stars_gained": 1201,
           "gained_label": "за день",
           "topics": [],
-          "url": "https://github.com/Nutlope/hallmark",
-          "summary": "Навык дизайна для Claude Code, Cursor и Codex, который генерирует страницы по 50 темам-материалам и проверяет результат в браузере, отсекая типичные признаки машинной вёрстки. Полезен для быстрого прототипирования и аудита интерфейсов без шаблонного вида."
+          "url": "https://github.com/YuJunZhiXue/dsh-purge",
+          "summary": "Плагин для DeepSeek Harness, снимающий ограничения хоста и подменяющий промпты для разных моделей, с редактором правил и проверкой политик на локальной машине. Полезен для red-team оценки собственной установки и разбора, какие дефолтные ограничения слишком строгие."
         },
         {
-          "full_name": "debpalash/VoiceStudio",
-          "description": "VoiceStudio is the open-source, fully-local ElevenLabs alternative — voice cloning, voice design, video dubbing, dictation, transcription & audiobook creation in 646 languages.",
-          "language": "Python",
-          "stars": 91249,
-          "stars_gained": 2601,
+          "full_name": "affaan-m/ECC",
+          "description": "The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond.",
+          "language": "JavaScript",
+          "stars": 291123,
+          "stars_gained": 1165,
           "gained_label": "за день",
           "topics": [],
-          "url": "https://github.com/debpalash/VoiceStudio",
-          "summary": "Локальная альтернатива ElevenLabs: клонирование и дизайн голоса, дубляж видео, диктовка, транскрипция и озвучка книг на 646 языках, работает на своём устройстве без аккаунтов и API-ключей. Есть локальный API и MCP для агентов."
+          "url": "https://github.com/affaan-m/ECC",
+          "summary": "Система оптимизации работы ИИ-агентов для Claude Code, Codex, Cursor и других: 71 агент, 311 скиллов, хуки, память, непрерывное обучение и сканер безопасности AgentShield."
         },
         {
-          "full_name": "TauricResearch/TradingAgents",
-          "description": "TradingAgents: Multi-Agents LLM Financial Trading Framework",
+          "full_name": "NVIDIA/SkillSpector",
+          "description": "Security scanner for AI agent skills. Detect vulnerabilities, malicious patterns, security risks, prompt injection, data exfiltration, and supply-chain risks in Claude Code, Codex, and MCP skills before you install them.",
           "language": "Python",
-          "stars": 117281,
-          "stars_gained": 1702,
+          "stars": 22815,
+          "stars_gained": 953,
           "gained_label": "за день",
           "topics": [],
-          "url": "https://github.com/TauricResearch/TradingAgents",
-          "summary": "Многoагентный фреймворк для трейдинга: LLM-агенты (фундаментальный, сентимент, новостной, технический аналитики, трейдер и риск-менеджмент) обсуждают рынок и формируют торговые решения. Полезен для исследований и бэктестов торговых стратегий на разных LLM-провайдерах."
+          "url": "https://github.com/NVIDIA/SkillSpector",
+          "summary": "Сканер безопасности для скиллов ИИ-агентов (Claude Code, Codex, MCP): находит уязвимости, промпт-инъекции, утечки данных и риски цепочки поставок до установки. Полезен для проверки сторонних скиллов перед подключением."
         },
         {
-          "full_name": "Panniantong/Agent-Reach",
-          "description": "Give your AI agent eyes to see the entire internet. Read & search Twitter, Reddit, YouTube, GitHub, Bilibili, XiaoHongShu — one CLI, zero API fees.",
-          "language": "Python",
-          "stars": 104884,
-          "stars_gained": 1623,
+          "full_name": "gitroomhq/postiz-app",
+          "description": "📨 The ultimate agentic social media scheduling tool 🤖",
+          "language": "TypeScript",
+          "stars": 39647,
+          "stars_gained": 951,
           "gained_label": "за день",
           "topics": [],
-          "url": "https://github.com/Panniantong/Agent-Reach",
-          "summary": "CLI-инструмент, дающий AI-агентам доступ к платформам за логином и без API: Twitter, Reddit, YouTube, GitHub, Bilibili, XiaoHongShu — поиск, чтение и субтитры одной командой."
+          "url": "https://github.com/gitroomhq/postiz-app",
+          "summary": "Платформа для планирования и автоматизации постов в соцсетях с аналитикой, командной работой и публичным API. Поддерживает интеграции с N8N, Make.com и AI-агентами, разворачивается self-hosted."
         },
         {
-          "full_name": "HKUDS/DeepTutor",
-          "description": "DeepTutor: Lifelong Personalized Tutoring. https://deeptutor.info/ .",
-          "language": "Python",
-          "stars": 45770,
-          "stars_gained": 1587,
+          "full_name": "heygen-com/hyperframes",
+          "description": "Write HTML. Render video. Built for agents.",
+          "language": "TypeScript",
+          "stars": 74160,
+          "stars_gained": 934,
           "gained_label": "за день",
           "topics": [],
-          "url": "https://github.com/HKUDS/DeepTutor",
-          "summary": "Персонализированная обучающая платформа на базе ИИ: агенты-репетиторы, работа с базами знаний, генерация книг и практических заданий, поддержка LLM-провайдеров и RAG."
+          "url": "https://github.com/heygen-com/hyperframes",
+          "summary": "Фреймворк для детерминированного рендера HTML, CSS и анимаций в MP4-видео через CLI или ИИ-агентов. Полезен разработчикам для генерации видео из кода и автоматизации видеопродакшена."
         }
       ]
     },
@@ -68,59 +68,59 @@
       "title": "Набирают популярность",
       "repos": [
         {
-          "full_name": "hmjz100/LinkSwift",
-          "description": "一个基于 JavaScript 的网盘文件下载地址获取工具。基于【网盘直链下载助手】修改 ，支持 百度网盘 / 阿里云盘 / 中国移动云盘 / 天翼云盘 / 迅雷云盘 / 夸克网盘 / UC网盘 / 123云盘 八大网盘",
-          "language": "JavaScript",
-          "stars": 32973,
-          "stars_gained": 4011,
-          "gained_label": "за день",
-          "topics": [],
-          "url": "https://github.com/hmjz100/LinkSwift",
-          "summary": "Пользовательский скрипт на JavaScript, который получает прямые ссылки для скачивания файлов с девяти китайских облачных хранилищ (Baidu, Aliyun, Quark, UC и др.) и передаёт их в IDM, Aria2 и другие загрузчики."
-        },
-        {
-          "full_name": "pbakaus/impeccable",
-          "description": "The design language that makes your AI harness better at design.",
-          "language": "Rust",
-          "stars": 90443,
-          "stars_gained": 1458,
-          "gained_label": "за день",
-          "topics": [],
-          "url": "https://github.com/pbakaus/impeccable",
-          "summary": "Набор команд и правил-детекторов для AI-агентов, помогающий избегать шаблонного фронтенд-дизайна: аудит, критика, полировка и живая итерация в браузере. Полезен разработчикам, генерирующим UI через LLM."
-        },
-        {
-          "full_name": "makecindy/cindy",
-          "description": "Consider it done. The open-source AI agent that works out of the box · 想到，就能做到。开源、开箱即用的 AI Agent。",
-          "language": "TypeScript",
-          "stars": 7431,
-          "stars_gained": 1446,
-          "gained_label": "за день",
-          "topics": [],
-          "url": "https://github.com/makecindy/cindy",
-          "summary": "Открытый AI-агент с десктопным и мобильным клиентами, объединяющий Claude Code, Codex и Pi в едином интерфейсе с доступом с разных устройств, автоматизациями и поддержкой Skills, плагинов и MCP."
-        },
-        {
-          "full_name": "elayadesign/ai-design-skills",
-          "description": "",
+          "full_name": "togg53192-cmd/jailbreaks",
+          "description": "LIST OF ALL MY JAILBREAKS",
           "language": "",
-          "stars": 9227,
-          "stars_gained": 1395,
+          "stars": 5995,
+          "stars_gained": 902,
           "gained_label": "за день",
           "topics": [],
-          "url": "https://github.com/elayadesign/ai-design-skills",
-          "summary": "Набор скиллов для ИИ-инструментов разработки (Claude Code, Cursor, Codex, Windsurf): готовые markdown-правила, например для сборки лендинга со структурой, копирайтингом и визуальной системой."
+          "url": "https://github.com/togg53192-cmd/jailbreaks",
+          "summary": "Коллекция из 31 системного промпта и конфигураций для 25+ моделей (Claude, Gemini, Grok, GLM, DeepSeek, Kimi, Qwen и др.), включая AGENTS.md и Modelfiles для Ollama. Полезна для изучения джейлбрейков и защиты от манипуляций инструкциями."
         },
         {
-          "full_name": "JetBrains/thinkrail",
-          "description": "Vibe code with pi in a lightweight, real IDE that customises itself around the way you work — The Vibe You Need",
+          "full_name": "nightly-labs/openbot",
+          "description": "A local-first desktop workspace for persistent AI teammates. Run Codex, Claude, and Grok with dedicated workspaces, task queues, file sharing, browser control, and agent-to-agent collaboration.",
           "language": "TypeScript",
-          "stars": 3929,
-          "stars_gained": 1211,
+          "stars": 2686,
+          "stars_gained": 777,
           "gained_label": "за день",
           "topics": [],
-          "url": "https://github.com/JetBrains/thinkrail",
-          "summary": "Агентная IDE от JetBrains на базе pi-агента: изолированные git-worktree воркспейсы, Monaco-редактор, чаты с параллельными сессиями, живые спецификации и навыки. Полезно разработчикам, которым нужен ИИ-агент прямо в полноценной среде с контролем изменений и PR."
+          "url": "https://github.com/nightly-labs/openbot",
+          "summary": "Локальное десктоп-приложение для постоянных ИИ-напарников: запускает Codex, Claude, Grok и другие CLI-агенты в отдельных воркспейсах с очередями задач, обменом файлами, встроенным браузером и общением агентов между собой."
+        },
+        {
+          "full_name": "AgriciDaniel/claude-seo",
+          "description": "Universal SEO skill for Claude Code. 26 sub-skills + 19 sub-agents covering technical SEO, E-E-A-T, schema, GEO/AEO, agent readiness (Lighthouse Agentic Browsing, WebMCP, llms.txt), backlinks, local SEO, e-commerce, international SEO, Google APIs, and PDF/Excel reporting. 9 optional extensions for live SEO data.",
+          "language": "Python",
+          "stars": 22892,
+          "stars_gained": 711,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/AgriciDaniel/claude-seo",
+          "summary": "Бесплатный SEO-плагин для Claude Code: 26 суб-навыков и 19 агентов проводят полный аудит сайта за 10–15 минут — технический SEO, E-E-A-T, schema, GEO/AEO, локальный и e-commerce SEO — и выдают приоритизированный план действий."
+        },
+        {
+          "full_name": "tt-a1i/archify",
+          "description": "Turn any idea, plan, or codebase into a beautiful interactive diagram. An agent skill for Claude Code, Codex, and more.",
+          "language": "JavaScript",
+          "stars": 90629,
+          "stars_gained": 659,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/tt-a1i/archify",
+          "summary": "Скилл для ИИ-агентов (Claude Code, Codex, Cursor), превращающий идею, план или кодовую базу в интерактивную HTML-диаграмму или одностраничный объяснитель с экспортом в PNG/PDF."
+        },
+        {
+          "full_name": "obra/superpowers",
+          "description": "An agentic skills framework & software development methodology that works.",
+          "language": "Shell",
+          "stars": 306705,
+          "stars_gained": 617,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/obra/superpowers",
+          "summary": "Фреймворк агентных навыков и методология разработки для кодинг-агентов: агент сначала уточняет спецификацию, затем строит план и реализует его через субагентов с TDD. Работает с Claude Code, Codex, Cursor, Gemini CLI и другими."
         }
       ]
     }
