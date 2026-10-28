@@ -7,8 +7,7 @@ import { formatDay } from "@/lib/format";
 import type { SavedRepo } from "@/stores/app-store";
 import { useAppStore, useSavedHydrated } from "@/stores/app-store-provider";
 
-import { RepoCard } from "./repo-card";
-import { useSpotlight } from "./use-spotlight";
+import { RepoEntry } from "./repo-entry";
 
 export function SavedList() {
   const hydrated = useSavedHydrated();
@@ -16,10 +15,9 @@ export function SavedList() {
   const removeSaved = useAppStore((s) => s.removeSaved);
   const restoreSaved = useAppStore((s) => s.restoreSaved);
   const [removed, setRemoved] = useState<SavedRepo | null>(null);
-  const spotlight = useSpotlight();
   const items = Object.values(saved).sort((a, b) => b.saved_at.localeCompare(a.saved_at));
 
-  if (!hydrated) return <CardsSkeleton count={3} />;
+  if (!hydrated) return <EntriesSkeleton count={3} />;
 
   const remove = (repo: SavedRepo) => {
     setRemoved(repo);
@@ -27,11 +25,11 @@ export function SavedList() {
   };
 
   const undo = removed && (
-    <div className="toast card" role="status">
-      <span>Убрали {removed.full_name}</span>
+    <div className="undo" role="status">
+      <p>Убрали {removed.full_name}.</p>
       <button
         type="button"
-        className="btn btn--ghost btn--sm"
+        className="button button--ghost"
         onClick={() => {
           restoreSaved(removed);
           setRemoved(null);
@@ -46,13 +44,12 @@ export function SavedList() {
     return (
       <>
         {undo}
-        <div className="empty card">
-          <p className="empty__title">Здесь пока пусто</p>
+        <div className="empty">
           <p>
-            Нажмите на закладку в карточке репозитория, и он останется здесь, пока вы его не уберёте. Список хранится
-            только в этом браузере.
+            Здесь пусто. Нажмите «Отложить» у записи в выпуске, и репозиторий останется здесь, пока вы его не уберёте.
+            Список хранится только в этом браузере.
           </p>
-          <Link className="btn btn--primary" href="/">
+          <Link className="button" href="/#repos">
             Открыть свежий выпуск
           </Link>
         </div>
@@ -63,11 +60,10 @@ export function SavedList() {
   return (
     <>
       {undo}
-      <div className="grid" {...spotlight}>
-        {items.map((r, i) => (
-          <RepoCard
+      <div className="entries">
+        {items.map((r) => (
+          <RepoEntry
             key={r.full_name}
-            index={i}
             issueDate={r.issue}
             repo={{
               full_name: r.full_name,
@@ -80,13 +76,13 @@ export function SavedList() {
               gained_label: "",
               topics: [],
             }}
-            extraTag={
-              <Link className="tag tag--link" href={`/issue/${r.issue}`}>
-                из выпуска {formatDay(r.issue)}
+            note={
+              <Link className="link" href={`/issue/${r.issue}`}>
+                из выпуска за {formatDay(r.issue)}
               </Link>
             }
-            footer={
-              <button type="button" className="btn btn--ghost btn--sm" onClick={() => remove(r)}>
+            aside={
+              <button type="button" className="save" onClick={() => remove(r)}>
                 Убрать
               </button>
             }
@@ -97,18 +93,17 @@ export function SavedList() {
   );
 }
 
-export function CardsSkeleton({ count = 6 }: { count?: number }) {
+export function EntriesSkeleton({ count = 6 }: { count?: number }) {
   return (
-    <div className="grid" aria-busy="true" aria-label="Загрузка">
+    <div className="entries" aria-busy="true" aria-label="Загрузка">
       {Array.from({ length: count }, (_, i) => (
-        <div key={i} className="card skeleton-card">
-          <div className="skeleton-card__head">
-            <span className="skeleton skeleton--avatar" />
+        <div key={i} className="entry">
+          <span className="skeleton entry__picture" />
+          <div className="entry__body">
             <span className="skeleton skeleton--title" />
+            <span className="skeleton skeleton--line" />
+            <span className="skeleton skeleton--line skeleton--short" />
           </div>
-          <span className="skeleton skeleton--line" />
-          <span className="skeleton skeleton--line" />
-          <span className="skeleton skeleton--line skeleton--short" />
         </div>
       ))}
     </div>

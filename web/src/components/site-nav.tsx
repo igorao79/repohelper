@@ -2,30 +2,57 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useEffect, useState } from "react";
 
 import { useAppStore, useSavedHydrated } from "@/stores/app-store-provider";
 
-import { ArchiveIcon, BookmarkIcon, FlameIcon } from "./icons";
-
 const LINKS = [
-  { href: "/", label: "Выпуск", Icon: FlameIcon, match: (p: string) => p === "/" || p.startsWith("/issue/") },
-  { href: "/archive", label: "Архив", Icon: ArchiveIcon, match: (p: string) => p === "/archive" },
-  { href: "/saved", label: "Отложенные", Icon: BookmarkIcon, match: (p: string) => p === "/saved" },
+  { href: "/", label: "Выпуск", match: (p: string) => p === "/" || p.startsWith("/issue/") },
+  { href: "/archive", label: "Архив", match: (p: string) => p === "/archive" },
+  { href: "/saved", label: "Отложенные", match: (p: string) => p === "/saved" },
 ];
 
-/** variant="top" — пилюли в шапке (планшет и десктоп), variant="tabs" — нижняя панель на телефоне. */
+/** Нижняя панель уезжает при прокрутке вниз и возвращается при прокрутке вверх, чтобы не закрывать текст. */
+function useHideOnScrollDown(enabled: boolean) {
+  const [hidden, setHidden] = useState(false);
+  useEffect(() => {
+    if (!enabled) return;
+    let last = window.scrollY;
+    let frame = 0;
+    const onScroll = () => {
+      cancelAnimationFrame(frame);
+      frame = requestAnimationFrame(() => {
+        const y = window.scrollY;
+        const nearBottom = window.innerHeight + y >= document.documentElement.scrollHeight - 8;
+        if (Math.abs(y - last) > 6) setHidden(y > last && y > 120 && !nearBottom);
+        last = y;
+      });
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => {
+      cancelAnimationFrame(frame);
+      window.removeEventListener("scroll", onScroll);
+    };
+  }, [enabled]);
+  return hidden;
+}
+
+/** variant="top" — ссылки в верхней строке (планшет и десктоп), variant="tabs" — нижняя панель на телефоне. */
 export function SiteNav({ variant }: { variant: "top" | "tabs" }) {
   const pathname = usePathname();
   const savedCount = useAppStore((s) => Object.keys(s.saved).length);
   const hydrated = useSavedHydrated();
+  const hidden = useHideOnScrollDown(variant === "tabs");
 
   return (
-    <nav className={variant === "top" ? "nav-pills" : "tabbar"} aria-label="Разделы сайта">
-      {LINKS.map(({ href, label, Icon, match }) => (
+    <nav
+      className={variant === "top" ? "topnav" : hidden ? "tabbar is-hidden" : "tabbar"}
+      aria-label="Разделы сайта"
+    >
+      {LINKS.map(({ href, label, match }) => (
         <Link key={href} href={href} aria-current={match(pathname) ? "page" : undefined}>
-          {variant === "tabs" && <Icon size={20} />}
-          <span>{label}</span>
-          {href === "/saved" && hydrated && savedCount > 0 && <span className="count-badge">{savedCount}</span>}
+          {label}
+          {href === "/saved" && hydrated && savedCount > 0 && <span className="count">{savedCount}</span>}
         </Link>
       ))}
     </nav>

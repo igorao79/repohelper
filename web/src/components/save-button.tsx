@@ -3,8 +3,6 @@
 import type { SavedRepo } from "@/stores/app-store";
 import { useAppStore } from "@/stores/app-store-provider";
 
-import { BookmarkIcon } from "./icons";
-
 type Props = { repo: Omit<SavedRepo, "saved_at"> };
 
 export function SaveButton({ repo }: Props) {
@@ -14,13 +12,12 @@ export function SaveButton({ repo }: Props) {
   return (
     <button
       type="button"
-      className="icon-btn save-btn"
+      className="save"
       aria-pressed={isSaved}
       aria-label={isSaved ? `Убрать ${repo.full_name} из отложенных` : `Отложить ${repo.full_name}`}
-      title={isSaved ? "Убрать из отложенных" : "Отложить"}
       onClick={() => toggleSaved(repo)}
     >
-      <BookmarkIcon />
+      {isSaved ? "Отложено" : "Отложить"}
     </button>
   );
 }

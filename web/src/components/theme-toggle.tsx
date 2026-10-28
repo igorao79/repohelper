@@ -2,11 +2,9 @@
 
 import { useAppStore } from "@/stores/app-store-provider";
 
-import { MoonIcon, SunIcon } from "./icons";
-
 const currentTheme = () =>
   document.documentElement.dataset.theme ??
-  (window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark");
+  (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
 
 export function ThemeToggle() {
   const setTheme = useAppStore((s) => s.setTheme);
@@ -14,14 +12,13 @@ export function ThemeToggle() {
   return (
     <button
       type="button"
-      className="icon-btn theme-toggle"
-      aria-label="Переключить тему"
-      title="Светлая или тёмная тема"
-      onClick={() => setTheme(currentTheme() === "light" ? "dark" : "light")}
+      className="theme-toggle"
+      aria-label="Переключить светлую и тёмную тему"
+      onClick={() => setTheme(currentTheme() === "dark" ? "light" : "dark")}
     >
-      {/* обе иконки в разметке, CSS показывает нужную — так нет мигания при гидратации */}
-      <SunIcon className="theme-toggle__sun" />
-      <MoonIcon className="theme-toggle__moon" />
+      {/* обе подписи в разметке, CSS показывает нужную — так нет мигания при гидратации */}
+      <span className="theme-toggle__to-dark">Тёмная</span>
+      <span className="theme-toggle__to-light">Светлая</span>
     </button>
   );
 }

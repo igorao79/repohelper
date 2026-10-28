@@ -5,3 +5,4 @@ seen.json
 *.log
 .claude/
 .hallmark/
+.taste-skill/

@@ -2,21 +2,19 @@
 
 import { useEffect, useMemo } from "react";
 
-import { languageColor } from "@/lib/languages";
+import { plural } from "@/lib/format";
 import type { Issue, Repo, SectionId } from "@/lib/types";
 import { type Filters, type SectionFilter, defaultFilters } from "@/stores/app-store";
 import { useAppStore, useAppStoreApi } from "@/stores/app-store-provider";
 
-import { SearchIcon } from "./icons";
-import { RepoCard } from "./repo-card";
-import { useSpotlight } from "./use-spotlight";
+import { RepoEntry } from "./repo-entry";
 
 type Row = Repo & { rank: number; section: SectionId };
 
-const SECTIONS: { id: SectionFilter; label: string; short: string }[] = [
-  { id: "all", label: "Все", short: "Все" },
-  { id: "ai", label: "ИИ", short: "ИИ" },
-  { id: "hot", label: "Набирают популярность", short: "Растут" },
+const SECTIONS: { id: SectionFilter; label: string }[] = [
+  { id: "all", label: "Весь выпуск" },
+  { id: "ai", label: "ИИ" },
+  { id: "hot", label: "Набирают популярность" },
 ];
 
 /** Фильтры живут в Zustand и зеркалятся в адресную строку, чтобы ссылкой можно было поделиться. */
@@ -47,7 +45,7 @@ function useFiltersInUrl() {
       if (state.query) next.set("q", state.query);
       if (state.onlySaved) next.set("saved", "1");
       const qs = next.toString();
-      window.history.replaceState(null, "", qs ? `?${qs}` : window.location.pathname);
+      window.history.replaceState(null, "", qs ? `?${qs}#repos` : `${window.location.pathname}#repos`);
     });
   }, [store]);
 }
@@ -61,9 +59,9 @@ function matches(row: Row, f: Filters, saved: Record<string, unknown>): boolean 
   return true;
 }
 
+/** Секция выпуска: её заголовок — поле поиска, под ним записи отвечают на запрос. */
 export function IssueBoard({ issue }: { issue: Issue }) {
   useFiltersInUrl();
-  const spotlight = useSpotlight();
 
   const section = useAppStore((s) => s.section);
   const language = useAppStore((s) => s.language);
@@ -77,9 +75,6 @@ export function IssueBoard({ issue }: { issue: Issue }) {
     let rank = 0;
     return issue.sections.flatMap((s) => s.repos.map((r) => ({ ...r, rank: ++rank, section: s.id })));
   }, [issue]);
-
-  const maxGain = Math.max(...rows.map((r) => r.stars_gained), 1);
-  const leadName = rows.find((r) => r.stars_gained === maxGain)?.full_name;
   const languages = useMemo(() => [...new Set(rows.map((r) => r.language).filter(Boolean))].sort(), [rows]);
   const counts: Record<SectionFilter, number> = {
     all: rows.length,
@@ -90,107 +85,76 @@ export function IssueBoard({ issue }: { issue: Issue }) {
   const filters = { section, language, query, onlySaved };
   const visible = rows.filter((r) => matches(r, filters, saved));
   const isFiltered = JSON.stringify(filters) !== JSON.stringify(defaultFilters);
-  const activeIndex = SECTIONS.findIndex((s) => s.id === section);
+  const savedEmpty = onlySaved && !Object.keys(saved).length;
 
   return (
-    <section className="board container" id="repos" aria-labelledby="board-title">
-      <div className="board__head">
-        <h2 id="board-title">Все репозитории выпуска</h2>
-        <p className="board__count" role="status">
-          {isFiltered ? `Показано ${visible.length} из ${rows.length}` : `${rows.length} в выпуске`}
-        </p>
+    <section className="issue frame" id="repos" aria-labelledby="issue-title">
+      <h2 id="issue-title" className="issue__title" data-reveal>
+        <label htmlFor="q">Найти в выпуске</label>
+      </h2>
+
+      <div className="ask" data-ui data-reveal>
+        <input
+          id="q"
+          className="ask__input"
+          type="search"
+          name="q"
+          autoComplete="off"
+          spellCheck={false}
+          placeholder="агенты для кода"
+          value={query}
+          onChange={(e) => setFilters({ query: e.target.value })}
+        />
       </div>
 
-      <div className="filters">
-        <div
-          className="tabs"
-          role="group"
-          aria-label="Раздел"
-          style={{ "--active": activeIndex, "--count": SECTIONS.length } as React.CSSProperties}
-        >
-          <span className="tabs__indicator" aria-hidden="true" />
-          {SECTIONS.map(({ id, label, short }) => (
-            <button
-              key={id}
-              type="button"
-              aria-pressed={section === id}
-              onClick={() => setFilters({ section: id })}
-              disabled={id !== "all" && counts[id] === 0}
-            >
-              <span className="tabs__label">{label}</span>
-              <span className="tabs__short">{short}</span>
-              <span className="tabs__count">{counts[id]}</span>
-            </button>
-          ))}
-        </div>
-
-        <label className="search">
-          <SearchIcon />
-          <span className="visually-hidden">Поиск по выпуску</span>
-          <input
-            type="search"
-            name="q"
-            autoComplete="off"
-            placeholder="Найти по названию или описанию"
-            value={query}
-            onChange={(e) => setFilters({ query: e.target.value })}
-          />
-        </label>
-
-        <div className="chips" role="group" aria-label="Язык">
-          <button type="button" className="chip" aria-pressed={language === ""} onClick={() => setFilters({ language: "" })}>
-            Все языки
-          </button>
-          {languages.map((l) => (
-            <button
-              key={l}
-              type="button"
-              className="chip"
-              aria-pressed={language === l}
-              onClick={() => setFilters({ language: language === l ? "" : l })}
-            >
-              <span className="lang__dot" style={{ background: languageColor(l) }} />
-              {l}
-            </button>
-          ))}
+      <div className="ask__examples" role="group" aria-label="Фильтры выпуска" data-reveal>
+        {SECTIONS.map(({ id, label }) => (
           <button
+            key={id}
             type="button"
-            className="chip chip--saved"
-            aria-pressed={onlySaved}
-            onClick={() => setFilters({ onlySaved: !onlySaved })}
+            aria-pressed={section === id}
+            onClick={() => setFilters({ section: id })}
+            disabled={id !== "all" && counts[id] === 0}
           >
-            Только отложенные
+            {label} <span className="ask__count">{counts[id]}</span>
           </button>
-        </div>
+        ))}
+        {languages.map((l) => (
+          <button
+            key={l}
+            type="button"
+            aria-pressed={language === l}
+            onClick={() => setFilters({ language: language === l ? "" : l })}
+          >
+            {l}
+          </button>
+        ))}
+        <button type="button" aria-pressed={onlySaved} onClick={() => setFilters({ onlySaved: !onlySaved })}>
+          Отложенные
+        </button>
       </div>
+
+      <p className="issue__status" role="status">
+        {isFiltered
+          ? `Подходит ${visible.length} из ${rows.length}`
+          : `${rows.length} ${plural(rows.length, "репозиторий", "репозитория", "репозиториев")} в выпуске`}
+      </p>
 
       {visible.length > 0 ? (
-        <div className="grid" {...spotlight}>
-          {visible.map((r, i) => (
-            <RepoCard
-              key={r.full_name}
-              repo={r}
-              rank={r.rank}
-              section={r.section}
-              isLead={r.full_name === leadName}
-              issueDate={issue.date}
-              maxGain={maxGain}
-              index={i}
-            />
+        <div className="entries">
+          {visible.map((r) => (
+            <RepoEntry key={r.full_name} repo={r} rank={r.rank} isAi={r.section === "ai"} issueDate={issue.date} />
           ))}
         </div>
       ) : (
-        <div className="empty card">
-          <p className="empty__title">
-            {onlySaved && !Object.keys(saved).length ? "Отложенных пока нет" : "Ничего не нашлось"}
-          </p>
+        <div className="empty">
           <p>
-            {onlySaved && !Object.keys(saved).length
-              ? "Нажмите на закладку в карточке, чтобы вернуться к репозиторию позже."
-              : "Под эти фильтры в выпуске ничего не подходит. Попробуйте другой язык или запрос."}
+            {savedEmpty
+              ? "Вы ещё ничего не отложили. Нажмите «Отложить» у записи, и она останется в разделе «Отложенные»."
+              : "В этом выпуске под запрос ничего не подходит. Попробуйте другое слово или язык."}
           </p>
-          <button type="button" className="btn" onClick={resetFilters}>
-            Сбросить фильтры
+          <button type="button" className="button button--ghost" onClick={resetFilters}>
+            Сбросить поиск и фильтры
           </button>
         </div>
       )}

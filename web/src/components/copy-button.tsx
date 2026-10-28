@@ -2,15 +2,13 @@
 
 import { useState } from "react";
 
-import { CopyIcon } from "./icons";
-
 export function CopyButton({ text, label }: { text: string; label: string }) {
   const [copied, setCopied] = useState(false);
 
   return (
     <button
       type="button"
-      className="btn btn--ghost"
+      className="link link--button"
       onClick={async () => {
         try {
           await navigator.clipboard.writeText(text);
@@ -21,8 +19,7 @@ export function CopyButton({ text, label }: { text: string; label: string }) {
         }
       }}
     >
-      <CopyIcon size={16} />
-      <span aria-live="polite">{copied ? "Скопировано" : label}</span>
+      <span aria-live="polite">{copied ? "Ссылка скопирована" : label}</span>
     </button>
   );
 }

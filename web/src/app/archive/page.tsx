@@ -1,72 +1,64 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 
-import { ArrowUpRightIcon } from "@/components/icons";
 import { getIndex } from "@/lib/data";
-import { formatGain, formatWeekday } from "@/lib/format";
+import { formatDay, formatGain, formatWeekday } from "@/lib/format";
 
 export const metadata: Metadata = { title: "Архив выпусков" };
 
-const dayNum = (iso: string) => Number(iso.slice(8, 10));
-const monthShort = (iso: string) =>
-  new Intl.DateTimeFormat("ru-RU", { month: "short", timeZone: "UTC" })
-    .format(new Date(`${iso}T00:00:00Z`))
-    .replace(".", "");
-
 export default async function ArchivePage() {
   const index = await getIndex();
+  const latestLead = index[0]?.lead;
 
   return (
-    <>
-      <div className="page-head container">
-        <p className="pill">Архив</p>
-        <h1 className="page-title">
-          Все выпуски, <span className="grad-text">день за днём</span>
-        </h1>
-        <p className="hero__lead">Каждый выпуск хранит десять репозиториев дня с описаниями. Новые сверху.</p>
-      </div>
-
-      <section className="container section-pad" aria-label="Список выпусков">
-        {index.length ? (
-          <ol className="archive">
-            {index.map((e, i) => {
-              const [owner, name] = (e.lead ?? "/").split("/");
-              return (
-                <li key={e.date}>
-                  <Link className={i === 0 ? "archive__card card is-latest" : "archive__card card"} href={`/issue/${e.date}`}>
-                    <div className="archive__date">
-                      <span className="archive__day">{dayNum(e.date)}</span>
-                      <span className="archive__month">
-                        {monthShort(e.date)}, {formatWeekday(e.date)}
-                      </span>
-                    </div>
-                    <div className="archive__body">
-                      <span className="archive__label">
-                        Выпуск №{index.length - i}
-                        {i === 0 && <span className="tag tag--lead">свежий</span>}
-                      </span>
-                      {e.lead && (
-                        <span className="archive__lead">
-                          Лидер дня: {owner}/<b>{name}</b> <span className="gain">{formatGain(e.lead_gained)}</span>
-                        </span>
-                      )}
-                      <span className="archive__meta">
-                        {e.count} репозиториев, из них {e.ai_count} про ИИ
-                      </span>
-                    </div>
-                    <ArrowUpRightIcon className="archive__arrow" />
-                  </Link>
-                </li>
-              );
-            })}
+    <section className="leaders leaders--page frame" aria-labelledby="archive-title">
+      <h1 id="archive-title" className="leaders__title">
+        Все выпуски, день за&nbsp;днём
+      </h1>
+      {index.length ? (
+        <div className="leaders__grid">
+          {latestLead && (
+            <figure className="leaders__photo" data-reveal>
+              {/* eslint-disable-next-line @next/next/no-img-element -- аватар автора с GitHub */}
+              <img
+                src={`https://github.com/${latestLead.split("/")[0]}.png?size=640`}
+                alt={`Аватар ${latestLead.split("/")[0]}`}
+                width={640}
+                height={640}
+              />
+              <figcaption>
+                {latestLead}, лидер последнего выпуска: {formatGain(index[0].lead_gained)} звёзд за сутки.
+              </figcaption>
+            </figure>
+          )}
+          <p className="leaders__word" aria-hidden="true">
+            выпуски
+          </p>
+          <ol className="leaders__table leaders__table--archive" data-reveal>
+            {index.map((e, i) => (
+              <li key={e.date}>
+                <Link href={`/issue/${e.date}`}>
+                  <span className="leaders__kind">
+                    №{index.length - i}, {formatWeekday(e.date)}
+                  </span>
+                  <span className="leaders__name">
+                    {formatDay(e.date)}
+                    <span className="leaders__owner">
+                      {" "}
+                      {e.count} репо, {e.ai_count} про ИИ{e.lead ? `, лидер ${e.lead.split("/")[1]}` : ""}
+                    </span>
+                  </span>
+                  <span className="leaders__value">{e.lead ? formatGain(e.lead_gained) : ""}</span>
+                </Link>
+              </li>
+            ))}
           </ol>
-        ) : (
-          <div className="empty card">
-            <p className="empty__title">Архив пока пуст</p>
-            <p>Первый выпуск появится после 10:00 по Москве.</p>
-          </div>
-        )}
-      </section>
-    </>
+        </div>
+      ) : (
+        <div className="empty">
+          <p>Архив пока пуст. Первый выпуск появится после 10:00 по Москве.</p>
+        </div>
+      )}
+    </section>
   );
 }

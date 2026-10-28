@@ -9,8 +9,6 @@ import type { IndexEntry, Issue } from "./types";
 const DATA_BASE_URL =
   process.env.DATA_BASE_URL ?? "https://raw.githubusercontent.com/igorao79/repohelper/main/data";
 
-export const DATA_REPO_URL = "https://github.com/igorao79/repohelper";
-
 const DATE_RE = /^\d{4}-\d{2}-\d{2}$/;
 
 async function load<T>(file: string): Promise<T | null> {
@@ -39,12 +37,4 @@ export async function getIssue(date: string): Promise<Issue | null> {
   cacheLife("hours");
   if (!DATE_RE.test(date)) return null;
   return load<Issue>(`issues/${date}.json`);
-}
-
-export function issueFileUrl(date: string): string {
-  return `${DATA_REPO_URL}/blob/main/data/issues/${date}.json`;
-}
-
-export function issueRawUrl(date: string): string {
-  return `https://raw.githubusercontent.com/igorao79/repohelper/main/data/issues/${date}.json`;
 }
