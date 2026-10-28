@@ -31,40 +31,43 @@ const ENDPOINTS = [
 export default function DevelopersPage() {
   return (
     <section className="docs frame" aria-labelledby="docs-title">
-      <h1 id="docs-title" className="docs__title">
-        API repohelper
-      </h1>
-      <p className="docs__lead">
-        Те же выпуски, что на сайте и в Telegram, в JSON. Ключ передаётся в заголовке{" "}
-        <code>Authorization: Bearer rh_…</code> или <code>X-API-Key</code>. Ключ получают после входа через GitHub.
-      </p>
-
-      <div className="docs__key" id="api">
-        <h2 className="docs__h2">Ключ</h2>
-        <ApiKeyPanel />
+      <div className="docs__side">
+        <h1 id="docs-title" className="docs__title">
+          API repohelper
+        </h1>
+        <p className="docs__lead">
+          Те же выпуски, что на сайте и в Telegram, в JSON. Ключ передаётся в заголовке{" "}
+          <code>Authorization: Bearer rh_…</code> или <code>X-API-Key</code>.
+        </p>
+        <div className="docs__key" id="api">
+          <ApiKeyPanel />
+        </div>
       </div>
 
-      <h2 className="docs__h2">Запросы</h2>
-      <ol className="docs__endpoints">
-        {ENDPOINTS.map((e) => (
-          <li key={e.path}>
-            <h3 className="docs__path">
-              <code>{e.path}</code>
-            </h3>
-            <p>{e.what}</p>
-            <p className="docs__params">Параметры: {e.params}</p>
-            <pre>
-              <code>{`curl -H "Authorization: Bearer $REPOHELPER_KEY" \\\n  "https://repohelper.site${e.example}"`}</code>
-            </pre>
-          </li>
-        ))}
-      </ol>
+      <div className="docs__main">
+        <h2 className="docs__h2">Запросы</h2>
+        <ol className="docs__endpoints">
+          {ENDPOINTS.map((e) => (
+            <li key={e.path}>
+              <h3 className="docs__path">
+                <code>{e.path}</code>
+              </h3>
+              <p>{e.what}</p>
+              <p className="docs__params">Параметры: {e.params}</p>
+              <pre>
+                <code>{`curl -H "Authorization: Bearer $REPOHELPER_KEY" \\\n  "https://repohelper.site${e.example}"`}</code>
+              </pre>
+            </li>
+          ))}
+        </ol>
 
-      <h2 className="docs__h2">Ошибки</h2>
-      <p className="docs__lead">
-        Ответ с ошибкой выглядит так: <code>{`{"error":{"code":"invalid_key","message":"…"}}`}</code>. Коды: 400 неверная
-        дата или параметр, 401 нет ключа или он неверный, 404 выпуска нет. Данные обновляются каждый день в 10:00 по Москве.
-      </p>
+        <h2 className="docs__h2">Ошибки</h2>
+        <p className="docs__lead">
+          Ответ с ошибкой выглядит так: <code>{`{"error":{"code":"invalid_key","message":"…"}}`}</code>. Коды: 400 неверная
+          дата или параметр, 401 нет ключа или он неверный, 404 выпуска нет. Данные обновляются каждый день в 10:00 по
+          Москве.
+        </p>
+      </div>
     </section>
   );
 }

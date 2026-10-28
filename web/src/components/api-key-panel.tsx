@@ -2,7 +2,7 @@
 
 import { useCallback, useEffect, useRef, useState } from "react";
 
-import { loginUrl, returnHere } from "@/lib/key-flow";
+import { GET_KEY_EVENT, loginUrl, returnHere } from "@/lib/key-flow";
 import { useAppStore } from "@/stores/app-store-provider";
 
 import { CopyButton } from "./copy-button";
@@ -40,9 +40,15 @@ export function ApiKeyPanel() {
     autoRequested.current = true;
     url.searchParams.delete("get");
     window.history.replaceState(null, "", `${url.pathname}${url.search}${url.hash}`);
-    const t = setTimeout(() => void getKey(), 0); // запрос вне тела эффекта
-    return () => clearTimeout(t);
+    setTimeout(() => void getKey(), 0); // запрос вне тела эффекта; повтор отсекает autoRequested
   }, [user, getKey]);
+
+  // Кнопка «Получить ключ» в хедере на этой же странице.
+  useEffect(() => {
+    const onRequest = () => void getKey();
+    window.addEventListener(GET_KEY_EVENT, onRequest);
+    return () => window.removeEventListener(GET_KEY_EVENT, onRequest);
+  }, [getKey]);
 
   const onClick = () => {
     if (user) void getKey();

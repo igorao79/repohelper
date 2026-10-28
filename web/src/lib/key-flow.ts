@@ -12,3 +12,6 @@ export function returnHere(): string {
   url.hash = "api";
   return `${url.pathname}${url.search}${url.hash}`;
 }
+
+/** Событие «выдай ключ» для панели на текущей странице (кнопка в хедере → панель). */
+export const GET_KEY_EVENT = "repohelper:get-key";
