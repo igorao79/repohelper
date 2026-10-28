@@ -51,8 +51,14 @@ npm run dev   # локально читает ../data (DATA_DIR в .env.local)
 | --- | --- |
 | `GITHUB_CLIENT_ID`, `GITHUB_CLIENT_SECRET` | вход через GitHub (OAuth App, callback `https://www.repohelper.site/api/auth/callback`) |
 | `AUTH_SECRET` | подпись сессий и ключей API, 32+ символа: `openssl rand -base64 48`. Смена секрета отзывает все ключи |
+| `DEEPSEEK_API_KEY` | Студия: подбор репозиториев (модель `DEEPSEEK_MODEL`, по умолчанию `deepseek-flash`) |
+| `GITHUB_TOKEN` | необязательно: запасной токен для поиска GitHub, если у пользователя нет своего (войти заново) |
 | `SITE_URL` | необязательно: `https://www.repohelper.site`, если redirect_uri должен быть фиксированным |
 | `DATA_BASE_URL` | необязательно: другой источник JSON, если репозиторий станет приватным |
+
+## Студия
+
+Чат для вошедших (`/studio`): пользователь описывает задачу или даёт ссылку на репозиторий, DeepSeek ищет инструментами (поиск GitHub, карточка репо с README, поиск по выпускам) и выбирает 3–6 репозиториев только из найденного, с объяснением. Поиск идёт токеном пользователя из входа (хранится в зашифрованной cookie), история чата — в `localStorage`.
 
 ## API
 

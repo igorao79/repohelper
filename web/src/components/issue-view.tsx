@@ -107,7 +107,7 @@ function Leaders({ repos, aiNames }: { repos: Repo[]; aiNames: Set<string> }) {
           Больше всех за&nbsp;сутки
         </h2>
         <p className="leaders__lead" data-reveal>
-          Полоса — сколько звёзд репозиторий набрал за день относительно лидера.
+          Полоса показывает, сколько звёзд репозиторий набрал за день относительно лидера.
         </p>
       </div>
       <GainBoard

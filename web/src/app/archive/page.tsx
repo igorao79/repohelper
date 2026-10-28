@@ -15,7 +15,7 @@ export default async function ArchivePage() {
         <h1 id="archive-title" className="leaders__title">
           Все выпуски
         </h1>
-        <p className="leaders__lead">Новые сверху. Полоса — сколько звёзд за день набрал лидер выпуска.</p>
+        <p className="leaders__lead">Новые сверху. Полоса показывает, сколько звёзд за день набрал лидер выпуска.</p>
       </div>
       {index.length ? (
         <GainBoard

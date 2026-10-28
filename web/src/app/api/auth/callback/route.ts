@@ -1,6 +1,15 @@
 import { type NextRequest, NextResponse } from "next/server";
 
-import { SESSION_COOKIE, STATE_COOKIE, authConfigured, cookieOptions, createSession, siteOrigin } from "@/lib/auth";
+import {
+  GH_TOKEN_COOKIE,
+  SESSION_COOKIE,
+  STATE_COOKIE,
+  authConfigured,
+  cookieOptions,
+  createSession,
+  encryptToken,
+  siteOrigin,
+} from "@/lib/auth";
 
 /** GitHub вернул code: меняем на токен, читаем профиль, ставим подписанную сессию. */
 export async function GET(req: NextRequest) {
@@ -41,6 +50,7 @@ export async function GET(req: NextRequest) {
   const session = createSession({ id: user.id, login: user.login, avatar: user.avatar_url ?? "" });
   const res = NextResponse.redirect(`${origin}${next}`);
   res.cookies.set(SESSION_COOKIE, session.value, cookieOptions(session.maxAge));
+  res.cookies.set(GH_TOKEN_COOKIE, encryptToken(token.access_token), cookieOptions(session.maxAge));
   res.cookies.delete(STATE_COOKIE);
   return res;
 }

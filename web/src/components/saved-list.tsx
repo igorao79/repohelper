@@ -77,9 +77,15 @@ export function SavedList() {
               topics: [],
             }}
             note={
-              <Link className="link" href={`/issue/${r.issue}`}>
-                из выпуска за {formatDay(r.issue)}
-              </Link>
+              r.issue ? (
+                <Link className="link" href={`/issue/${r.issue}`}>
+                  из выпуска за {formatDay(r.issue)}
+                </Link>
+              ) : (
+                <Link className="link" href="/studio">
+                  из Студии
+                </Link>
+              )
             }
             aside={
               <button type="button" className="save" onClick={() => remove(r)}>

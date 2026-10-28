@@ -72,6 +72,9 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
                 <Link className="link" href="/">
                   Выпуск
                 </Link>
+                <Link className="link" href="/studio">
+                  Студия
+                </Link>
                 <Link className="link" href="/archive">
                   Архив
                 </Link>

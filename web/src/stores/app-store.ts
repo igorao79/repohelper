@@ -12,7 +12,7 @@ export type SavedRepo = {
   summary: string;
   language: string;
   stars: number;
-  issue: string; // дата выпуска, из которого отложен
+  issue: string; // дата выпуска, из которого отложен; "" — из Студии
   saved_at: string;
 };
 
@@ -25,7 +25,28 @@ export type Filters = {
 
 export type SessionUser = { id: number; login: string; avatar: string };
 
+export type StudioRepo = {
+  full_name: string;
+  url: string;
+  description: string;
+  stars: number;
+  language: string;
+  reason: string;
+  inDigest?: string;
+};
+
+export type StudioMessage = {
+  id: string;
+  role: "user" | "assistant";
+  text: string;
+  repos?: StudioRepo[];
+  steps?: string[]; // что агент делал: поиски, чтение README
+  pending?: boolean;
+  error?: boolean;
+};
+
 export type AppState = Filters & {
+  studio: StudioMessage[];
   saved: Record<string, SavedRepo>;
   /** undefined — ещё не знаем; null — не вошёл. В localStorage не пишется. */
   user: SessionUser | null | undefined;
@@ -36,6 +57,9 @@ export type AppState = Filters & {
 export type AppActions = {
   setFilters: (patch: Partial<Filters>) => void;
   resetFilters: () => void;
+  addStudioMessage: (m: StudioMessage) => void;
+  updateStudioMessage: (id: string, patch: Partial<StudioMessage>) => void;
+  clearStudio: () => void;
   toggleSaved: (repo: Omit<SavedRepo, "saved_at">) => void;
   removeSaved: (fullName: string) => void;
   restoreSaved: (repo: SavedRepo) => void;
@@ -58,6 +82,7 @@ export const createAppStore = () =>
       (set) => ({
         ...defaultFilters,
         saved: {},
+        studio: [],
         theme: null,
         user: undefined,
         authConfigured: false,
@@ -77,6 +102,10 @@ export const createAppStore = () =>
             return { saved };
           }),
         restoreSaved: (repo) => set((state) => ({ saved: { ...state.saved, [repo.full_name]: repo } })),
+        addStudioMessage: (m) => set((state) => ({ studio: [...state.studio, m].slice(-40) })),
+        updateStudioMessage: (id, patch) =>
+          set((state) => ({ studio: state.studio.map((m) => (m.id === id ? { ...m, ...patch } : m)) })),
+        clearStudio: () => set({ studio: [] }),
         setTheme: (theme) => set({ theme }),
         loadUser: async () => {
           try {
@@ -95,7 +124,8 @@ export const createAppStore = () =>
       {
         name: STORAGE_KEY,
         storage: createJSONStorage(() => window.localStorage), // на сервере window нет — persist молча выключается
-        partialize: (state) => ({ saved: state.saved, theme: state.theme }),
+        // незавершённые ответы не сохраняем — после перезагрузки они бы висели вечно
+        partialize: (state) => ({ saved: state.saved, theme: state.theme, studio: state.studio.filter((m) => !m.pending) }),
         skipHydration: true, // читаем localStorage после монтирования, чтобы не было расхождения с SSR
       },
     ),

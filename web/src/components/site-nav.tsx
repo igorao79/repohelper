@@ -9,9 +9,10 @@ import { useAppStore, useSavedHydrated } from "@/stores/app-store-provider";
 import { GetKeyButton } from "./get-key-button";
 
 const LINKS = [
-  { href: "/", label: "Выпуск", match: (p: string) => p === "/" || p.startsWith("/issue/") },
-  { href: "/archive", label: "Архив", match: (p: string) => p === "/archive" },
-  { href: "/saved", label: "Отложенные", match: (p: string) => p === "/saved" },
+  { href: "/", label: "Выпуск", tab: "Выпуск", match: (p: string) => p === "/" || p.startsWith("/issue/") },
+  { href: "/studio", label: "Студия", tab: "Студия", match: (p: string) => p === "/studio" },
+  { href: "/archive", label: "Архив", tab: "Архив", match: (p: string) => p === "/archive" },
+  { href: "/saved", label: "Отложенные", tab: "Закладки", match: (p: string) => p === "/saved" },
 ];
 
 /** Нижняя панель уезжает при прокрутке вниз и возвращается при прокрутке вверх, чтобы не закрывать текст. */
@@ -51,9 +52,9 @@ export function SiteNav({ variant }: { variant: "top" | "tabs" }) {
       className={variant === "top" ? "topnav" : hidden ? "tabbar is-hidden" : "tabbar"}
       aria-label="Разделы сайта"
     >
-      {LINKS.map(({ href, label, match }) => (
+      {LINKS.map(({ href, label, tab, match }) => (
         <Link key={href} href={href} aria-current={match(pathname) ? "page" : undefined}>
-          {label}
+          {variant === "tabs" ? tab : label}
           {href === "/saved" && hydrated && savedCount > 0 && <span className="count">{savedCount}</span>}
         </Link>
       ))}

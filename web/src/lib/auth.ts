@@ -1,4 +1,4 @@
-import { createHmac, randomBytes, timingSafeEqual } from "node:crypto";
+import { createCipheriv, createDecipheriv, createHash, createHmac, randomBytes, timingSafeEqual } from "node:crypto";
 
 import type { NextRequest } from "next/server";
 
@@ -7,6 +7,7 @@ import type { NextRequest } from "next/server";
 
 export const SESSION_COOKIE = "rh_session";
 export const STATE_COOKIE = "rh_oauth_state";
+export const GH_TOKEN_COOKIE = "rh_gh"; // токен GitHub пользователя, зашифрован — для поиска в Студии
 const SESSION_TTL = 60 * 60 * 24 * 30; // 30 дней
 
 export type SessionUser = { id: number; login: string; avatar: string };
@@ -87,3 +88,26 @@ export const cookieOptions = (maxAge: number) => ({
   path: "/",
   maxAge,
 });
+
+// Токен GitHub шифруется AES-256-GCM (ключ — sha256 от AUTH_SECRET), чтобы не лежать в cookie открытым текстом.
+const tokenKey = () => createHash("sha256").update(`gh-token.${secret()}`).digest();
+
+export function encryptToken(token: string): string {
+  const iv = randomBytes(12);
+  const cipher = createCipheriv("aes-256-gcm", tokenKey(), iv);
+  const data = Buffer.concat([cipher.update(token, "utf8"), cipher.final()]);
+  return [iv, cipher.getAuthTag(), data].map((b) => b.toString("base64url")).join(".");
+}
+
+export function readGithubToken(req: NextRequest): string | null {
+  const raw = req.cookies.get(GH_TOKEN_COOKIE)?.value;
+  if (!raw || !authConfigured()) return null;
+  try {
+    const [iv, tag, data] = raw.split(".").map((p) => Buffer.from(p, "base64url"));
+    const decipher = createDecipheriv("aes-256-gcm", tokenKey(), iv);
+    decipher.setAuthTag(tag);
+    return Buffer.concat([decipher.update(data), decipher.final()]).toString("utf8");
+  } catch {
+    return null;
+  }
+}
