@@ -24,32 +24,30 @@ export function OpenData({ sample, date, dates, fileUrl, older }: Props) {
   return (
     <section className="opendata frame" aria-labelledby="opendata-title">
       <div className="opendata__copy">
+        <h2 id="opendata-title" className="opendata__title" data-reveal>
+          Выпуск в&nbsp;JSON
+        </h2>
         <form
+          className="opendata__form"
+          data-reveal
           onSubmit={(e) => {
             e.preventDefault();
             window.open(issueRawUrl(picked), "_blank", "noopener");
           }}
         >
-          <h2 id="opendata-title" className="opendata__line" data-reveal>
-            Выпуск за{" "}
-            <select
-              className="opendata__select"
-              name="date"
-              aria-label="Дата выпуска"
-              value={picked}
-              onChange={(e) => setPicked(e.target.value)}
-            >
+          <label className="opendata__field">
+            <span className="visually-hidden">Дата выпуска</span>
+            <select name="date" value={picked} onChange={(e) => setPicked(e.target.value)}>
               {options.map((d) => (
                 <option key={d} value={d}>
-                  {formatDay(d)}
+                  Выпуск за {formatDay(d)}
                 </option>
               ))}
-            </select>{" "}
-            в{" "}
-            <button type="submit" className="opendata__go">
-              JSON
-            </button>
-          </h2>
+            </select>
+          </label>
+          <button type="submit" className="button">
+            Открыть JSON
+          </button>
         </form>
         <p className="opendata__note" data-reveal>
           Каждое утро бот кладёт выпуск в репозиторий файлом{" "}

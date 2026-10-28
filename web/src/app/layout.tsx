@@ -78,7 +78,6 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
                 </Link>
               </nav>
               <p>Превью репозиториев и аватары: GitHub</p>
-              <p>Москва, 2026</p>
             </div>
           </footer>
 

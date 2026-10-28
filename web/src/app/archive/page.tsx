@@ -1,59 +1,38 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 
+import { GainBoard } from "@/components/gain-board";
 import { getIndex } from "@/lib/data";
-import { formatDay, formatGain, formatWeekday } from "@/lib/format";
+import { formatDay, formatWeekday } from "@/lib/format";
 
 export const metadata: Metadata = { title: "Архив выпусков" };
 
 export default async function ArchivePage() {
   const index = await getIndex();
-  const latestLead = index[0]?.lead;
 
   return (
     <section className="leaders leaders--page frame" aria-labelledby="archive-title">
-      <h1 id="archive-title" className="leaders__title">
-        Все выпуски, день за&nbsp;днём
-      </h1>
+      <div className="leaders__head">
+        <h1 id="archive-title" className="leaders__title">
+          Все выпуски
+        </h1>
+        <p className="leaders__lead">Новые сверху. Полоса — сколько звёзд за день набрал лидер выпуска.</p>
+      </div>
       {index.length ? (
-        <div className="leaders__grid">
-          {latestLead && (
-            <figure className="leaders__photo" data-reveal>
-              {/* eslint-disable-next-line @next/next/no-img-element -- аватар автора с GitHub */}
-              <img
-                src={`https://github.com/${latestLead.split("/")[0]}.png?size=640`}
-                alt={`Аватар ${latestLead.split("/")[0]}`}
-                width={640}
-                height={640}
-              />
-              <figcaption>
-                {latestLead}, лидер последнего выпуска: {formatGain(index[0].lead_gained)} звёзд за сутки.
-              </figcaption>
-            </figure>
-          )}
-          <p className="leaders__word" aria-hidden="true">
-            выпуски
-          </p>
-          <ol className="leaders__table leaders__table--archive" data-reveal>
-            {index.map((e, i) => (
-              <li key={e.date}>
-                <Link href={`/issue/${e.date}`}>
-                  <span className="leaders__kind">
-                    №{index.length - i}, {formatWeekday(e.date)}
-                  </span>
-                  <span className="leaders__name">
-                    {formatDay(e.date)}
-                    <span className="leaders__owner">
-                      {" "}
-                      {e.count} репо, {e.ai_count} про ИИ{e.lead ? `, лидер ${e.lead.split("/")[1]}` : ""}
-                    </span>
-                  </span>
-                  <span className="leaders__value">{e.lead ? formatGain(e.lead_gained) : ""}</span>
-                </Link>
-              </li>
-            ))}
-          </ol>
-        </div>
+        <GainBoard
+          label="Выпуски по датам"
+          rows={index.map((e, i) => ({
+            key: e.date,
+            href: `/issue/${e.date}`,
+            avatar: e.lead?.split("/")[0],
+            title: (
+              <>
+                {formatDay(e.date)} <span className="board__owner">№{index.length - i}, {formatWeekday(e.date)}</span>
+              </>
+            ),
+            note: `${e.count} репо, ${e.ai_count} про ИИ${e.lead ? `, лидер ${e.lead}` : ""}`,
+            value: e.lead_gained,
+          }))}
+        />
       ) : (
         <div className="empty">
           <p>Архив пока пуст. Первый выпуск появится после 10:00 по Москве.</p>

@@ -1,7 +1,8 @@
 import { issueFileUrl } from "@/lib/urls";
-import { formatCompact, formatDay, formatGain, plural } from "@/lib/format";
+import { formatCompact, formatDay, plural } from "@/lib/format";
 import type { IndexEntry, Issue, Repo } from "@/lib/types";
 
+import { GainBoard } from "./gain-board";
 import { IssueBoard } from "./issue-board";
 import { OpenData } from "./open-data";
 import { Pipeline } from "./pipeline";
@@ -97,59 +98,37 @@ function Hero({
 }
 
 function Leaders({ repos, aiNames }: { repos: Repo[]; aiNames: Set<string> }) {
-  const lead = repos[0];
-  const [owner, name] = lead.full_name.split("/");
-
   return (
     <section className="leaders frame" aria-labelledby="leaders-title">
-      <h2 id="leaders-title" className="leaders__title" data-reveal>
-        Больше всех за&nbsp;сутки
-      </h2>
-      <div className="leaders__grid">
-        <figure className="leaders__photo" data-reveal>
-          {/* eslint-disable-next-line @next/next/no-img-element -- аватар автора с GitHub */}
-          <img
-            src={`https://github.com/${owner}.png?size=640`}
-            alt={`Аватар ${owner}`}
-            width={640}
-            height={640}
-            loading="lazy"
-          />
-          <figcaption>
-            {owner}, автор {name}: {formatGain(lead.stars_gained)} звёзд за
-            сутки, больше всех в выпуске.
-          </figcaption>
-        </figure>
-        <p className="leaders__word" aria-hidden="true">
-          звёзд за сутки
+      <div className="leaders__head">
+        <h2 id="leaders-title" className="leaders__title" data-reveal>
+          Больше всех за&nbsp;сутки
+        </h2>
+        <p className="leaders__lead" data-reveal>
+          Полоса — сколько звёзд репозиторий набрал за день относительно лидера.
         </p>
-        <ol className="leaders__table" data-reveal>
-          {repos.map((r) => {
-            const [o, n] = r.full_name.split("/");
-            return (
-              <li key={r.full_name}>
-                <a href={r.url} target="_blank" rel="noopener noreferrer">
-                  <span className="leaders__kind">
-                    {aiNames.has(r.full_name) ? "ИИ" : "растёт"}
-                  </span>
-                  <span className="leaders__name">
-                    <span className="leaders__owner">{o}/</span>
-                    <wbr />
-                    {n}
-                  </span>
-                  <span className="leaders__value">
-                    {formatGain(r.stars_gained)}
-                    <span className="visually-hidden">
-                      {" "}
-                      звёзд, всего {formatCompact(r.stars)}
-                    </span>
-                  </span>
-                </a>
-              </li>
-            );
-          })}
-        </ol>
       </div>
+      <GainBoard
+        label="Прирост звёзд за сутки"
+        rows={repos.map((r) => {
+          const [o, n] = r.full_name.split("/");
+          return {
+            key: r.full_name,
+            href: r.url,
+            external: true,
+            avatar: o,
+            title: (
+              <>
+                <span className="board__owner">{o}/</span>
+                <wbr />
+                {n}
+              </>
+            ),
+            note: `${aiNames.has(r.full_name) ? "ИИ" : "набирает популярность"}, ${formatCompact(r.stars)} звёзд`,
+            value: r.stars_gained,
+          };
+        })}
+      />
     </section>
   );
 }
