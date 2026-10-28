@@ -44,3 +44,7 @@ export async function getIssue(date: string): Promise<Issue | null> {
 export function issueFileUrl(date: string): string {
   return `${DATA_REPO_URL}/blob/main/data/issues/${date}.json`;
 }
+
+export function issueRawUrl(date: string): string {
+  return `https://raw.githubusercontent.com/igorao79/repohelper/main/data/issues/${date}.json`;
+}

@@ -14,6 +14,12 @@ export function AppStoreProvider({ children }: { children: ReactNode }) {
 
   useEffect(() => {
     void store.persist.rehydrate();
+    // Тема из стора → атрибут на <html>. До гидратации её уже выставил inline-скрипт в layout.
+    return store.subscribe((state, prev) => {
+      if (state.theme === prev.theme) return;
+      if (state.theme) document.documentElement.dataset.theme = state.theme;
+      else delete document.documentElement.dataset.theme;
+    });
   }, [store]);
 
   return <AppStoreContext.Provider value={store}>{children}</AppStoreContext.Provider>;

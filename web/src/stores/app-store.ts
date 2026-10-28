@@ -4,6 +4,7 @@ import { createStore } from "zustand/vanilla";
 import type { SectionId } from "@/lib/types";
 
 export type SectionFilter = "all" | SectionId;
+export type Theme = "dark" | "light";
 
 export type SavedRepo = {
   full_name: string;
@@ -24,6 +25,7 @@ export type Filters = {
 
 export type AppState = Filters & {
   saved: Record<string, SavedRepo>;
+  theme: Theme | null; // null — как в системе
 };
 
 export type AppActions = {
@@ -32,20 +34,24 @@ export type AppActions = {
   toggleSaved: (repo: Omit<SavedRepo, "saved_at">) => void;
   removeSaved: (fullName: string) => void;
   restoreSaved: (repo: SavedRepo) => void;
+  setTheme: (theme: Theme) => void;
 };
 
 export type AppStore = AppState & AppActions;
 
+export const STORAGE_KEY = "repohelper-saved";
+
 export const defaultFilters: Filters = { section: "all", language: "", query: "", onlySaved: false };
 
 // Фабрика, а не глобальный стор: в Next.js стор создаётся на каждый запрос (см. гайд Zustand).
-// Отложенные хранятся в localStorage; фильтры — только в памяти и в адресной строке.
+// Отложенные и тема хранятся в localStorage; фильтры — только в памяти и в адресной строке.
 export const createAppStore = () =>
   createStore<AppStore>()(
     persist(
       (set) => ({
         ...defaultFilters,
         saved: {},
+        theme: null,
         setFilters: (patch) => set(patch),
         resetFilters: () => set(defaultFilters),
         toggleSaved: (repo) =>
@@ -62,11 +68,12 @@ export const createAppStore = () =>
             return { saved };
           }),
         restoreSaved: (repo) => set((state) => ({ saved: { ...state.saved, [repo.full_name]: repo } })),
+        setTheme: (theme) => set({ theme }),
       }),
       {
-        name: "repohelper-saved",
+        name: STORAGE_KEY,
         storage: createJSONStorage(() => window.localStorage), // на сервере window нет — persist молча выключается
-        partialize: (state) => ({ saved: state.saved }),
+        partialize: (state) => ({ saved: state.saved, theme: state.theme }),
         skipHydration: true, // читаем localStorage после монтирования, чтобы не было расхождения с SSR
       },
     ),

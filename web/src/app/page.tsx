@@ -9,9 +9,10 @@ export default async function Home() {
 
   if (!latest) {
     return (
-      <div className="page-head container">
-        <h1>Выпусков пока нет</h1>
-        <p className="lead">Первый выпуск появится здесь после 10:00 по Москве, когда бот соберёт тренды дня.</p>
+      <div className="page-head container section-pad">
+        <p className="pill">Скоро</p>
+        <h1 className="page-title">Выпусков пока нет</h1>
+        <p className="hero__lead">Первый выпуск появится здесь после 10:00 по Москве, когда бот соберёт тренды дня.</p>
       </div>
     );
   }

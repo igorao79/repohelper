@@ -1,10 +1,17 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 
+import { ArrowUpRightIcon } from "@/components/icons";
 import { getIndex } from "@/lib/data";
-import { formatDate, formatGain, formatWeekday } from "@/lib/format";
+import { formatGain, formatWeekday } from "@/lib/format";
 
 export const metadata: Metadata = { title: "Архив выпусков" };
+
+const dayNum = (iso: string) => Number(iso.slice(8, 10));
+const monthShort = (iso: string) =>
+  new Intl.DateTimeFormat("ru-RU", { month: "short", timeZone: "UTC" })
+    .format(new Date(`${iso}T00:00:00Z`))
+    .replace(".", "");
 
 export default async function ArchivePage() {
   const index = await getIndex();
@@ -12,59 +19,53 @@ export default async function ArchivePage() {
   return (
     <>
       <div className="page-head container">
-        <h1>Архив выпусков</h1>
-        <p className="lead">Все выпуски, новые сверху. Каждый хранит десять репозиториев дня с описаниями.</p>
+        <p className="pill">Архив</p>
+        <h1 className="page-title">
+          Все выпуски, <span className="grad-text">день за днём</span>
+        </h1>
+        <p className="hero__lead">Каждый выпуск хранит десять репозиториев дня с описаниями. Новые сверху.</p>
       </div>
 
-      <section className="ledger-wrap container" aria-label="Список выпусков">
-        <div className="sheet">
-          {index.length ? (
-            <table className="ledger ledger--archive">
-              <thead>
-                <tr>
-                  <th scope="col">Выпуск</th>
-                  <th scope="col">День</th>
-                  <th scope="col" className="num">
-                    Репозиториев
-                  </th>
-                  <th scope="col" className="num">
-                    Про ИИ
-                  </th>
-                  <th scope="col">Лидер дня</th>
-                  <th scope="col" className="num">
-                    Звёзд за день
-                  </th>
-                </tr>
-              </thead>
-              <tbody>
-                {index.map((e, i) => (
-                  <tr key={e.date} className={i === 0 ? "ledger__row is-latest" : "ledger__row"}>
-                    <td>
-                      <Link className="ledger__name" href={`/issue/${e.date}`}>
-                        {formatDate(e.date)}
-                      </Link>
-                    </td>
-                    <td data-label="День">{formatWeekday(e.date)}</td>
-                    <td className="num" data-label="Репозиториев">
-                      {e.count}
-                    </td>
-                    <td className="num" data-label="Про ИИ">
-                      {e.ai_count}
-                    </td>
-                    <td data-label="Лидер дня">{e.lead ?? <span className="muted">нет</span>}</td>
-                    <td className="num" data-label="Звёзд за день">
-                      {e.lead ? formatGain(e.lead_gained) : ""}
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          ) : (
-            <div className="state state--empty">
-              <p>Архив пока пуст. Первый выпуск появится после 10:00 по Москве.</p>
-            </div>
-          )}
-        </div>
+      <section className="container section-pad" aria-label="Список выпусков">
+        {index.length ? (
+          <ol className="archive">
+            {index.map((e, i) => {
+              const [owner, name] = (e.lead ?? "/").split("/");
+              return (
+                <li key={e.date}>
+                  <Link className={i === 0 ? "archive__card card is-latest" : "archive__card card"} href={`/issue/${e.date}`}>
+                    <div className="archive__date">
+                      <span className="archive__day">{dayNum(e.date)}</span>
+                      <span className="archive__month">
+                        {monthShort(e.date)}, {formatWeekday(e.date)}
+                      </span>
+                    </div>
+                    <div className="archive__body">
+                      <span className="archive__label">
+                        Выпуск №{index.length - i}
+                        {i === 0 && <span className="tag tag--lead">свежий</span>}
+                      </span>
+                      {e.lead && (
+                        <span className="archive__lead">
+                          Лидер дня: {owner}/<b>{name}</b> <span className="gain">{formatGain(e.lead_gained)}</span>
+                        </span>
+                      )}
+                      <span className="archive__meta">
+                        {e.count} репозиториев, из них {e.ai_count} про ИИ
+                      </span>
+                    </div>
+                    <ArrowUpRightIcon className="archive__arrow" />
+                  </Link>
+                </li>
+              );
+            })}
+          </ol>
+        ) : (
+          <div className="empty card">
+            <p className="empty__title">Архив пока пуст</p>
+            <p>Первый выпуск появится после 10:00 по Москве.</p>
+          </div>
+        )}
       </section>
     </>
   );

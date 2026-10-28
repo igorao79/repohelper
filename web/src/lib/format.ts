@@ -19,3 +19,10 @@ export function plural(n: number, one: string, few: string, many: string): strin
   if (mod10 >= 2 && mod10 <= 4 && (mod100 < 12 || mod100 > 14)) return few;
   return many;
 }
+
+/** 38904 → «38.9k», 117281 → «117k». */
+export function formatCompact(n: number): string {
+  if (n < 1000) return String(n);
+  const k = n / 1000;
+  return `${k >= 100 ? Math.round(k) : k.toFixed(1).replace(/\.0$/, "")}k`;
+}

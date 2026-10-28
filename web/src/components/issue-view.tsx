@@ -1,128 +1,177 @@
 import Link from "next/link";
 
-import { issueFileUrl } from "@/lib/data";
-import { formatDate, formatDay, formatGain, plural } from "@/lib/format";
-import type { IndexEntry, Issue } from "@/lib/types";
+import { issueFileUrl, issueRawUrl } from "@/lib/data";
+import { formatCompact, formatDate, formatDay, formatGain, formatNumber, plural } from "@/lib/format";
+import type { IndexEntry, Issue, Repo } from "@/lib/types";
 
-import { IssueLedger } from "./issue-ledger";
+import { CopyButton } from "./copy-button";
+import { ArrowUpRightIcon, StarIcon } from "./icons";
+import { IssueBoard } from "./issue-board";
+import { RepoPreview } from "./repo-preview";
 
 export function IssueView({ issue, index }: { issue: Issue; index: IndexEntry[] }) {
   const pos = index.findIndex((e) => e.date === issue.date);
+  const number = pos >= 0 ? index.length - pos : null;
   const newer = pos > 0 ? index[pos - 1] : null;
   const older = pos >= 0 && pos < index.length - 1 ? index[pos + 1] : null;
 
   const repos = issue.sections.flatMap((s) => s.repos);
   const ai = issue.sections.find((s) => s.id === "ai")?.repos.length ?? 0;
-  const lead = repos.reduce((best, r) => (r.stars_gained > best.stars_gained ? r : best), repos[0]);
+  const languages = new Set(repos.map((r) => r.language).filter(Boolean)).size;
+  const dayGain = repos.filter((r) => r.gained_label === "за день").reduce((sum, r) => sum + r.stars_gained, 0);
+  const podium = [...repos].sort((a, b) => b.stars_gained - a.stars_gained).slice(0, 3);
 
   return (
     <>
-      <header className="issue-head container">
-        <div className="issue-head__title">
-          <h1>Выпуск за {formatDate(issue.date)}</h1>
-          <p className="lead">
-            {repos.length} {plural(repos.length, "репозиторий", "репозитория", "репозиториев")}, которые за сутки
-            набрали больше всего звёзд на GitHub. Описания пишет DeepSeek по README.
+      <section className="hero container">
+        <div className="hero__copy">
+          <p className="pill">
+            <span className="pill__pulse" aria-hidden="true" />
+            {number ? `Выпуск №${number}` : "Выпуск"}, {formatDate(issue.date)}
           </p>
-        </div>
+          <h1 className="hero__title">
+            Что взлетело на&nbsp;GitHub <span className="grad-text">за&nbsp;сутки</span>
+          </h1>
+          <p className="hero__lead">
+            {repos.length} {plural(repos.length, "репозиторий", "репозитория", "репозиториев")}, которые быстрее всех
+            набирают звёзды. Коротко и по-русски: описания пишет DeepSeek по README.
+          </p>
 
-        <dl className="facts">
-          <div>
-            <dt>Языков</dt>
-            <dd className="num">{new Set(repos.map((r) => r.language).filter(Boolean)).size}</dd>
-          </div>
-          <div>
-            <dt>Про ИИ</dt>
-            <dd className="num">
-              {ai} из {repos.length}
-            </dd>
-          </div>
-          {lead && (
+          <dl className="stats">
             <div>
-              <dt>Лидер дня</dt>
+              <dt>звёзд за сутки</dt>
+              <dd className="grad-text">{formatGain(dayGain)}</dd>
+            </div>
+            <div>
+              <dt>про ИИ</dt>
               <dd>
-                <a href={lead.url} target="_blank" rel="noopener noreferrer">
-                  {lead.full_name.split("/")[1]}
-                </a>{" "}
-                <span className="num accent">{formatGain(lead.stars_gained)}</span>
+                {ai}
+                <small>/{repos.length}</small>
               </dd>
             </div>
-          )}
-        </dl>
+            <div>
+              <dt>языков</dt>
+              <dd>{languages}</dd>
+            </div>
+          </dl>
 
-        {(older || newer) && (
-          <nav className="pager" aria-label="Соседние выпуски">
+          <div className="hero__actions">
+            <a className="btn btn--primary" href="#repos">
+              Смотреть выпуск
+            </a>
             {older && (
-              <Link href={`/issue/${older.date}`} rel="prev">
-                Предыдущий выпуск, {formatDay(older.date)}
+              <Link className="btn btn--ghost" href={`/issue/${older.date}`} rel="prev">
+                Выпуск за {formatDay(older.date)}
               </Link>
             )}
             {newer && (
-              <Link href={`/issue/${newer.date}`} rel="next">
-                Следующий выпуск, {formatDay(newer.date)}
+              <Link className="btn btn--ghost" href={`/issue/${newer.date}`} rel="next">
+                Следующий, {formatDay(newer.date)}
               </Link>
             )}
-          </nav>
-        )}
-      </header>
+          </div>
+        </div>
 
-      <IssueLedger issue={issue} />
+        <ol className="podium" aria-label="Тройка лидеров по звёздам за день">
+          {podium.map((repo, i) => (
+            <PodiumCard key={repo.full_name} repo={repo} place={i + 1} />
+          ))}
+        </ol>
+      </section>
 
-      <JsonBand issue={issue} />
+      <IssueBoard issue={issue} />
+
+      <JsonSection issue={issue} />
     </>
   );
 }
 
-function JsonBand({ issue }: { issue: Issue }) {
+function PodiumCard({ repo, place }: { repo: Repo; place: number }) {
+  const [owner, name] = repo.full_name.split("/");
+  return (
+    <li className={`podium__item podium__item--${place}`}>
+      <a className="podium__card card" href={repo.url} target="_blank" rel="noopener noreferrer">
+        <div className="podium__media">
+          <RepoPreview fullName={repo.full_name} priority={place === 1} />
+        </div>
+        <div className="podium__body">
+          <span className="podium__place" aria-label={`${place} место`}>
+            {place}
+          </span>
+          <div className="podium__name">
+            <span>{owner}/</span>
+            {name}
+          </div>
+          <div className="podium__meta">
+            <span className="gain">{formatGain(repo.stars_gained)}</span>
+            <span className="podium__stars">
+              <StarIcon size={13} />
+              {formatCompact(repo.stars)}
+            </span>
+            <ArrowUpRightIcon size={16} className="podium__arrow" />
+          </div>
+        </div>
+      </a>
+    </li>
+  );
+}
+
+function JsonSection({ issue }: { issue: Issue }) {
   const first = issue.sections[0]?.repos[0];
   if (!first) return null;
   const sample = {
     full_name: first.full_name,
-    url: first.url,
     language: first.language,
     stars: first.stars,
     stars_gained: first.stars_gained,
     summary: first.summary,
   };
   const file = `data/issues/${issue.date}.json`;
+  const total = issue.sections.flatMap((s) => s.repos).length;
 
   return (
-    <section className="band-ink" aria-labelledby="json-title">
-      <div className="container band-ink__grid">
-        <div className="band-ink__head">
-          <h2 id="json-title">Тот же выпуск в JSON</h2>
-          <p>Бот кладёт каждый выпуск в репозиторий. Файл можно забрать для своих скриптов, ленты или бота.</p>
-          <a className="band-ink__link" href={issueFileUrl(issue.date)} target="_blank" rel="noopener noreferrer">
-            Открыть {file}
+    <section className="json container" aria-labelledby="json-title">
+      <div className="json__copy">
+        <h2 id="json-title">
+          Выпуск открыт <span className="grad-text">как&nbsp;JSON</span>
+        </h2>
+        <p>
+          Каждый выпуск бот кладёт в репозиторий. Забирайте файл в свои скрипты, ленты и ботов: в нём все {total}{" "}
+          {plural(total, "репозиторий", "репозитория", "репозиториев")} с описаниями и цифрами.
+        </p>
+        <div className="json__actions">
+          <a className="btn" href={issueFileUrl(issue.date)} target="_blank" rel="noopener noreferrer">
+            Открыть на GitHub <ArrowUpRightIcon size={16} />
           </a>
+          <CopyButton text={issueRawUrl(issue.date)} label="Скопировать ссылку на файл" />
         </div>
-        <figure className="band-ink__code">
-          <pre>
-            <code>{highlightJson(JSON.stringify(sample, null, 2))}</code>
-          </pre>
-          <figcaption>
-            Первая запись выпуска. В файле все {issue.sections.flatMap((s) => s.repos).length} репозиториев по разделам.
-          </figcaption>
-        </figure>
       </div>
+
+      <figure className="code card">
+        <figcaption className="code__bar">
+          <span className="code__file">{file}</span>
+          <span className="code__size">{formatNumber(total)} записей</span>
+        </figcaption>
+        <pre>
+          <code>{highlightJson(JSON.stringify(sample, null, 2))}</code>
+        </pre>
+      </figure>
     </section>
   );
 }
 
 function highlightJson(json: string) {
   return json.split("\n").map((line, i) => {
-    const m = line.match(/^(\s*)("[^"]+")(:.*)$/);
+    const m = line.match(/^(\s*)("[^"]+")(:\s)(.*)$/);
+    if (!m) return <span key={i}>{line + "\n"}</span>;
+    const value = m[4];
+    const cls = value.startsWith('"') ? "tok-str" : "tok-num";
     return (
       <span key={i}>
-        {m ? (
-          <>
-            {m[1]}
-            <span className="json-key">{m[2]}</span>
-            {m[3]}
-          </>
-        ) : (
-          line
-        )}
+        {m[1]}
+        <span className="tok-key">{m[2]}</span>
+        {m[3]}
+        <span className={cls}>{value}</span>
         {"\n"}
       </span>
     );

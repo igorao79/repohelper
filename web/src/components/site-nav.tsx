@@ -5,26 +5,29 @@ import { usePathname } from "next/navigation";
 
 import { useAppStore, useSavedHydrated } from "@/stores/app-store-provider";
 
+import { ArchiveIcon, BookmarkIcon, FlameIcon } from "./icons";
+
 const LINKS = [
-  { href: "/", label: "Выпуск", match: (p: string) => p === "/" || p.startsWith("/issue/") },
-  { href: "/archive", label: "Архив", match: (p: string) => p === "/archive" },
+  { href: "/", label: "Выпуск", Icon: FlameIcon, match: (p: string) => p === "/" || p.startsWith("/issue/") },
+  { href: "/archive", label: "Архив", Icon: ArchiveIcon, match: (p: string) => p === "/archive" },
+  { href: "/saved", label: "Отложенные", Icon: BookmarkIcon, match: (p: string) => p === "/saved" },
 ];
 
-export function SiteNav() {
+/** variant="top" — пилюли в шапке (планшет и десктоп), variant="tabs" — нижняя панель на телефоне. */
+export function SiteNav({ variant }: { variant: "top" | "tabs" }) {
   const pathname = usePathname();
   const savedCount = useAppStore((s) => Object.keys(s.saved).length);
   const hydrated = useSavedHydrated();
 
   return (
-    <nav className="site-nav" aria-label="Разделы сайта">
-      {LINKS.map((l) => (
-        <Link key={l.href} href={l.href} aria-current={l.match(pathname) ? "page" : undefined}>
-          {l.label}
+    <nav className={variant === "top" ? "nav-pills" : "tabbar"} aria-label="Разделы сайта">
+      {LINKS.map(({ href, label, Icon, match }) => (
+        <Link key={href} href={href} aria-current={match(pathname) ? "page" : undefined}>
+          {variant === "tabs" && <Icon size={20} />}
+          <span>{label}</span>
+          {href === "/saved" && hydrated && savedCount > 0 && <span className="count-badge">{savedCount}</span>}
         </Link>
       ))}
-      <Link href="/saved" aria-current={pathname === "/saved" ? "page" : undefined}>
-        Отложенные{hydrated && savedCount > 0 && <span className="num site-nav__count">{savedCount}</span>}
-      </Link>
     </nav>
   );
 }

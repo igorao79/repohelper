@@ -3,9 +3,12 @@
 import Link from "next/link";
 import { useState } from "react";
 
-import { formatDay, formatNumber } from "@/lib/format";
+import { formatDay } from "@/lib/format";
 import type { SavedRepo } from "@/stores/app-store";
 import { useAppStore, useSavedHydrated } from "@/stores/app-store-provider";
+
+import { RepoCard } from "./repo-card";
+import { useSpotlight } from "./use-spotlight";
 
 export function SavedList() {
   const hydrated = useSavedHydrated();
@@ -13,9 +16,10 @@ export function SavedList() {
   const removeSaved = useAppStore((s) => s.removeSaved);
   const restoreSaved = useAppStore((s) => s.restoreSaved);
   const [removed, setRemoved] = useState<SavedRepo | null>(null);
+  const spotlight = useSpotlight();
   const items = Object.values(saved).sort((a, b) => b.saved_at.localeCompare(a.saved_at));
 
-  if (!hydrated) return <LedgerSkeleton rows={3} />;
+  if (!hydrated) return <CardsSkeleton count={3} />;
 
   const remove = (repo: SavedRepo) => {
     setRemoved(repo);
@@ -23,11 +27,11 @@ export function SavedList() {
   };
 
   const undo = removed && (
-    <div className="undo" role="status">
-      <p>Убрали {removed.full_name}.</p>
+    <div className="toast card" role="status">
+      <span>Убрали {removed.full_name}</span>
       <button
         type="button"
-        className="btn"
+        className="btn btn--ghost btn--sm"
         onClick={() => {
           restoreSaved(removed);
           setRemoved(null);
@@ -40,82 +44,71 @@ export function SavedList() {
 
   if (!items.length) {
     return (
-      <div className="sheet">
+      <>
         {undo}
-        <div className="state state--empty">
+        <div className="empty card">
+          <p className="empty__title">Здесь пока пусто</p>
           <p>
-            Здесь пусто. Нажмите на закладку в строке выпуска, и репозиторий останется здесь, пока вы его не уберёте.
-            Список хранится только в этом браузере.
+            Нажмите на закладку в карточке репозитория, и он останется здесь, пока вы его не уберёте. Список хранится
+            только в этом браузере.
           </p>
-          <Link className="btn" href="/">
+          <Link className="btn btn--primary" href="/">
             Открыть свежий выпуск
           </Link>
         </div>
-      </div>
+      </>
     );
   }
 
   return (
-    <div className="sheet">
+    <>
       {undo}
-      <table className="ledger ledger--saved">
-        <thead>
-          <tr>
-            <th scope="col">Репозиторий</th>
-            <th scope="col">Язык</th>
-            <th scope="col" className="num">
-              Звёзд
-            </th>
-            <th scope="col">Из выпуска</th>
-            <th scope="col">
-              <span className="visually-hidden">Убрать</span>
-            </th>
-          </tr>
-        </thead>
-        <tbody>
-          {items.map((r) => {
-            const [owner, name] = r.full_name.split("/");
-            return (
-              <tr key={r.full_name} className="ledger__row">
-                <td className="ledger__repo">
-                  <a className="ledger__name" href={r.url} target="_blank" rel="noopener noreferrer">
-                    <span className="ledger__owner">{owner}/</span>
-                    <wbr />
-                    {name}
-                  </a>
-                  <p className="ledger__summary">{r.summary}</p>
-                </td>
-                <td className="ledger__lang" data-label="Язык">
-                  {r.language || <span className="muted">не указан</span>}
-                </td>
-                <td className="num" data-label="Звёзд">
-                  {formatNumber(r.stars)}
-                </td>
-                <td className="ledger__issue" data-label="Из выпуска">
-                  <Link href={`/issue/${r.issue}`}>{formatDay(r.issue)}</Link>
-                </td>
-                <td className="ledger__save">
-                  <button type="button" className="btn btn--quiet" onClick={() => remove(r)}>
-                    Убрать
-                  </button>
-                </td>
-              </tr>
-            );
-          })}
-        </tbody>
-      </table>
-    </div>
+      <div className="grid" {...spotlight}>
+        {items.map((r, i) => (
+          <RepoCard
+            key={r.full_name}
+            index={i}
+            issueDate={r.issue}
+            repo={{
+              full_name: r.full_name,
+              url: r.url,
+              description: "",
+              summary: r.summary,
+              language: r.language,
+              stars: r.stars,
+              stars_gained: 0,
+              gained_label: "",
+              topics: [],
+            }}
+            extraTag={
+              <Link className="tag tag--link" href={`/issue/${r.issue}`}>
+                из выпуска {formatDay(r.issue)}
+              </Link>
+            }
+            footer={
+              <button type="button" className="btn btn--ghost btn--sm" onClick={() => remove(r)}>
+                Убрать
+              </button>
+            }
+          />
+        ))}
+      </div>
+    </>
   );
 }
 
-export function LedgerSkeleton({ rows = 6 }: { rows?: number }) {
+export function CardsSkeleton({ count = 6 }: { count?: number }) {
   return (
-    <div className="sheet" aria-busy="true" aria-label="Загрузка">
-      <div className="skeleton skeleton--head" />
-      {Array.from({ length: rows }, (_, i) => (
-        <div key={i} className="skeleton-row">
-          <div className="skeleton skeleton--title" />
-          <div className="skeleton skeleton--line" />
+    <div className="grid" aria-busy="true" aria-label="Загрузка">
+      {Array.from({ length: count }, (_, i) => (
+        <div key={i} className="card skeleton-card">
+          <div className="skeleton-card__head">
+            <span className="skeleton skeleton--avatar" />
+            <span className="skeleton skeleton--title" />
+          </div>
+          <span className="skeleton skeleton--line" />
+          <span className="skeleton skeleton--line" />
+          <span className="skeleton skeleton--line skeleton--short" />
         </div>
       ))}
     </div>
