@@ -79,7 +79,7 @@
 
 *, *::before, *::after { box-sizing: border-box; }
 html, body { overflow-x: clip; }
-html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+html { scroll-behavior: smooth; scroll-padding-top: calc(var(--topbar) + 16px); -webkit-text-size-adjust: 100%; }
 body {
   margin: 0;
   background: var(--bg);
@@ -133,7 +133,9 @@ button { cursor: pointer; }
 
 /* ---------- верхняя строка ---------- */
 
-.topbar { display: flex; align-items: center; gap: 32px; height: var(--topbar); padding-inline: var(--margin); }
+/* Хедер закреплён сверху: сплошной фон страницы, без стекла и тени */
+.topbar { position: fixed; top: 0; left: 0; right: 0; z-index: 30; display: flex; align-items: center; gap: 32px; height: var(--topbar); padding-inline: var(--margin); background: var(--bg); }
+main { padding-top: var(--topbar); }
 .wordmark { font: 500 var(--step-body)/1 var(--font-text); text-decoration: none; }
 .topnav { display: flex; gap: 28px; margin-left: auto; }
 .topnav a, .theme-toggle {
@@ -244,7 +246,7 @@ button { cursor: pointer; }
 .ask__count { color: var(--muted); }
 .ask__examples button[aria-pressed="true"] .ask__count { color: inherit; opacity: 0.7; }
 @media (hover: hover) and (pointer: fine) {
-  .ask__examples button:not([aria-pressed="true"]):hover { background: var(--accent); color: var(--accent-ink); }
+  .ask__examples button:not([aria-pressed="true"]):hover { background: var(--surface-2); }
 }
 .issue__status { margin-top: 56px; color: var(--muted); font-size: var(--step-small); }
 
