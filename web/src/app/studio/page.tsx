@@ -9,16 +9,10 @@ export const metadata: Metadata = {
 
 export default function StudioPage() {
   return (
-    <section className="studio frame" aria-labelledby="studio-title">
-      <div className="studio__head">
-        <h1 id="studio-title" className="studio__title">
-          Студия
-        </h1>
-        <p className="studio__lead">
-          Опишите, что ищете, или вставьте ссылку на репозиторий. Студия поищет на GitHub и в выпусках repohelper и
-          предложит похожие проекты с объяснением, чем каждый подходит.
-        </p>
-      </div>
+    <section className="studio-page" aria-labelledby="studio-title">
+      <h1 id="studio-title" className="visually-hidden">
+        Студия: поиск репозиториев
+      </h1>
       <Studio />
     </section>
   );

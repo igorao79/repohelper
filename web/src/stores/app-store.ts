@@ -45,8 +45,16 @@ export type StudioMessage = {
   error?: boolean;
 };
 
+export type StudioChat = {
+  id: string;
+  title: string; // первый запрос пользователя, обрезанный
+  messages: StudioMessage[];
+  updatedAt: number;
+};
+
 export type AppState = Filters & {
-  studio: StudioMessage[];
+  studioChats: StudioChat[];
+  studioCurrent: string | null; // null — новый пустой чат
   saved: Record<string, SavedRepo>;
   /** undefined — ещё не знаем; null — не вошёл. В localStorage не пишется. */
   user: SessionUser | null | undefined;
@@ -57,9 +65,12 @@ export type AppState = Filters & {
 export type AppActions = {
   setFilters: (patch: Partial<Filters>) => void;
   resetFilters: () => void;
-  addStudioMessage: (m: StudioMessage) => void;
-  updateStudioMessage: (id: string, patch: Partial<StudioMessage>) => void;
-  clearStudio: () => void;
+  /** Добавляет сообщение в чат; если чата ещё нет — создаёт его с заголовком из первого запроса. */
+  addStudioMessage: (chatId: string, m: StudioMessage) => void;
+  updateStudioMessage: (chatId: string, id: string, patch: Partial<StudioMessage>) => void;
+  newStudioChat: () => void;
+  selectStudioChat: (id: string) => void;
+  deleteStudioChat: (id: string) => void;
   toggleSaved: (repo: Omit<SavedRepo, "saved_at">) => void;
   removeSaved: (fullName: string) => void;
   restoreSaved: (repo: SavedRepo) => void;
@@ -82,7 +93,8 @@ export const createAppStore = () =>
       (set) => ({
         ...defaultFilters,
         saved: {},
-        studio: [],
+        studioChats: [],
+        studioCurrent: null,
         theme: null,
         user: undefined,
         authConfigured: false,
@@ -102,10 +114,32 @@ export const createAppStore = () =>
             return { saved };
           }),
         restoreSaved: (repo) => set((state) => ({ saved: { ...state.saved, [repo.full_name]: repo } })),
-        addStudioMessage: (m) => set((state) => ({ studio: [...state.studio, m].slice(-40) })),
-        updateStudioMessage: (id, patch) =>
-          set((state) => ({ studio: state.studio.map((m) => (m.id === id ? { ...m, ...patch } : m)) })),
-        clearStudio: () => set({ studio: [] }),
+        addStudioMessage: (chatId, m) =>
+          set((state) => {
+            const exists = state.studioChats.some((c) => c.id === chatId);
+            const chats = exists
+              ? state.studioChats.map((c) =>
+                  c.id === chatId ? { ...c, messages: [...c.messages, m].slice(-60), updatedAt: Date.now() } : c,
+                )
+              : [
+                  { id: chatId, title: m.text.replace(/\s+/g, " ").slice(0, 60), messages: [m], updatedAt: Date.now() },
+                  ...state.studioChats,
+                ].slice(0, 30);
+            return { studioChats: chats, studioCurrent: chatId };
+          }),
+        updateStudioMessage: (chatId, id, patch) =>
+          set((state) => ({
+            studioChats: state.studioChats.map((c) =>
+              c.id === chatId ? { ...c, messages: c.messages.map((m) => (m.id === id ? { ...m, ...patch } : m)) } : c,
+            ),
+          })),
+        newStudioChat: () => set({ studioCurrent: null }),
+        selectStudioChat: (id) => set({ studioCurrent: id }),
+        deleteStudioChat: (id) =>
+          set((state) => ({
+            studioChats: state.studioChats.filter((c) => c.id !== id),
+            studioCurrent: state.studioCurrent === id ? null : state.studioCurrent,
+          })),
         setTheme: (theme) => set({ theme }),
         loadUser: async () => {
           try {
@@ -125,7 +159,28 @@ export const createAppStore = () =>
         name: STORAGE_KEY,
         storage: createJSONStorage(() => window.localStorage), // на сервере window нет — persist молча выключается
         // незавершённые ответы не сохраняем — после перезагрузки они бы висели вечно
-        partialize: (state) => ({ saved: state.saved, theme: state.theme, studio: state.studio.filter((m) => !m.pending) }),
+        partialize: (state) => ({
+          saved: state.saved,
+          theme: state.theme,
+          studioCurrent: state.studioCurrent,
+          studioChats: state.studioChats.map((c) => ({ ...c, messages: c.messages.filter((m) => !m.pending) })),
+        }),
+        // v0 хранил один чат массивом studio — переносим его в первый чат списка.
+        version: 1,
+        migrate: (persisted, version) => {
+          const old = (persisted ?? {}) as Record<string, unknown> & { studio?: StudioMessage[] };
+          if (version < 1 && Array.isArray(old.studio) && old.studio.length) {
+            const first = old.studio.find((m) => m.role === "user");
+            const chat: StudioChat = {
+              id: "migrated",
+              title: (first?.text ?? "Поиск").slice(0, 60),
+              messages: old.studio.filter((m) => !m.pending),
+              updatedAt: Date.now(),
+            };
+            return { ...old, studio: undefined, studioChats: [chat], studioCurrent: chat.id } as unknown as AppStore;
+          }
+          return old as unknown as AppStore;
+        },
         skipHydration: true, // читаем localStorage после монтирования, чтобы не было расхождения с SSR
       },
     ),
