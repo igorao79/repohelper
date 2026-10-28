@@ -7,6 +7,9 @@ import { type StudioEvent, type StudioTurn, runStudio } from "@/lib/studio";
 export const maxDuration = 60;
 
 const MAX_TEXT = 1500;
+const MAX_IMAGES = 3;
+const MAX_IMAGE_CHARS = 3_000_000; // ~2.2 МБ картинки в base64
+const IMAGE_RE = /^data:image\/(png|jpeg|webp|gif);base64,[A-Za-z0-9+/=]+$/;
 
 /** Студия: POST {messages}, ответ — поток NDJSON: status… и в конце result или error. */
 export async function POST(req: NextRequest) {
@@ -17,12 +20,16 @@ export async function POST(req: NextRequest) {
   if (!readSession(req)) return NextResponse.json({ error: "Войдите через GitHub" }, { status: 401 });
   if (!process.env.DEEPSEEK_API_KEY) return NextResponse.json({ error: "Студия ещё не настроена" }, { status: 503 });
 
-  const body = (await req.json().catch(() => null)) as { messages?: StudioTurn[] } | null;
+  const body = (await req.json().catch(() => null)) as { messages?: StudioTurn[]; images?: unknown } | null;
   const turns = (body?.messages ?? [])
     .filter((m) => (m.role === "user" || m.role === "assistant") && typeof m.text === "string")
     .slice(-8)
     .map((m) => ({ role: m.role, text: m.text.slice(0, MAX_TEXT), repos: m.repos?.slice(0, 8) }));
-  if (turns.at(-1)?.role !== "user" || !turns.at(-1)?.text.trim()) {
+  const images = Array.isArray(body?.images) ? body.images.filter((u): u is string => typeof u === "string") : [];
+  if (images.length > MAX_IMAGES || images.some((u) => u.length > MAX_IMAGE_CHARS || !IMAGE_RE.test(u))) {
+    return NextResponse.json({ error: `До ${MAX_IMAGES} картинок PNG, JPEG или WebP, каждая до 2 МБ` }, { status: 400 });
+  }
+  if (turns.at(-1)?.role !== "user" || (!turns.at(-1)?.text.trim() && !images.length)) {
     return NextResponse.json({ error: "Пустой запрос" }, { status: 400 });
   }
 
@@ -32,7 +39,7 @@ export async function POST(req: NextRequest) {
     async start(controller) {
       const emit = (e: StudioEvent) => controller.enqueue(encoder.encode(`${JSON.stringify(e)}\n`));
       try {
-        await runStudio(turns, token, emit);
+        await runStudio(turns, token, emit, images);
       } catch (e) {
         emit({
           type: "error",

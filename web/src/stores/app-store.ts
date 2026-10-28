@@ -39,6 +39,7 @@ export type StudioMessage = {
   id: string;
   role: "user" | "assistant";
   text: string;
+  images?: string[]; // миниатюры прикреплённых картинок (data URL, ~160px)
   repos?: StudioRepo[];
   steps?: string[]; // что агент делал: поиски, чтение README
   pending?: boolean;

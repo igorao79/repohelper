@@ -105,7 +105,44 @@ const compact = (r: GhRepo) => ({
   topics: r.topics.slice(0, 6),
 });
 
-export async function runStudio(turns: StudioTurn[], token: string | null, emit: (e: StudioEvent) => void): Promise<void> {
+/** Описание прикреплённых картинок словами — дальше поиск идёт по тексту. */
+async function describeImages(images: string[], userText: string): Promise<string> {
+  const reply = await deepseek({
+    max_tokens: 300,
+    messages: [
+      {
+        role: "system",
+        content:
+          "Пользователь ищет GitHub-репозитории и прикрепил картинку. Опиши её для поиска: что это (интерфейс, продукт, схема, код, ошибка, график), какие функции и технологии видны, и 3–6 ключевых слов на английском. 2–4 предложения по-русски, без вступлений.",
+      },
+      {
+        role: "user",
+        content: [
+          { type: "text", text: userText || "Найди репозитории по картинке" },
+          ...images.map((url) => ({ type: "image_url", image_url: { url } })),
+        ] as unknown as string,
+      },
+    ],
+  });
+  return (reply.content ?? "").trim();
+}
+
+export async function runStudio(
+  turns: StudioTurn[],
+  token: string | null,
+  emit: (e: StudioEvent) => void,
+  images: string[] = [],
+): Promise<void> {
+  if (images.length) {
+    emit({ type: "status", text: images.length > 1 ? "Смотрю картинки" : "Смотрю картинку" });
+    const last = turns[turns.length - 1];
+    const description = await describeImages(images, last.text);
+    if (description) {
+      emit({ type: "status", text: `На картинке: ${description.split(/(?<=[.!?])\s/)[0].slice(0, 140)}` });
+      turns = [...turns.slice(0, -1), { ...last, text: `${last.text || "Найди похожие репозитории"}\n\n[Прикреплённая картинка: ${description}]` }];
+    }
+  }
+
   const candidates = new Map<string, GhRepo>();
   const digestDates = new Map<string, string>();
   const history: ChatMessage[] = turns.slice(-8).map((t) => ({

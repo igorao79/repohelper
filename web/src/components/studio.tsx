@@ -18,6 +18,24 @@ const EXAMPLES = [
   "CLI для перевода README через LLM",
 ];
 
+type Attachment = { id: string; full: string; thumb: string };
+const MAX_ATTACHMENTS = 3;
+
+/** Сжимает картинку в JPEG: длинная сторона не больше max пикселей. */
+async function compress(file: File, max: number, quality: number): Promise<string> {
+  const bitmap = await createImageBitmap(file);
+  const scale = Math.min(1, max / Math.max(bitmap.width, bitmap.height));
+  const canvas = document.createElement("canvas");
+  canvas.width = Math.round(bitmap.width * scale);
+  canvas.height = Math.round(bitmap.height * scale);
+  const ctx = canvas.getContext("2d")!;
+  ctx.fillStyle = "#ffffff"; // прозрачный PNG не должен стать чёрным
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
+  ctx.drawImage(bitmap, 0, 0, canvas.width, canvas.height);
+  bitmap.close();
+  return canvas.toDataURL("image/jpeg", quality);
+}
+
 type StudioEventLine =
   | { type: "status"; text: string }
   | { type: "result"; reply: string; repos: StudioRepo[] }
@@ -38,6 +56,9 @@ export function Studio() {
   const messages = chat?.messages ?? [];
   const busy = messages.some((m) => m.pending);
   const [text, setText] = useState("");
+  const [attachments, setAttachments] = useState<Attachment[]>([]);
+  const [dragging, setDragging] = useState(false);
+  const fileRef = useRef<HTMLInputElement>(null);
   const scrollRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLTextAreaElement>(null);
 
@@ -49,9 +70,26 @@ export function Studio() {
     if (el) el.scrollTo({ top: el.scrollHeight, behavior: "smooth" });
   }, [currentId, messages.length, stepsCount, lastPending]);
 
+  const addFiles = async (files: Iterable<File>) => {
+    const images = [...files].filter((f) => f.type.startsWith("image/"));
+    const room = MAX_ATTACHMENTS - attachments.length;
+    const picked = images.slice(0, Math.max(0, room));
+    const ready = await Promise.all(
+      picked.map(async (f) => {
+        try {
+          return { id: crypto.randomUUID(), full: await compress(f, 1280, 0.82), thumb: await compress(f, 160, 0.7) };
+        } catch {
+          return null; // файл не картинка или битый — просто пропускаем
+        }
+      }),
+    );
+    setAttachments((prev) => [...prev, ...ready.filter((a): a is Attachment => a !== null)].slice(0, MAX_ATTACHMENTS));
+  };
+
   const send = async (raw: string) => {
     const query = raw.trim();
-    if (!query || busy) return;
+    const pics = attachments;
+    if ((!query && !pics.length) || busy) return;
     const s = store.getState();
     const chatId = s.studioCurrent && s.studioChats.some((c) => c.id === s.studioCurrent) ? s.studioCurrent : crypto.randomUUID();
     const prior = s.studioChats.find((c) => c.id === chatId)?.messages ?? [];
@@ -61,10 +99,16 @@ export function Studio() {
       repos: m.repos?.map((r) => r.full_name),
     }));
 
-    s.addStudioMessage(chatId, { id: crypto.randomUUID(), role: "user", text: query });
+    s.addStudioMessage(chatId, {
+      id: crypto.randomUUID(),
+      role: "user",
+      text: query,
+      images: pics.length ? pics.map((p) => p.thumb) : undefined,
+    });
     const botId = crypto.randomUUID();
     s.addStudioMessage(chatId, { id: botId, role: "assistant", text: "", steps: [], pending: true });
     setText("");
+    setAttachments([]);
     const update = (patch: Partial<StudioMessage>) => store.getState().updateStudioMessage(chatId, botId, patch);
     const current = () => store.getState().studioChats.find((c) => c.id === chatId)?.messages.find((m) => m.id === botId);
 
@@ -72,7 +116,7 @@ export function Studio() {
       const res = await fetch("/api/studio", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ messages: history }),
+        body: JSON.stringify({ messages: history, images: pics.map((p) => p.full) }),
       });
       if (!res.ok || !res.body) {
         const err = (await res.json().catch(() => null)) as { error?: string } | null;
@@ -132,12 +176,65 @@ export function Studio() {
 
   const composer = (
     <form
-      className="sbox"
+      className={dragging ? "sbox is-dragging" : "sbox"}
       onSubmit={(e) => {
         e.preventDefault();
         void send(text);
       }}
+      onDragOver={(e) => {
+        if (!e.dataTransfer.types.includes("Files")) return;
+        e.preventDefault();
+        setDragging(true);
+      }}
+      onDragLeave={() => setDragging(false)}
+      onDrop={(e) => {
+        e.preventDefault();
+        setDragging(false);
+        void addFiles(e.dataTransfer.files);
+      }}
     >
+      {attachments.length > 0 && (
+        <ul className="sbox__files" aria-label="Прикреплённые картинки">
+          {attachments.map((a) => (
+            <li key={a.id}>
+              {/* eslint-disable-next-line @next/next/no-img-element -- локальная миниатюра */}
+              <img src={a.thumb} alt="" width={56} height={56} />
+              <button
+                type="button"
+                aria-label="Убрать картинку"
+                onClick={() => setAttachments((prev) => prev.filter((x) => x.id !== a.id))}
+              >
+                <svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true">
+                  <path d="M6 6l12 12M18 6 6 18" />
+                </svg>
+              </button>
+            </li>
+          ))}
+        </ul>
+      )}
+      <button
+        type="button"
+        className="sbox__attach"
+        aria-label="Прикрепить картинку"
+        title="Прикрепить картинку: скриншот, схему, интерфейс"
+        disabled={busy || attachments.length >= MAX_ATTACHMENTS}
+        onClick={() => fileRef.current?.click()}
+      >
+        <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+          <path d="m20.5 11.5-8.3 8.3a5 5 0 0 1-7.1-7.1l8.6-8.6a3.4 3.4 0 0 1 4.8 4.8l-8.6 8.6a1.7 1.7 0 0 1-2.4-2.4l8-8" />
+        </svg>
+      </button>
+      <input
+        ref={fileRef}
+        type="file"
+        accept="image/png,image/jpeg,image/webp,image/gif"
+        multiple
+        hidden
+        onChange={(e) => {
+          if (e.target.files) void addFiles(e.target.files);
+          e.target.value = "";
+        }}
+      />
       <label htmlFor="studio-input" className="visually-hidden">
         Что ищете
       </label>
@@ -147,9 +244,16 @@ export function Studio() {
         name="query"
         rows={1}
         maxLength={1500}
-        placeholder={messages.length ? "Уточните или спросите ещё" : "Опишите задачу или вставьте ссылку на репозиторий"}
+        placeholder={messages.length ? "Уточните или спросите ещё" : "Опишите задачу, вставьте ссылку или скриншот"}
         value={text}
         onChange={(e) => setText(e.target.value)}
+        onPaste={(e) => {
+          const files = [...e.clipboardData.files].filter((f) => f.type.startsWith("image/"));
+          if (files.length) {
+            e.preventDefault();
+            void addFiles(files);
+          }
+        }}
         onKeyDown={(e) => {
           if (e.key === "Enter" && !e.shiftKey && !e.nativeEvent.isComposing) {
             e.preventDefault();
@@ -157,7 +261,7 @@ export function Studio() {
           }
         }}
       />
-      <button type="submit" className="sbox__send" disabled={busy || !text.trim()} aria-label={busy ? "Идёт поиск" : "Отправить"}>
+      <button type="submit" className="sbox__send" disabled={busy || (!text.trim() && !attachments.length)} aria-label={busy ? "Идёт поиск" : "Отправить"}>
         {busy ? (
           <span className="sbox__spinner" aria-hidden="true" />
         ) : (
@@ -239,7 +343,7 @@ export function Studio() {
               <ol className="sapp__thread" aria-live="polite">
                 {messages.map((m) => (
                   <li key={m.id} className={m.role === "user" ? "smsg smsg--user" : "smsg smsg--bot"}>
-                    {m.role === "user" ? <p className="smsg__bubble">{m.text}</p> : <BotMessage message={m} />}
+                    {m.role === "user" ? <UserMessage message={m} /> : <BotMessage message={m} />}
                   </li>
                 ))}
               </ol>
@@ -251,6 +355,22 @@ export function Studio() {
           </>
         )}
       </div>
+    </div>
+  );
+}
+
+function UserMessage({ message: m }: { message: StudioMessage }) {
+  return (
+    <div className="smsg__user">
+      {m.images && m.images.length > 0 && (
+        <div className="smsg__images">
+          {m.images.map((src, i) => (
+            // eslint-disable-next-line @next/next/no-img-element -- миниатюра прикреплённой картинки
+            <img key={i} src={src} alt="Прикреплённая картинка" />
+          ))}
+        </div>
+      )}
+      {m.text && <p className="smsg__bubble">{m.text}</p>}
     </div>
   );
 }

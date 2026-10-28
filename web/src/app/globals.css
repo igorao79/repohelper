@@ -469,7 +469,7 @@ body:has(.sapp) .closing { display: none; }
 .sapp__muted { max-width: 52ch; color: var(--muted); }
 .sapp__hello { font: 800 clamp(2.25rem, 1.4rem + 3.4vw, 4.25rem)/0.98 var(--font-display); letter-spacing: -0.01em; text-transform: uppercase; text-align: center; text-wrap: balance; }
 
-.sapp__side { display: flex; flex-direction: column; gap: 6px; min-height: 0; padding: 16px 12px 24px; background: var(--surface); overflow-y: auto; }
+.sapp__side { display: flex; flex-direction: column; gap: 6px; min-width: 0; min-height: 0; padding: 16px 12px 24px; background: var(--surface); overflow-x: hidden; overflow-y: auto; }
 .sapp__new {
   display: flex;
   align-items: center;
@@ -486,8 +486,8 @@ body:has(.sapp) .closing { display: none; }
 .sapp__new:active { transform: scale(0.98); }
 .sapp__new svg, .sapp__del svg, .smsg__actions svg, .sbox__send svg { fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
 .sapp__label { margin: 18px 14px 6px; color: var(--muted); font-size: var(--step-small); }
-.sapp__chats { display: grid; gap: 2px; margin: 0; padding: 0; list-style: none; }
-.sapp__chats li { position: relative; display: flex; align-items: center; }
+.sapp__chats { display: grid; grid-template-columns: minmax(0, 1fr); gap: 2px; min-width: 0; margin: 0; padding: 0; list-style: none; }
+.sapp__chats li { position: relative; display: flex; align-items: center; min-width: 0; }
 .sapp__chat {
   flex: 1;
   min-width: 0;
@@ -560,13 +560,26 @@ body:has(.sapp) .closing { display: none; }
   field-sizing: content;
 }
 .sbox textarea::placeholder { color: var(--muted); }
+.sbox { flex-wrap: wrap; padding-left: 8px; }
+.sbox.is-dragging { outline: 2px dashed var(--ink); outline-offset: 2px; }
+.sbox__files { display: flex; flex-basis: 100%; gap: 8px; margin: 4px 4px 2px; padding: 0; list-style: none; }
+.sbox__files li { position: relative; }
+.sbox__files img { width: 56px; height: 56px; border-radius: 10px; object-fit: cover; background: var(--surface-2); }
+.sbox__files button { position: absolute; top: -6px; right: -6px; display: grid; place-items: center; width: 22px; height: 22px; padding: 0; border: 0; border-radius: 50%; background: var(--ink); color: var(--bg); }
+.sbox__files svg, .sbox__attach svg { fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.sbox__attach { display: grid; place-items: center; flex-shrink: 0; width: 40px; height: 40px; border: 0; border-radius: 50%; background: transparent; color: var(--muted); transition: background-color 160ms ease, color 160ms ease; }
+.sbox__attach:disabled { opacity: 0.35; cursor: not-allowed; }
+@media (hover: hover) and (pointer: fine) { .sbox__attach:not(:disabled):hover { background: var(--surface-2); color: var(--ink); } }
+.smsg__user { display: grid; justify-items: end; gap: 8px; max-width: 85%; }
+.smsg__images { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 8px; }
+.smsg__images img { width: 120px; height: 120px; border-radius: 14px; object-fit: cover; background: var(--surface); }
 .sbox__send { display: grid; place-items: center; flex-shrink: 0; width: 40px; height: 40px; border: 0; border-radius: 50%; background: var(--ink); color: var(--bg); transition: opacity 160ms ease, transform 120ms var(--ease); }
 .sbox__send:active { transform: scale(0.92); }
 .sbox__send:disabled { opacity: 0.3; cursor: not-allowed; }
 .sbox__spinner { width: 16px; height: 16px; border: 2px solid currentColor; border-right-color: transparent; border-radius: 50%; animation: spin 800ms linear infinite; }
 
 .smsg--user { display: flex; justify-content: flex-end; }
-.smsg__bubble { max-width: 85%; padding: 12px 18px; border-radius: 22px; background: var(--surface-2); overflow-wrap: anywhere; white-space: pre-wrap; }
+.smsg__bubble { max-width: 100%; padding: 12px 18px; border-radius: 22px; background: var(--surface-2); overflow-wrap: anywhere; white-space: pre-wrap; }
 .smsg__bot { display: grid; gap: 16px; }
 .smsg__steps { color: var(--muted); font-size: var(--step-small); }
 .smsg__steps summary { display: inline-flex; align-items: center; gap: 6px; cursor: pointer; list-style: none; }
@@ -591,6 +604,7 @@ body:has(.sapp) .closing { display: none; }
 .srepo__title a { text-decoration: none; }
 .srepo .entry__meta { margin-top: 2px; }
 .srepo .save { background: var(--bg); }
+.srepo .save[aria-pressed="true"] { background: var(--accent); color: var(--accent-ink); }
 
 @keyframes spin { to { transform: rotate(360deg); } }
 @keyframes breathe { 50% { opacity: 0.45; } }
