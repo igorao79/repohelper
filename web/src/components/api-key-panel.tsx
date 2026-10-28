@@ -1,23 +1,26 @@
 "use client";
 
-import { usePathname } from "next/navigation";
-import { useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 
+import { loginUrl, returnHere } from "@/lib/key-flow";
 import { useAppStore } from "@/stores/app-store-provider";
 
 import { CopyButton } from "./copy-button";
 
 const SITE = "https://repohelper.site";
 
-/** Кнопка «Получить ключ»: доступна после входа через GitHub, ключ показывается один раз. */
+/**
+ * «Получить ключ»: гость по клику сразу уходит на вход через GitHub и возвращается сюда с ?get=1,
+ * после чего ключ выдаётся автоматически. Ключ показывается один раз.
+ */
 export function ApiKeyPanel() {
-  const pathname = usePathname();
   const user = useAppStore((s) => s.user);
   const configured = useAppStore((s) => s.authConfigured);
   const [key, setKey] = useState<string | null>(null);
   const [state, setState] = useState<"idle" | "loading" | "error">("idle");
+  const autoRequested = useRef(false);
 
-  const getKey = async () => {
+  const getKey = useCallback(async () => {
     setState("loading");
     try {
       const res = await fetch("/api/keys", { method: "POST" });
@@ -27,35 +30,51 @@ export function ApiKeyPanel() {
     } catch {
       setState("error");
     }
+  }, []);
+
+  // Вернулись со входа через GitHub с ?get=1 — выдаём ключ сразу и убираем флаг из адреса.
+  useEffect(() => {
+    if (!user || autoRequested.current) return;
+    const url = new URL(window.location.href);
+    if (url.searchParams.get("get") !== "1") return;
+    autoRequested.current = true;
+    url.searchParams.delete("get");
+    window.history.replaceState(null, "", `${url.pathname}${url.search}${url.hash}`);
+    const t = setTimeout(() => void getKey(), 0); // запрос вне тела эффекта
+    return () => clearTimeout(t);
+  }, [user, getKey]);
+
+  const onClick = () => {
+    if (user) void getKey();
+    else window.location.assign(loginUrl(returnHere()));
   };
 
-  const loggedIn = Boolean(user);
   const example = `curl -H "Authorization: Bearer ${key ?? "rh_ваш_ключ"}" \\\n  "${SITE}/api/v1/repos?from=2026-10-01&to=2026-10-31&section=ai"`;
 
   return (
     <div className="keypanel">
       <div className="keypanel__actions">
-        <button type="button" className="button" disabled={!loggedIn || state === "loading"} onClick={() => void getKey()}>
+        <button
+          type="button"
+          className="button"
+          disabled={state === "loading" || (user === null && !configured)}
+          onClick={onClick}
+        >
           {state === "loading" ? "Выдаём ключ…" : key ? "Получить новый ключ" : "Получить ключ"}
         </button>
-        {!loggedIn && user !== undefined && configured && (
-          <a className="button button--ghost" href={`/api/auth/github?next=${encodeURIComponent(`${pathname}#api`)}`}>
-            Войти через GitHub
-          </a>
-        )}
       </div>
       <p className="keypanel__hint" role="status">
         {user === undefined
           ? "Проверяем вход…"
           : !configured
             ? "Вход через GitHub ещё не настроен на этом сайте."
-            : !loggedIn
-              ? "Ключ выдаётся после входа через GitHub."
+            : !user
+              ? "Нажмите, войдите через GitHub, и ключ появится здесь."
               : state === "error"
                 ? "Не получилось выдать ключ. Попробуйте ещё раз или войдите заново."
                 : key
                   ? "Сохраните ключ: он показывается один раз. Старые ключи продолжают работать."
-                  : `Вы вошли как ${user!.login}.`}
+                  : `Вы вошли как ${user.login}.`}
       </p>
       {key && (
         <figure className="keypanel__key">

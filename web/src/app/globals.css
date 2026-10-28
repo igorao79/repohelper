@@ -391,13 +391,29 @@ main { padding-top: var(--topbar); }
 
 /* ---------- вход и API ---------- */
 
+.keybtn {
+  min-height: 44px;
+  margin-left: 4px;
+  padding: 0 20px;
+  border: 0;
+  border-radius: 999px;
+  background: var(--ink);
+  color: var(--bg);
+  font: 500 var(--step-body)/1 var(--font-text);
+  white-space: nowrap;
+  transition: background-color 160ms ease, transform 120ms var(--ease);
+}
+.keybtn:active { transform: scale(0.97); }
+@media (hover: hover) and (pointer: fine) { .keybtn:hover { background: var(--button-hover); } }
+.topnav { align-items: center; }
+
 .auth { display: inline-flex; align-items: center; gap: 10px; min-height: 44px; color: var(--ink); font: 400 var(--step-body)/1 var(--font-text); }
-a.auth { padding: 0 18px; border-radius: 999px; background: var(--surface); text-decoration: none; transition: background-color 160ms ease; }
+a.auth { padding: 0 6px; text-decoration: underline; text-decoration-thickness: 0.07em; text-underline-offset: 0.3em; text-decoration-color: transparent; transition: text-decoration-color 160ms ease; }
 .auth__avatar { width: 28px; height: 28px; border-radius: 50%; background: var(--surface); }
 .auth__login { color: var(--muted); font-size: var(--step-small); }
 .auth__out { padding: 8px 0; border: 0; background: none; color: var(--ink); font: inherit; text-decoration: underline; text-decoration-thickness: 0.07em; text-underline-offset: 0.2em; text-decoration-color: color-mix(in srgb, currentColor 35%, transparent); }
 @media (hover: hover) and (pointer: fine) {
-  a.auth:hover { background: var(--surface-2); }
+  a.auth:hover { text-decoration-color: currentColor; }
   .auth__out:hover { text-decoration-color: currentColor; }
 }
 
@@ -527,7 +543,8 @@ a.auth { padding: 0 18px; border-radius: 999px; background: var(--surface); text
   }
   .tabbar.is-hidden { transform: translateY(100%); }
   .tabbar a { display: grid; place-items: center; min-height: 48px; border-radius: 999px; font-size: var(--step-small); font-weight: 500; text-decoration: none; }
-  .tabbar a[aria-current="page"] { background: var(--ink); color: var(--bg); }
+  .tabbar a[aria-current="page"] { background: var(--surface-2); color: var(--ink); }
+  .keybtn--tab { min-height: 48px; margin: 0 0 0 4px; padding: 0 8px; font-size: var(--step-small); }
 
   .hero { justify-content: center; min-height: calc(100svh - var(--topbar) - 64px); padding-top: 24px; padding-bottom: 32px; }
   .hero__line { flex-wrap: wrap; justify-content: space-between; row-gap: 0.12em; font-size: 21vw; }
