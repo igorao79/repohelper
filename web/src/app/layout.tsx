@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Fira_Sans, Fira_Sans_Extra_Condensed } from "next/font/google";
 import Link from "next/link";
 
+import { AuthStatus } from "@/components/auth-status";
 import { Reveal } from "@/components/reveal";
 import { SiteNav } from "@/components/site-nav";
 import { ThemeToggle } from "@/components/theme-toggle";
@@ -47,6 +48,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
               repohelper
             </Link>
             <SiteNav variant="top" />
+            <AuthStatus />
             <ThemeToggle />
           </header>
 
@@ -75,6 +77,9 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
                 </Link>
                 <Link className="link" href="/saved">
                   Отложенные
+                </Link>
+                <Link className="link" href="/developers">
+                  API
                 </Link>
               </nav>
               <p>Превью репозиториев и аватары: GitHub</p>

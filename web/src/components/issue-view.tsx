@@ -2,6 +2,7 @@ import { issueFileUrl } from "@/lib/urls";
 import { formatCompact, formatDay, plural } from "@/lib/format";
 import type { IndexEntry, Issue, Repo } from "@/lib/types";
 
+import { ApiSection } from "./api-section";
 import { GainBoard } from "./gain-board";
 import { IssueBoard } from "./issue-board";
 import { OpenData } from "./open-data";
@@ -55,6 +56,7 @@ export function IssueView({
           older ? { date: older.date, label: formatDay(older.date) } : null
         }
       />
+      <ApiSection />
     </>
   );
 }

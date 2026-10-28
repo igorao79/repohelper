@@ -23,8 +23,13 @@ export type Filters = {
   onlySaved: boolean;
 };
 
+export type SessionUser = { id: number; login: string; avatar: string };
+
 export type AppState = Filters & {
   saved: Record<string, SavedRepo>;
+  /** undefined — ещё не знаем; null — не вошёл. В localStorage не пишется. */
+  user: SessionUser | null | undefined;
+  authConfigured: boolean;
   theme: Theme | null; // null — как в системе
 };
 
@@ -35,6 +40,8 @@ export type AppActions = {
   removeSaved: (fullName: string) => void;
   restoreSaved: (repo: SavedRepo) => void;
   setTheme: (theme: Theme) => void;
+  loadUser: () => Promise<void>;
+  logout: () => Promise<void>;
 };
 
 export type AppStore = AppState & AppActions;
@@ -52,6 +59,8 @@ export const createAppStore = () =>
         ...defaultFilters,
         saved: {},
         theme: null,
+        user: undefined,
+        authConfigured: false,
         setFilters: (patch) => set(patch),
         resetFilters: () => set(defaultFilters),
         toggleSaved: (repo) =>
@@ -69,6 +78,19 @@ export const createAppStore = () =>
           }),
         restoreSaved: (repo) => set((state) => ({ saved: { ...state.saved, [repo.full_name]: repo } })),
         setTheme: (theme) => set({ theme }),
+        loadUser: async () => {
+          try {
+            const res = await fetch("/api/auth/me", { cache: "no-store" });
+            const data = (await res.json()) as { user: SessionUser | null; configured: boolean };
+            set({ user: data.user, authConfigured: data.configured });
+          } catch {
+            set({ user: null });
+          }
+        },
+        logout: async () => {
+          await fetch("/api/auth/logout", { method: "POST" }).catch(() => undefined);
+          set({ user: null });
+        },
       }),
       {
         name: STORAGE_KEY,

@@ -10,6 +10,7 @@ const LINKS = [
   { href: "/", label: "Выпуск", match: (p: string) => p === "/" || p.startsWith("/issue/") },
   { href: "/archive", label: "Архив", match: (p: string) => p === "/archive" },
   { href: "/saved", label: "Отложенные", match: (p: string) => p === "/saved" },
+  { href: "/developers", label: "API", match: (p: string) => p === "/developers" },
 ];
 
 /** Нижняя панель уезжает при прокрутке вниз и возвращается при прокрутке вверх, чтобы не закрывать текст. */

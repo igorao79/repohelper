@@ -14,6 +14,7 @@ export function AppStoreProvider({ children }: { children: ReactNode }) {
 
   useEffect(() => {
     void store.persist.rehydrate();
+    void store.getState().loadUser();
     // Тема из стора → атрибут на <html>. До гидратации её уже выставил inline-скрипт в layout.
     return store.subscribe((state, prev) => {
       if (state.theme === prev.theme) return;

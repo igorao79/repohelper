@@ -45,4 +45,19 @@ npm install
 npm run dev   # локально читает ../data (DATA_DIR в .env.local)
 ```
 
-**Vercel:** импортировать репозиторий, в настройках проекта указать *Root Directory* = `web`. Переменные окружения не нужны. Если репозиторий станет приватным, задайте `DATA_BASE_URL` на доступный источник JSON.
+**Vercel:** импортировать репозиторий, в настройках проекта указать *Root Directory* = `web` и задать переменные:
+
+| Переменная | Зачем |
+| --- | --- |
+| `GITHUB_CLIENT_ID`, `GITHUB_CLIENT_SECRET` | вход через GitHub (OAuth App, callback `https://www.repohelper.site/api/auth/callback`) |
+| `AUTH_SECRET` | подпись сессий и ключей API, 32+ символа: `openssl rand -base64 48`. Смена секрета отзывает все ключи |
+| `SITE_URL` | необязательно: `https://www.repohelper.site`, если redirect_uri должен быть фиксированным |
+| `DATA_BASE_URL` | необязательно: другой источник JSON, если репозиторий станет приватным |
+
+## API
+
+Ключ выдаётся на сайте после входа через GitHub (кнопка «Получить ключ»), передаётся в `Authorization: Bearer rh_…` или `X-API-Key`. Документация: `/developers`.
+
+- `GET /api/v1/issues?from=YYYY-MM-DD&to=YYYY-MM-DD` — выпуски за период (до 90 дней; без параметров — последние 30)
+- `GET /api/v1/issues/{date}` — выпуск за день целиком
+- `GET /api/v1/repos?repo=owner/name|q=…&language=…&section=ai|hot&from=&to=` — репозитории из выпусков с датой, разделом и местом
