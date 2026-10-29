@@ -1,0 +1,128 @@
+{
+  "date": "2026-10-29",
+  "generated_at": "2026-10-29T08:01:04+01:00",
+  "sections": [
+    {
+      "id": "ai",
+      "title": "ИИ",
+      "repos": [
+        {
+          "full_name": "Leonxlnx/taste-skill",
+          "description": "Agent skills that give coding agents taste: art direction, reference images and a browser check instead of generic AI pages",
+          "language": "JavaScript",
+          "stars": 104810,
+          "stars_gained": 709,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/Leonxlnx/taste-skill",
+          "summary": "Навык для кодинг-агентов, который заставляет их проектировать сайты и экраны приложений с арт-дирекшеном, реальными изображениями и самопроверкой в браузере вместо шаблонных AI-страниц."
+        },
+        {
+          "full_name": "ruvnet/RuView",
+          "description": "π RuView turns commodity WiFi signals into real-time spatial intelligence, vital sign monitoring, and presence detection — all without a single pixel of video.",
+          "language": "Rust",
+          "stars": 101281,
+          "stars_gained": 557,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/ruvnet/RuView",
+          "summary": "Платформа WiFi-сенсинга на Rust: по CSI с дешёвых ESP32 определяет присутствие, дыхание, пульс и активность через стены без камер, с интеграцией в Home Assistant, Apple Home, Google Home и Alexa."
+        },
+        {
+          "full_name": "KeygraphHQ/shannon",
+          "description": "Shannon is an AI pentester for web applications and APIs. It analyzes your source code, identifies attack vectors, and executes real exploits to prove vulnerabilities before they reach production.",
+          "language": "TypeScript",
+          "stars": 50229,
+          "stars_gained": 476,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/KeygraphHQ/shannon",
+          "summary": "Автономный ИИ-пентестер для веб-приложений и API: анализирует исходный код, находит векторы атак и выполняет реальные эксплойты, включая в отчёт только подтверждённые уязвимости."
+        },
+        {
+          "full_name": "baidu/Unlimited-OCR",
+          "description": "Unlimited OCR Works: Welcome the Era of One-shot Long-horizon Parsing.",
+          "language": "Python",
+          "stars": 29609,
+          "stars_gained": 429,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/baidu/Unlimited-OCR",
+          "summary": "OCR-модель от Baidu для разбора документов любой длины: благодаря Sparse Reference Sliding Window Attention время и память на шаг декодирования почти не растут с числом страниц. Поддерживает инференс через Transformers и SGLang."
+        },
+        {
+          "full_name": "Alishahryar1/free-claude-code",
+          "description": "Use Claude Code, Codex, Antigravity, VSCode, Pi, and OpenCode (and 6 other harnesses) for free (1.3B+ free tokens) from your terminal, app, IDE, or phone, and now from the browser with native browser sessions (multi-harness + multi-model) like OpenClaw (voice supported + ToS friendly)",
+          "language": "Python",
+          "stars": 64706,
+          "stars_gained": 400,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/Alishahryar1/free-claude-code",
+          "summary": "Прокси-шлюз, дающий бесплатный доступ к 12 кодинг-агентам (Claude Code, Codex, Aider и др.) через 61 провайдера с 1.3 млрд бесплатных токенов в месяц, с браузерными сессиями, голосовым вводом и оптимизацией расхода токенов."
+        }
+      ]
+    },
+    {
+      "id": "hot",
+      "title": "Набирают популярность",
+      "repos": [
+        {
+          "full_name": "github/spec-kit",
+          "description": "💫 Toolkit to help you get started with SDD or any other process!",
+          "language": "Python",
+          "stars": 143741,
+          "stars_gained": 361,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/github/spec-kit",
+          "summary": "Набор инструментов для Spec-Driven Development: даёт AI-агентам структурированные процессы, шаблоны и расширения для разработки по спецификациям, исправления багов и оценки идей."
+        },
+        {
+          "full_name": "addyosmani/agent-skills",
+          "description": "Production-grade engineering skills for AI coding agents.",
+          "language": "JavaScript",
+          "stars": 111532,
+          "stars_gained": 347,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/addyosmani/agent-skills",
+          "summary": "Набор из 25 инженерных скиллов и 9 слэш-команд для ИИ-агентов, охватывающих цикл разработки от спецификации до релиза. Помогает агентам следовать проверенным практикам: TDD, код-ревью, контроль качества и производительности."
+        },
+        {
+          "full_name": "thedotmack/claude-mem",
+          "description": "Persistent Context Across Sessions for Every Agent – Captures everything your agent does during sessions, compresses it with AI, and injects relevant context back into future sessions. Works with Claude Code, OpenClaw, Codex, Gemini, Hermes, Copilot, OpenCode + More",
+          "language": "TypeScript",
+          "stars": 104114,
+          "stars_gained": 324,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/thedotmack/claude-mem",
+          "summary": "Система постоянной памяти для Claude Code и других агентов: перехватывает действия в сессиях, сжимает их с помощью ИИ и подгружает релевантный контекст в будущие сессии. Полезно для сохранения непрерывности знаний о проекте между сессиями."
+        },
+        {
+          "full_name": "alibaba/open-code-review",
+          "description": "Secure, fast, efficient, battle-tested at Alibaba's scale. Hybrid architecture code review tool: deterministic pipelines + LLM Agent, precise line-level comments, built-in multi-language ruleset (NPE, thread-safety, XSS, SQL injection), OpenAI & Anthropic compatible.",
+          "language": "Go",
+          "stars": 48883,
+          "stars_gained": 310,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/alibaba/open-code-review",
+          "summary": "AI-инструмент для код-ревью на Go: детерминированные пайплайны плюс LLM-агент дают точные построчные замечания с правилами для NPE, потокобезопасности, XSS и SQL-инъекций. Экономит токены и ускоряет ревью по сравнению с универсальными агентами."
+        },
+        {
+          "full_name": "p-e-w/heretic",
+          "description": "Fully automatic censorship removal for language models",
+          "language": "Python",
+          "stars": 37021,
+          "stars_gained": 307,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/p-e-w/heretic",
+          "summary": "Инструмент для автоматического удаления цензуры (safety alignment) из трансформерных языковых моделей через направленную абляцию с оптимизацией параметров, сохраняя исходные способности модели."
+        }
+      ]
+    }
+  ]
+}
