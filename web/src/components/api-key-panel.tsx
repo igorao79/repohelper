@@ -7,7 +7,7 @@ import { useAppStore } from "@/stores/app-store-provider";
 
 import { CopyButton } from "./copy-button";
 
-const SITE = "https://repohelper.site";
+const SITE = "https://www.repohelper.site";
 
 /**
  * «Получить ключ»: гость по клику сразу уходит на вход через GitHub и возвращается сюда с ?get=1,

@@ -70,10 +70,10 @@ npm run dev   # локально читает ../data (DATA_DIR в .env.local)
 
 ## MCP
 
-`https://repohelper.site/api/mcp` — MCP-сервер (Streamable HTTP, без сессий) с тем же ключом. Инструменты: `list_issues`, `get_issue`, `search_digest` (выпуски), `search_github`, `get_github_repo` (поиск по GitHub идёт через `GITHUB_TOKEN`, без него лимит GitHub — 10 поисков в минуту).
+`https://www.repohelper.site/api/mcp` — MCP-сервер (Streamable HTTP, без сессий) с тем же ключом. Инструменты: `list_issues`, `get_issue`, `search_digest` (выпуски), `search_github`, `get_github_repo` (поиск по GitHub идёт через `GITHUB_TOKEN`, без него лимит GitHub — 10 поисков в минуту).
 
 ```bash
-claude mcp add --transport http repohelper https://repohelper.site/api/mcp --header "Authorization: Bearer rh_…"
+claude mcp add --transport http repohelper https://www.repohelper.site/api/mcp --header "Authorization: Bearer rh_…"
 ```
 
-Клиентам без заголовков (коннекторы Claude и ChatGPT) можно дать адрес `https://repohelper.site/api/mcp?key=rh_…`.
+Клиентам без заголовков (коннекторы Claude и ChatGPT) можно дать адрес `https://www.repohelper.site/api/mcp?key=rh_…`.

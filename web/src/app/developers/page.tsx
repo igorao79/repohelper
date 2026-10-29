@@ -39,15 +39,15 @@ const MCP_TOOLS = [
 const MCP_CLIENTS = [
   {
     name: "Claude Code",
-    code: `claude mcp add --transport http repohelper https://repohelper.site/api/mcp \\\n  --header "Authorization: Bearer $REPOHELPER_KEY"`,
+    code: `claude mcp add --transport http repohelper https://www.repohelper.site/api/mcp \\\n  --header "Authorization: Bearer $REPOHELPER_KEY"`,
   },
   {
     name: "Cursor, Windsurf, VS Code и другие с mcp.json",
-    code: `{\n  "mcpServers": {\n    "repohelper": {\n      "url": "https://repohelper.site/api/mcp",\n      "headers": { "Authorization": "Bearer rh_ваш_ключ" }\n    }\n  }\n}`,
+    code: `{\n  "mcpServers": {\n    "repohelper": {\n      "url": "https://www.repohelper.site/api/mcp",\n      "headers": { "Authorization": "Bearer rh_ваш_ключ" }\n    }\n  }\n}`,
   },
   {
     name: "Claude, ChatGPT и клиенты без заголовков",
-    code: "https://repohelper.site/api/mcp?key=rh_ваш_ключ",
+    code: "https://www.repohelper.site/api/mcp?key=rh_ваш_ключ",
     note: "Добавьте как свой коннектор по адресу. Ключ в адресе виден в истории и логах, поэтому для таких клиентов лучше выпустить отдельный.",
   },
 ];
@@ -79,7 +79,7 @@ export default function DevelopersPage() {
               <p>{e.what}</p>
               <p className="docs__params">Параметры: {e.params}</p>
               <pre>
-                <code>{`curl -H "Authorization: Bearer $REPOHELPER_KEY" \\\n  "https://repohelper.site${e.example}"`}</code>
+                <code>{`curl -H "Authorization: Bearer $REPOHELPER_KEY" \\\n  "https://www.repohelper.site${e.example}"`}</code>
               </pre>
             </li>
           ))}
@@ -90,7 +90,7 @@ export default function DevelopersPage() {
         </h2>
         <p className="docs__lead">
           Выпуски и поиск по GitHub как инструменты для ИИ: Claude, Cursor и любой клиент с поддержкой MCP сам ищет
-          репозитории и смотрит тренды, пока решает вашу задачу. Сервер <code>https://repohelper.site/api/mcp</code>{" "}
+          репозитории и смотрит тренды, пока решает вашу задачу. Сервер <code>https://www.repohelper.site/api/mcp</code>{" "}
           (Streamable HTTP), ключ тот же, что для API.
         </p>
         <ol className="docs__endpoints">
