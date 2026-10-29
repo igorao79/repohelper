@@ -67,3 +67,13 @@ npm run dev   # локально читает ../data (DATA_DIR в .env.local)
 - `GET /api/v1/issues?from=YYYY-MM-DD&to=YYYY-MM-DD` — выпуски за период (до 90 дней; без параметров — последние 30)
 - `GET /api/v1/issues/{date}` — выпуск за день целиком
 - `GET /api/v1/repos?repo=owner/name|q=…&language=…&section=ai|hot&from=&to=` — репозитории из выпусков с датой, разделом и местом
+
+## MCP
+
+`https://repohelper.site/api/mcp` — MCP-сервер (Streamable HTTP, без сессий) с тем же ключом. Инструменты: `list_issues`, `get_issue`, `search_digest` (выпуски), `search_github`, `get_github_repo` (поиск по GitHub идёт через `GITHUB_TOKEN`, без него лимит GitHub — 10 поисков в минуту).
+
+```bash
+claude mcp add --transport http repohelper https://repohelper.site/api/mcp --header "Authorization: Bearer rh_…"
+```
+
+Клиентам без заголовков (коннекторы Claude и ChatGPT) можно дать адрес `https://repohelper.site/api/mcp?key=rh_…`.

@@ -1,8 +1,7 @@
 import type { NextRequest } from "next/server";
 
-import { apiError, apiOk, parseRange, preflight, requireKey } from "@/lib/api";
-import { getIndex, getIssue } from "@/lib/data";
-import type { SectionId } from "@/lib/types";
+import { apiError, apiOk, preflight, requireKey } from "@/lib/api";
+import { findRepos } from "@/lib/digest";
 
 /**
  * GET /api/v1/repos — репозитории из выпусков за период.
@@ -15,32 +14,17 @@ export async function GET(req: NextRequest) {
   if (denied) return denied;
 
   const p = req.nextUrl.searchParams;
-  const repo = p.get("repo")?.toLowerCase() ?? null;
-  const q = p.get("q")?.trim().toLowerCase() ?? null;
-  const language = p.get("language")?.toLowerCase() ?? null;
-  const section = p.get("section");
-  if (section && section !== "ai" && section !== "hot") return apiError(400, "bad_section", "section: ai или hot");
-  if (repo && !/^[\w.-]+\/[\w.-]+$/.test(repo)) return apiError(400, "bad_repo", "repo в формате owner/name");
-
-  const range = parseRange(req, await getIndex());
-  if (!range.ok) return range.res;
-
-  const issues = await Promise.all(range.entries.map((e) => getIssue(e.date)));
-  const results = issues.flatMap((issue) => {
-    if (!issue) return [];
-    let rank = 0;
-    return issue.sections.flatMap((s) =>
-      s.repos.map((r) => ({ ...r, date: issue.date, section: s.id as SectionId, rank: ++rank })),
-    );
-  }).filter((r) => {
-    if (repo && r.full_name.toLowerCase() !== repo) return false;
-    if (section && r.section !== section) return false;
-    if (language && r.language.toLowerCase() !== language) return false;
-    if (q && ![r.full_name, r.description, r.summary].some((t) => t.toLowerCase().includes(q))) return false;
-    return true;
+  const found = await findRepos({
+    repo: p.get("repo"),
+    q: p.get("q"),
+    language: p.get("language"),
+    section: p.get("section"),
+    date: p.get("date"),
+    from: p.get("from"),
+    to: p.get("to"),
   });
-
-  return apiOk({ from: range.from, to: range.to, count: results.length, repos: results });
+  if (!found.ok) return apiError(400, found.error.code, found.error.message);
+  return apiOk({ from: found.from, to: found.to, count: found.repos.length, repos: found.repos });
 }
 
 export const OPTIONS = preflight;

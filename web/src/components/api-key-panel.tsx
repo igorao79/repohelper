@@ -88,6 +88,7 @@ export function ApiKeyPanel() {
             <code>{key}</code>
           </pre>
           <CopyButton text={key} label="Скопировать ключ" />
+          <CopyButton text={`${SITE}/api/mcp?key=${key}`} label="Скопировать адрес MCP" />
         </figure>
       )}
       <figure className="keypanel__example">

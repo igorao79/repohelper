@@ -24,6 +24,9 @@ export function ApiSection() {
           <li>
             <code>GET /api/v1/repos?repo=owner/name</code> появления репозитория
           </li>
+          <li>
+            <code>/api/mcp</code> MCP-сервер для Claude, Cursor и других ИИ
+          </li>
         </ul>
         <Link className="link" href="/developers">
           Вся документация API

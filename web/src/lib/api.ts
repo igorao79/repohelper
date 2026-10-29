@@ -1,7 +1,10 @@
 import { type NextRequest, NextResponse } from "next/server";
 
 import { readApiKey } from "./auth";
+import { pickRange } from "./digest";
 import type { IndexEntry } from "./types";
+
+export { isDate } from "./digest";
 
 // Общее для /api/v1: CORS (ключ в заголовке, без куки — можно звать с любого сайта), ошибки, даты.
 
@@ -10,12 +13,6 @@ export const CORS = {
   "Access-Control-Allow-Methods": "GET, OPTIONS",
   "Access-Control-Allow-Headers": "Authorization, X-API-Key, Content-Type",
 };
-
-const DATE_RE = /^\d{4}-\d{2}-\d{2}$/;
-/** YYYY-MM-DD и при этом настоящая дата (не 2026-13-01). */
-export const isDate = (v: string) =>
-  DATE_RE.test(v) && !Number.isNaN(Date.parse(`${v}T00:00:00Z`)) && new Date(`${v}T00:00:00Z`).toISOString().startsWith(v);
-export const MAX_RANGE_DAYS = 90;
 
 export function apiError(status: number, code: string, message: string) {
   return NextResponse.json({ error: { code, message } }, { status, headers: CORS });
@@ -37,25 +34,11 @@ export function requireKey(req: NextRequest): NextResponse | null {
   );
 }
 
-/** Разбирает ?date=, ?from=, ?to=. Без параметров — последние 30 выпусков. */
+/** ?date=, ?from=, ?to= из адреса. Без параметров — последние 30 выпусков. */
 export function parseRange(req: NextRequest, index: IndexEntry[]):
   | { ok: true; entries: IndexEntry[]; from: string | null; to: string | null }
   | { ok: false; res: NextResponse } {
   const p = req.nextUrl.searchParams;
-  const date = p.get("date");
-  const from = date ?? p.get("from");
-  const to = date ?? p.get("to");
-  for (const [name, v] of [["from", from], ["to", to]] as const) {
-    if (v && !isDate(v)) return { ok: false, res: apiError(400, "bad_date", `${name}: дата в формате YYYY-MM-DD`) };
-  }
-  if (from && to && from > to) return { ok: false, res: apiError(400, "bad_range", "from позже to") };
-  if (from && to) {
-    const days = (Date.parse(`${to}T00:00:00Z`) - Date.parse(`${from}T00:00:00Z`)) / 86_400_000;
-    if (days > MAX_RANGE_DAYS) {
-      return { ok: false, res: apiError(400, "range_too_wide", `Диапазон не больше ${MAX_RANGE_DAYS} дней`) };
-    }
-  }
-  let entries = index.filter((e) => (!from || e.date >= from) && (!to || e.date <= to));
-  if (!from && !to) entries = entries.slice(0, 30);
-  return { ok: true, entries, from, to };
+  const range = pickRange(index, { date: p.get("date"), from: p.get("from"), to: p.get("to") });
+  return range.ok ? range : { ok: false, res: apiError(400, range.error.code, range.error.message) };
 }
