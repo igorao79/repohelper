@@ -1,0 +1,128 @@
+{
+  "date": "2026-10-30",
+  "generated_at": "2026-10-30T08:00:41+01:00",
+  "sections": [
+    {
+      "id": "ai",
+      "title": "ИИ",
+      "repos": [
+        {
+          "full_name": "vectorize-io/hindsight",
+          "description": "Hindsight: Agent Memory That Learns",
+          "language": "Python",
+          "stars": 56304,
+          "stars_gained": 1454,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/vectorize-io/hindsight",
+          "summary": "Система памяти для ИИ-агентов, которая позволяет им учиться со временем, а не просто запоминать историю диалога. Показывает SOTA-результаты на бенчмарке LongMemEval и работает с 25+ LLM-провайдерами."
+        },
+        {
+          "full_name": "milind-soni/OpenMausBot",
+          "description": "Open-source Grok Bot alternative with a virtual machine that bots can use",
+          "language": "TypeScript",
+          "stars": 7703,
+          "stars_gained": 1199,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/milind-soni/OpenMausBot",
+          "summary": "Десктоп-приложение с командой ИИ-агентов в чате: каждый бот работает на локальных CLI Claude, Codex или Grok, имеет собственную виртуальную машину и подключённые приложения. Локальный харнесс хранит данные в ~/.openmausbot, а опасные действия требуют подтверждения."
+        },
+        {
+          "full_name": "rohitg00/ai-engineering-from-scratch",
+          "description": "Learn AI Engineering! Learn it. Build it. Ship it for others.",
+          "language": "Python",
+          "stars": 75630,
+          "stars_gained": 443,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/rohitg00/ai-engineering-from-scratch",
+          "summary": "Учебный курс по AI-инженерии: 542 урока и практические проекты по внутренностям моделей, RAG-пайплайнам и рантаймам агентов с проверкой кода и оценкой результатов."
+        },
+        {
+          "full_name": "macro-inc/macro",
+          "description": "Macro is a unified workspace for teams: email, chat, docs, tasks, agents, calls, and CRM — @-linked together with shared AI memory.",
+          "language": "Rust",
+          "stars": 5663,
+          "stars_gained": 379,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/macro-inc/macro",
+          "summary": "Единое рабочее пространство для команд: почта, чат, документы, задачи, CRM и ИИ-агенты с общей памятью и связями между объектами. Полезно как замена Slack, Notion, Linear и HubSpot в одном интерфейсе."
+        },
+        {
+          "full_name": "Donchitos/Claude-Code-Game-Studios",
+          "description": "Turn Claude Code into a full game dev studio — 49 AI agents, 72 workflow skills, and a complete coordination system mirroring real studio hierarchy.",
+          "language": "Shell",
+          "stars": 29599,
+          "stars_gained": 353,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/Donchitos/Claude-Code-Game-Studios",
+          "summary": "Набор из 49 ИИ-агентов и 74 скиллов для Claude Code, превращающий сессию в игровую студию с иерархией ролей, ревью и контролем качества. Помогает соло-разработчику вести проект от идеи до релиза структурированно."
+        }
+      ]
+    },
+    {
+      "id": "hot",
+      "title": "Набирают популярность",
+      "repos": [
+        {
+          "full_name": "clash-verge-rev/clash-verge-rev",
+          "description": "A modern GUI client based on Tauri, designed to run in Windows, macOS and Linux for tailored proxy experience",
+          "language": "Rust",
+          "stars": 155009,
+          "stars_gained": 295,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/clash-verge-rev/clash-verge-rev",
+          "summary": "Кроссплатформенный GUI-клиент для прокси на Rust и Tauri 2 со встроенным ядром mihomo (Clash Meta): управление конфигами, TUN-режим, визуальный редактор правил и WebDAV-синхронизация."
+        },
+        {
+          "full_name": "JuliusBrussee/caveman",
+          "description": "🪨 why use many token when few token do trick. Viral skill + proxy for coding agents that cuts 65% of tokens by talking like a caveman.",
+          "language": "Go",
+          "stars": 116171,
+          "stars_gained": 295,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/JuliusBrussee/caveman",
+          "summary": "Навык и прокси для кодинг-агентов, который сокращает расход токенов: ответы в телеграфном стиле, сжатие логов и вывода тестов, подбор модели под задачу. Код и команды остаются точными, экономия до 33% входных токенов и 54% стоимости."
+        },
+        {
+          "full_name": "rlaope/oh-my-hermes",
+          "description": "⚚ The coding harness with Hermes Agent wired into IDE.",
+          "language": "Python",
+          "stars": 4889,
+          "stars_gained": 267,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/rlaope/oh-my-hermes",
+          "summary": "Операционный слой для Hermes Agent: маршрутизирует задачи по моделям и скиллам, запускает параллельные DAG-графы через /dag-ulw и проверяет результат перед отчётом. Полезен разработчикам, автоматизирующим кодинг-агентов в IDE."
+        },
+        {
+          "full_name": "CopilotKit/OpenBot",
+          "description": "Open-source AI coworkers that each get a computer of their own: a browser, files and tools, with every action decided before it happens and recorded after. Bring any AG-UI agent.",
+          "language": "TypeScript",
+          "stars": 8328,
+          "stars_gained": 247,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/CopilotKit/OpenBot",
+          "summary": "Платформа ИИ-сотрудников на AG-UI: каждый агент получает браузер, файлы и инструменты, а все действия проходят через шлюз с проверкой и логированием. Разворачивается в своей инфраструктуре через Docker Compose."
+        },
+        {
+          "full_name": "jub0t/Concat",
+          "description": "The truly free, open-source, local-first, cross-platform CapCut replacement. Scriptable through a JSON-RPC API & MCP.",
+          "language": "Rust",
+          "stars": 12701,
+          "stars_gained": 224,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/jub0t/Concat",
+          "summary": "Бесплатный локальный видеоредактор на Rust как замена CapCut: автосубтитры, TTS, удаление фона, кейфреймы, экспорт до 4K. Управляется через JSON-RPC API и встроенный MCP-сервер для ИИ-агентов."
+        }
+      ]
+    }
+  ]
+}

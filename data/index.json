@@ -1,5 +1,12 @@
 [
   {
+    "date": "2026-10-30",
+    "count": 10,
+    "ai_count": 5,
+    "lead": "vectorize-io/hindsight",
+    "lead_gained": 1454
+  },
+  {
     "date": "2026-10-29",
     "count": 10,
     "ai_count": 5,
