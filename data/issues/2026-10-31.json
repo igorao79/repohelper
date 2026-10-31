@@ -1,0 +1,128 @@
+{
+  "date": "2026-10-31",
+  "generated_at": "2026-10-31T08:01:27+01:00",
+  "sections": [
+    {
+      "id": "ai",
+      "title": "ИИ",
+      "repos": [
+        {
+          "full_name": "Orkas-AI/Orkas",
+          "description": "Orkas is an open-source (MIT), local-first AI team for your desktop: a Commander turns your goal into to-dos and coordinates 16 built-in specialist agents plus Claude Code, Codex, OpenCode, OpenClaw and Hermes, with projects, scheduled automations and connectors. Free app for macOS & Windows; built-in models or your own keys.",
+          "language": "JavaScript",
+          "stars": 5445,
+          "stars_gained": 1004,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/Orkas-AI/Orkas",
+          "summary": "Локальное десктопное приложение с командой из 16 ИИ-агентов: Commander превращает цель в задачи и координирует специалистов по исследованиям, контенту, коду и офисным файлам, с проектами и автоматизациями."
+        },
+        {
+          "full_name": "pingdotgg/t3code",
+          "description": "",
+          "language": "TypeScript",
+          "stars": 33064,
+          "stars_gained": 930,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/pingdotgg/t3code",
+          "summary": "Панель управления ИИ-агентами для разработки: удалённо запускает Claude Code, Codex, Cursor и другие CLI-агенты с компьютера через мобильное, веб- и десктоп-приложение."
+        },
+        {
+          "full_name": "mattpocock/skills",
+          "description": "Skills for Real Engineers. Straight from my .agents directory.",
+          "language": "Shell",
+          "stars": 307678,
+          "stars_gained": 876,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/mattpocock/skills",
+          "summary": "Набор компактных и компонуемых скиллов для кодинг-агентов (Claude Code, Codex, Copilot и др.): сессии уточняющих вопросов, общий глоссарий проекта и ADR, чтобы агент лучше понимал задачу и писал лаконичнее."
+        },
+        {
+          "full_name": "lightpanda-io/browser",
+          "description": "Lightpanda: the headless browser designed for AI and automation",
+          "language": "Zig",
+          "stars": 38628,
+          "stars_gained": 626,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/lightpanda-io/browser",
+          "summary": "Безголовый браузер с нуля на Zig для ИИ-агентов и автоматизации: в 16 раз меньше памяти и в 9 раз быстрее Chromium, совместим с Puppeteer/Playwright через CDP и WebDriver BiDi."
+        },
+        {
+          "full_name": "anthropics/skills",
+          "description": "Public repository for Agent Skills",
+          "language": "Python",
+          "stars": 185519,
+          "stars_gained": 295,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/anthropics/skills",
+          "summary": "Набор навыков (skills) для Claude: папки с инструкциями и скриптами, которые учат ассистента выполнять задачи вроде работы с документами, дизайна и генерации MCP-серверов. Полезен как образец и шаблон для создания собственных навыков и агентов."
+        }
+      ]
+    },
+    {
+      "id": "hot",
+      "title": "Набирают популярность",
+      "repos": [
+        {
+          "full_name": "Renhuai123/ziwei-doushu",
+          "description": "紫微斗数开源排盘引擎 — 基于倪海厦《天纪》体系，含完整排盘算法、四化系统、格局知识库、古籍原文数据",
+          "language": "TypeScript",
+          "stars": 11569,
+          "stars_gained": 1126,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/Renhuai123/ziwei-doushu",
+          "summary": "Открытый движок для построения карт Цзывэй доушу на TypeScript: полный алгоритм расчёта, система Сыхуа, база знаний о конфигурациях и тексты древних книг. Полезен разработчикам, создающим астрологические или культурные приложения."
+        },
+        {
+          "full_name": "anomalyco/hex",
+          "description": "Local-first voice dictation for macOS. Hold a shortcut, speak, and paste into any app. Native Rust, on-device speech recognition, and a Linux beta.",
+          "language": "Rust",
+          "stars": 1286,
+          "stars_gained": 289,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/anomalyco/hex",
+          "summary": "Локальное голосовое диктование для macOS на Rust: удерживайте клавишу, говорите, и текст вставляется в любое приложение. Распознавание речи идёт на устройстве, без облака."
+        },
+        {
+          "full_name": "MemPalace/mempalace",
+          "description": "The best-benchmarked open-source AI memory system. And it's free.",
+          "language": "Python",
+          "stars": 60170,
+          "stars_gained": 258,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/MemPalace/mempalace",
+          "summary": "Локальная система памяти для ИИ: хранит историю диалогов дословно и ищет по ней семантически, без внешних API. Полезна разработчикам ИИ-ассистентов для долговременного контекста."
+        },
+        {
+          "full_name": "ethanplusai/harvey",
+          "description": "Autonomous AI sales agent powered by Claude Code or Codex. Finds prospects, writes cold emails, sends campaigns, handles replies, books meetings. No API keys needed — runs on your Claude or Codex subscriptions.",
+          "language": "Python",
+          "stars": 3525,
+          "stars_gained": 244,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/ethanplusai/harvey",
+          "summary": "Автономный ИИ-агент для продаж на базе Claude Code или Codex: ищет компании, пишет и рассылает холодные письма, обрабатывает ответы и назначает встречи без затрат на API. Работает локально на вашей подписке Claude или ChatGPT."
+        },
+        {
+          "full_name": "openclaw/openclaw",
+          "description": "The AI that really does things. Any OS. Any Platform. The lobster way. 🦞",
+          "language": "TypeScript",
+          "stars": 393502,
+          "stars_gained": 148,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/openclaw/openclaw",
+          "summary": "Открытый ИИ-ассистент, работающий на своём железе и подключаемый к Discord, Telegram, Slack, WhatsApp и другим каналам, с локальным хранением данных и сменными моделями и инструментами."
+        }
+      ]
+    }
+  ]
+}
