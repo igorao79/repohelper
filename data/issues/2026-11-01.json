@@ -1,0 +1,128 @@
+{
+  "date": "2026-11-01",
+  "generated_at": "2026-11-01T08:01:07+01:00",
+  "sections": [
+    {
+      "id": "ai",
+      "title": "ИИ",
+      "repos": [
+        {
+          "full_name": "openai/codex",
+          "description": "Lightweight coding agent that runs in your terminal",
+          "language": "Rust",
+          "stars": 132586,
+          "stars_gained": 731,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/openai/codex",
+          "summary": "Легковесный ИИ-агент для программирования на Rust, работающий локально в терминале: помогает писать и править код прямо из командной строки. Устанавливается через curl, npm или Homebrew, поддерживает вход по подписке ChatGPT или API-ключу."
+        },
+        {
+          "full_name": "stablyai/orca",
+          "description": "Orca is the place for working with a fleet of agents (e.g. Grok Bot, Claude Code). Run any coding agent with your own subscription. Available on desktop, mobile and remote runtime.",
+          "language": "TypeScript",
+          "stars": 111895,
+          "stars_gained": 728,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/stablyai/orca",
+          "summary": "IDE-оркестратор для запуска нескольких CLI-агентов (Claude Code, Codex, OpenCode и др.) параллельно, каждый в своём git worktree, с мобильным компаньоном и SSH-воркспейсами."
+        },
+        {
+          "full_name": "Graphify-Labs/graphify",
+          "description": "Turn any codebase, with its docs, SQL schemas, configs, and PDFs, into a queryable knowledge graph. A /graphify skill for Claude Code, Cursor, Codex, and Gemini CLI: local deterministic AST parsing, every edge explained, no vector store.",
+          "language": "Python",
+          "stars": 140144,
+          "stars_gained": 660,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/Graphify-Labs/graphify",
+          "summary": "Превращает кодовую базу, документацию, SQL-схемы и PDF в граф знаний для запросов вместо grep: локальный детерминированный AST-парсинг, каждый рёбро помечено как извлечённое или выведенное, без векторного хранилища."
+        },
+        {
+          "full_name": "cjpais/Handy",
+          "description": "A free, open source, and extensible speech-to-text application that works completely offline.",
+          "language": "Rust",
+          "stars": 35968,
+          "stars_gained": 611,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/cjpais/Handy",
+          "summary": "Кроссплатформенное десктопное приложение для офлайн-распознавания речи: по горячей клавише записывает голос, транскрибирует локально через Whisper или Parakeet и вставляет текст в активное поле. Полезно разработчикам, которым нужна приватная диктовка без облака."
+        },
+        {
+          "full_name": "tashfeenahmed/freellmapi",
+          "description": "7.4 billion tokens per month. 34 free LLM providers. 635 free model endpoints. All behind one /v1 endpoint, plus any custom OpenAI-compatible endpoint. Smart routing, automatic failover, encrypted keys. Personal experimentation only.",
+          "language": "TypeScript",
+          "stars": 45291,
+          "stars_gained": 593,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/tashfeenahmed/freellmapi",
+          "summary": "Агрегатор бесплатных тарифов 34 LLM-провайдеров за одним OpenAI-совместимым /v1 эндпоинтом с умной маршрутизацией, фейловером и шифрованием ключей. Позволяет подключать любые OpenAI-клиенты и кодинг-агенты к общему пулу бесплатных моделей."
+        }
+      ]
+    },
+    {
+      "id": "hot",
+      "title": "Набирают популярность",
+      "repos": [
+        {
+          "full_name": "DuarteSantos8/openGym",
+          "description": "Open-source gym & body-weight tracker, now in the App Store (iPhone + Apple Watch) and as an Android APK. Plan routines, log workouts, see which muscles are trained, import from Strong/Hevy/FitNotes. Self-host it or use it on the phone alone.",
+          "language": "JavaScript",
+          "stars": 18354,
+          "stars_gained": 626,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/DuarteSantos8/openGym",
+          "summary": "Самохостируемый трекер тренировок и упражнений с собственным весом: планирование рутин, журнал подходов, карта мышц, прогрессия и импорт из Strong/Hevy/FitNotes. Приложения для iPhone, Apple Watch и Android, синхронизация и офлайн-режим."
+        },
+        {
+          "full_name": "calesthio/OpenMontage",
+          "description": "World's first open-source, agentic video production system. 12 production pipelines, 100+ tools, 700+ agent skill and production-knowledge files. Turn your AI coding assistant into a full video production studio.",
+          "language": "Python",
+          "stars": 74083,
+          "stars_gained": 583,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/calesthio/OpenMontage",
+          "summary": "Открытая агентная система видеопроизводства: ИИ-ассистент по описанию на естественном языке выполняет ресёрч, сценарий, генерацию ассетов, монтаж и рендер через 12 пайплайнов и 100+ инструментов."
+        },
+        {
+          "full_name": "DietrichGebert/ponytail",
+          "description": "Makes your AI agent think like the laziest senior dev in the room. The best code is the code you never wrote.",
+          "language": "JavaScript",
+          "stars": 181666,
+          "stars_gained": 578,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/DietrichGebert/ponytail",
+          "summary": "Скилл для ИИ-агентов, который заставляет их писать минимальный код: переиспользовать существующее вместо нового, сокращая объём, время и стоимость без потери тестов и безопасности."
+        },
+        {
+          "full_name": "vorssaint/vorssaint-utils",
+          "description": "Free and open-source macOS menu bar toolkit.",
+          "language": "Swift",
+          "stars": 32055,
+          "stars_gained": 501,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/vorssaint/vorssaint-utils",
+          "summary": "Набор утилит для macOS в одном меню-бар приложении: микшер громкости по приложениям, системный монитор, переключение окон, история буфера обмена, сниппеты и управление окнами. Полезен разработчику как бесплатная замена десятку платных Mac-утилит с открытым исходным кодом."
+        },
+        {
+          "full_name": "paperclipai/paperclip",
+          "description": "The open-source app everyone uses to manage agents at work",
+          "language": "TypeScript",
+          "stars": 109604,
+          "stars_gained": 401,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/paperclipai/paperclip",
+          "summary": "Открытая платформа на Node.js и React для оркестрации команды ИИ-агентов: цели, оргструктура, бюджеты, права и история задач в одном дашборде. Позволяет подключать разных агентов (Claude Code, Codex, Cursor и др.) и управлять ими как сотрудниками."
+        }
+      ]
+    }
+  ]
+}
