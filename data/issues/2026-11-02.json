@@ -1,0 +1,128 @@
+{
+  "date": "2026-11-02",
+  "generated_at": "2026-11-02T08:01:12+01:00",
+  "sections": [
+    {
+      "id": "ai",
+      "title": "ИИ",
+      "repos": [
+        {
+          "full_name": "ifixai-ai/iFixAi",
+          "description": "Independent Auditing of AI Agents. Run by human or the agent itself, to answer the most crucial question in the AI Agent Economy. Is the agent doing what is supposed to do? With iFixAi you can have this answer in less than 120 seconds.",
+          "language": "Python",
+          "stars": 42721,
+          "stars_gained": 1584,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/ifixai-ai/iFixAi",
+          "summary": "Инструмент для независимого аудита ИИ-агентов: запускает агента в симуляции бизнеса, проверяет соответствие роли и целям, выдаёт отчёт с оценкой и доказательствами за пару минут."
+        },
+        {
+          "full_name": "patchy631/ai-engineering-hub",
+          "description": "In-depth tutorials on LLMs, RAGs and real-world AI agent applications.",
+          "language": "Jupyter Notebook",
+          "stars": 40582,
+          "stars_gained": 1191,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/patchy631/ai-engineering-hub",
+          "summary": "Набор из 90+ учебных проектов по LLM, RAG и ИИ-агентам с готовым кодом на Jupyter Notebook — от простых OCR и чатов до агентных workflow и файнтюнинга."
+        },
+        {
+          "full_name": "D4Vinci/Scrapling",
+          "description": "🕷️ The BEST Web Scraping framework that handles everything from a single request to a full-scale crawl! Don't be shy, join here: https://discord.gg/EMgGbDceNQ and follow here for daily tips and tricks: https://x.com/Scrapling_dev",
+          "language": "Python",
+          "stars": 91948,
+          "stars_gained": 892,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/D4Vinci/Scrapling",
+          "summary": "Python-фреймворк для веб-скрапинга: быстрые HTTP-запросы, стелс-браузеры, парсинг CSS/XPath, конкурентные пауки с ротацией прокси и экспортом данных. Работает из Python, CLI и через MCP-сервер для ИИ-агентов."
+        },
+        {
+          "full_name": "shiyu-coder/Kronos",
+          "description": "Kronos: A Foundation Model for the Language of Financial Markets",
+          "language": "Python",
+          "stars": 45594,
+          "stars_gained": 630,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/shiyu-coder/Kronos",
+          "summary": "Открытая фундаментальная модель на Python для прогнозирования финансовых свечей (K-line), обученная на данных 45+ бирж; даёт готовый пайплайн предсказания OHLCV в несколько строк кода."
+        },
+        {
+          "full_name": "beenuar/AiSOC",
+          "description": "Open-source AI Security Operations Center: alert fusion, LLM-agent triage, MITRE ATT&CK investigation, and a replayable decision ledger for every agent step. Self-hostable, runs with no API keys, MIT licensed. Ships an MCP server for Claude, Cursor and Continue.",
+          "language": "Python",
+          "stars": 6413,
+          "stars_gained": 446,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/beenuar/AiSOC",
+          "summary": "Самостоятельно разворачиваемый AI Security Operations Center: нормализует телеметрию, коррелирует алерты и расследует инциденты LLM-агентами с аудируемым журналом решений. Есть MCP-сервер для Claude, Cursor и Continue, работает без API-ключей."
+        }
+      ]
+    },
+    {
+      "id": "hot",
+      "title": "Набирают популярность",
+      "repos": [
+        {
+          "full_name": "bregman-arie/devops-exercises",
+          "description": "Linux, Jenkins, AWS, SRE, Prometheus, Docker, Python, Ansible, Git, Kubernetes, Terraform, OpenStack, SQL, NoSQL, Azure, GCP, DNS, Elastic, Network, Virtualization. DevOps Interview Questions",
+          "language": "Python",
+          "stars": 86363,
+          "stars_gained": 629,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/bregman-arie/devops-exercises",
+          "summary": "Сборник из более чем 2600 вопросов и упражнений по DevOps и SRE: Linux, сети, Kubernetes, облака, CI/CD, базы данных и системный дизайн. Помогает подготовиться к собеседованиям и структурировать знания по инфраструктуре."
+        },
+        {
+          "full_name": "leepokai/Codync",
+          "description": "Open source Grok Bot alternative, Bring your own agent and subscription: message Claude Code, Codex, Gemini CLI, Cursor, Copilot and 40+ AI agents as bots on your own computer, from iPhone, Mac, Windows, Linux or terminal. Agent-agnostic and free. Also a Muse and Dots alternative. Built in Rust.",
+          "language": "Rust",
+          "stars": 1637,
+          "stars_gained": 325,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/leepokai/Codync",
+          "summary": "Открытая альтернатива Grok Bot: превращает Claude Code, Codex, Gemini CLI, Cursor и ещё 40+ ИИ-агентов в ботов, которым можно писать с телефона или терминала. Хост на Rust, свои подписки, групповые чаты и уведомления."
+        },
+        {
+          "full_name": "public-apis/public-apis",
+          "description": "A collective list of free APIs",
+          "language": "Python",
+          "stars": 494997,
+          "stars_gained": 324,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/public-apis/public-apis",
+          "summary": "Курируемый сообществом список бесплатных публичных API по разным категориям — удобный справочник для поиска готовых сервисов под свой проект."
+        },
+        {
+          "full_name": "THU-MAIC/OpenMAIC",
+          "description": "Open Multi-Agent Interactive Classroom — Get an immersive, multi-agent learning experience in just one click",
+          "language": "TypeScript",
+          "stars": 42434,
+          "stars_gained": 306,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/THU-MAIC/OpenMAIC",
+          "summary": "Открытая платформа на базе мультиагентной оркестрации, превращающая тему или документ в интерактивный урок со слайдами, тестами, симуляциями и ИИ-преподавателями. Полезна разработчикам для встраивания генерации обучающего контента и экспорта занятий в PPTX или офлайн-HTML."
+        },
+        {
+          "full_name": "FlashML-org/FreeToken",
+          "description": "FreeToken brings datacenter-scale model serving to your desktop. Run massive models locally, fast and efficiently.",
+          "language": "Python",
+          "stars": 15592,
+          "stars_gained": 242,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/FlashML-org/FreeToken",
+          "summary": "Движок инференса MoE-моделей для потребительского железа: запускает модели масштаба 290B+ локально на GPU и CPU с адаптивным распределением памяти и кэшированием. Совместим с OpenAI/Anthropic API для интеграции с кодинг-агентами."
+        }
+      ]
+    }
+  ]
+}

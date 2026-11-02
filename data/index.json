@@ -1,5 +1,12 @@
 [
   {
+    "date": "2026-11-02",
+    "count": 10,
+    "ai_count": 5,
+    "lead": "ifixai-ai/iFixAi",
+    "lead_gained": 1584
+  },
+  {
     "date": "2026-11-01",
     "count": 10,
     "ai_count": 5,
