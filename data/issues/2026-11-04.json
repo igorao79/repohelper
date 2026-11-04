@@ -1,0 +1,128 @@
+{
+  "date": "2026-11-04",
+  "generated_at": "2026-11-04T08:01:18+01:00",
+  "sections": [
+    {
+      "id": "ai",
+      "title": "ИИ",
+      "repos": [
+        {
+          "full_name": "max-sixty/worktrunk",
+          "description": "Worktrunk is a CLI for Git worktree management, designed for parallel AI agent workflows",
+          "language": "Rust",
+          "stars": 10658,
+          "stars_gained": 438,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/max-sixty/worktrunk",
+          "summary": "CLI на Rust для управления git worktree, упрощающий параллельную работу нескольких AI-агентов: создание, переключение и очистка worktree по имени ветки, хуки, LLM-сообщения коммитов и общие кэши сборки."
+        },
+        {
+          "full_name": "blader/humanizer",
+          "description": "Agent skill that removes signs of AI-generated writing from text",
+          "language": "Python",
+          "stars": 64525,
+          "stars_gained": 407,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/blader/humanizer",
+          "summary": "Навык для ИИ-агентов (Claude Code, Codex и др.), который переписывает текст, убирая характерные признаки машинной генерации по 26 паттернам из гайда Wikipedia. Сохраняет смысл и факты, подстраивается под авторский голос."
+        },
+        {
+          "full_name": "herdrdev/herdr",
+          "description": "the runtime your coding agents live on",
+          "language": "Rust",
+          "stars": 47937,
+          "stars_gained": 295,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/herdrdev/herdr",
+          "summary": "Рантайм для терминалов, в которых работают кодинг-агенты: сессии выживают при отключении клиента или SSH, панели помечаются как working/blocked/idle, агенты управляют друг другом через CLI и socket API. Один бинарник на Rust без Electron."
+        },
+        {
+          "full_name": "lexmount/moli",
+          "description": "Best headless browser for AI agents. Lite, Fast, High-Compatibility. Built in Rust",
+          "language": "Rust",
+          "stars": 22505,
+          "stars_gained": 229,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/lexmount/moli",
+          "summary": "Головной браузер на Rust для ИИ-агентов: извлекает страницы в Markdown или семантическое дерево, поддерживает CDP, WebDriver и Playwright, а рендеринг выполняет только по требованию для экономии ресурсов."
+        },
+        {
+          "full_name": "Usagi-org/ai-goofish-monitor",
+          "description": "基于 Playwright 和AI实现的闲鱼多任务实时/定时监控与智能分析系统，配备了功能完善的后台管理UI。帮助用户从闲鱼海量商品中，找到心仪产品。",
+          "language": "Python",
+          "stars": 16794,
+          "stars_gained": 228,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/Usagi-org/ai-goofish-monitor",
+          "summary": "Система мониторинга объявлений на Xianyu на базе Playwright и ИИ: многозадачный парсинг, мультимодальный анализ товаров, веб-панель управления и уведомления. Полезна разработчикам, интересующимся связкой скрапинга с LLM-анализом."
+        }
+      ]
+    },
+    {
+      "id": "hot",
+      "title": "Набирают популярность",
+      "repos": [
+        {
+          "full_name": "floci-io/floci",
+          "description": "Light, fluffy, and always free - The AWS Local Emulator alternative",
+          "language": "Java",
+          "stars": 29055,
+          "stars_gained": 482,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/floci-io/floci",
+          "summary": "Бесплатный локальный эмулятор AWS-сервисов для разработки, тестов и CI: работает через docker compose или CLI на localhost:4566 и совместим с AWS SDK, CLI, Terraform и Testcontainers. Замена LocalStack без аккаунта и платных ограничений."
+        },
+        {
+          "full_name": "keploy/keploy",
+          "description": "Open-source platform for creating safe, isolated production sandboxes for API, integration, and E2E testing.",
+          "language": "Go",
+          "stars": 19307,
+          "stars_gained": 221,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/keploy/keploy",
+          "summary": "Инструмент для авто-генерации API и интеграционных тестов и моков из реального трафика через eBPF, без изменения кода и привязки к языку. Записывает вызовы БД, очередей и внешних API и детерминированно воспроизводит их для тестов."
+        },
+        {
+          "full_name": "Crosstalk-Solutions/project-nomad",
+          "description": "Project NOMAD is an offline-first knowledge and education server. Wikipedia, thousands of books, courses, maps, and optional local AI, all running on hardware you own with no internet required.",
+          "language": "TypeScript",
+          "stars": 42106,
+          "stars_gained": 204,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/Crosstalk-Solutions/project-nomad",
+          "summary": "Офлайн-сервер знаний и образования на Docker: офлайн-Википедия, книги, курсы Khan Academy, карты и локальный ИИ-чат с RAG на Ollama и Qdrant. Управляется через веб-панель Command Center."
+        },
+        {
+          "full_name": "Asymptote-Labs/agent-beacon",
+          "description": "The cross-harness, self-improving memory layer for AI agents. Join our community: https://discord.com/invite/zdNChS2fBu",
+          "language": "Go",
+          "stars": 3249,
+          "stars_gained": 193,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/Asymptote-Labs/agent-beacon",
+          "summary": "Слой памяти для ИИ-агентов: собирает историю сессий из Claude Code, Cursor, Codex и 20+ других харнессов, превращая рабочие процессы и исправления в переиспользуемые знания через MCP и Agent Skills."
+        },
+        {
+          "full_name": "avelino/awesome-go",
+          "description": "A curated list of awesome Go frameworks, libraries and software",
+          "language": "Go",
+          "stars": 191968,
+          "stars_gained": 192,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/avelino/awesome-go",
+          "summary": "Курируемый список Go-фреймворков, библиотек и инструментов по категориям — удобная точка входа для поиска готовых решений на Go."
+        }
+      ]
+    }
+  ]
+}
