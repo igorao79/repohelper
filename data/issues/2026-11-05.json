@@ -1,0 +1,128 @@
+{
+  "date": "2026-11-05",
+  "generated_at": "2026-11-05T08:01:23+01:00",
+  "sections": [
+    {
+      "id": "ai",
+      "title": "ИИ",
+      "repos": [
+        {
+          "full_name": "NVIDIA/auto-ontology",
+          "description": "Auto Ontology is a Python framework for building semantic, graph-based reasoning layers over data. It enables deterministic query generation, better context retrieval, and more explainable AI for LLM and agent workflows.",
+          "language": "Python",
+          "stars": 5750,
+          "stars_gained": 2050,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/NVIDIA/auto-ontology",
+          "summary": "Фреймворк для построения семантического онтологического слоя над корпоративными данными: генерирует граф знаний из метаданных, сверяет определения метрик и отдаёт контекст LLM-агентам через MCP, CLI и API для надёжного text-to-SQL."
+        },
+        {
+          "full_name": "affaan-m/ECC",
+          "description": "The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond.",
+          "language": "JavaScript",
+          "stars": 297413,
+          "stars_gained": 783,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/affaan-m/ECC",
+          "summary": "Система оптимизации работы агентов для Claude Code, Codex, Cursor и других: набор из 71 агента, 314 скиллов, хуков, памяти и сканера безопасности AgentShield для планирования, тестирования и ревью кода."
+        },
+        {
+          "full_name": "harry0703/MoneyPrinterTurbo",
+          "description": "利用 AI 大模型和自动化工作流，根据主题或关键词一键生成高清短视频。Generate HD short videos from a topic or keyword with an automated AI workflow.",
+          "language": "Python",
+          "stars": 139278,
+          "stars_gained": 617,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/harry0703/MoneyPrinterTurbo",
+          "summary": "Инструмент на Python, который по теме или ключевому слову автоматически генерирует сценарий, подбирает материалы, озвучку, субтитры и музыку, собирая HD-видео для коротких роликов. Поддерживает WebUI, API, CLI и AI-агента, а также множество LLM-провайдеров."
+        },
+        {
+          "full_name": "FareedKhan-dev/kimi-k3-in-c",
+          "description": "A 2.78-trillion-parameter Kimi K3 running inference on a single CPU in 8.24 GB of RAM. Portable C99: no BLAS, no framework, no GPU.",
+          "language": "C",
+          "stars": 10507,
+          "stars_gained": 351,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/FareedKhan-dev/kimi-k3-in-c",
+          "summary": "Инференс модели Kimi K3 на 2.78 трлн параметров на одном CPU в 8 ГБ RAM на портируемом C99 без BLAS, фреймворков и GPU; модель стримится с диска, память влияет только на скорость."
+        },
+        {
+          "full_name": "garrytan/gstack",
+          "description": "Use Garry Tan's exact Claude Code setup: 23 opinionated tools that serve as CEO, Designer, Eng Manager, Release Manager, Doc Engineer, and QA",
+          "language": "TypeScript",
+          "stars": 139499,
+          "stars_gained": 290,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/garrytan/gstack",
+          "summary": "Набор из 23 слэш-команд для Claude Code, превращающих агента в виртуальную инженерную команду: ревью, QA в реальном браузере, аудит безопасности и релизы. Полезен для структурированной разработки с ИИ вместо пустого промпта."
+        }
+      ]
+    },
+    {
+      "id": "hot",
+      "title": "Набирают популярность",
+      "repos": [
+        {
+          "full_name": "JiaFeiMiao-K-Cat/DiscImageStudio",
+          "description": "",
+          "language": "C#",
+          "stars": 6820,
+          "stars_gained": 1778,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/JiaFeiMiao-K-Cat/DiscImageStudio",
+          "summary": "Кроссплатформенный инструмент на C# для генерации и прожига изображений на поверхности CD/DVD/BD-дисках: преобразует картинку в данные, совместимые с физическими ограничениями носителя, и умеет писать ISO/RAW/WAV+CUE или сразу на диск."
+        },
+        {
+          "full_name": "The-PR-Agent/pr-agent",
+          "description": "🚀 PR Agent: The Original Open-Source PR Reviewer. This project is not the Qodo free tier.",
+          "language": "Python",
+          "stars": 14903,
+          "stars_gained": 280,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/The-PR-Agent/pr-agent",
+          "summary": "AI-агент для код-ревью pull request'ов: автоматически описывает, ревьюит и предлагает улучшения через команды в комментариях или CLI. Работает с GitHub, GitLab, Bitbucket, Azure DevOps и разными LLM."
+        },
+        {
+          "full_name": "crmne/zapfast",
+          "description": "ZapFast: a fast, native WhatsApp client in Rust and egui",
+          "language": "Rust",
+          "stars": 2861,
+          "stars_gained": 268,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/crmne/zapfast",
+          "summary": "Нативный клиент WhatsApp на Rust и egui без браузерного движка: запускается менее чем за секунду и занимает около 200 МБ RAM вместо 1.13 ГБ у WhatsApp Web. Поддерживает несколько номеров, шифрованный архив истории, темы и блокировку приложения."
+        },
+        {
+          "full_name": "liguobao/ds-harness-remote",
+          "description": "基于 DeepSeek Harness 插件机制构建的远程访问方案，通过低延迟、端到端加密的 P2P 网络，支持使用 PC、移动端 和 Web 随时访问本地设备上的DSH 、CodeX、Cursor、Claude Code等工作区。 (Built on DeepSeek Harness plugins, this low-latency, end-to-end encrypted P2P solution lets PC, mobile, and web clients access local DSH, Codex, Cursor, and Claude Code workspaces.)",
+          "language": "TypeScript",
+          "stars": 1807,
+          "stars_gained": 231,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/liguobao/ds-harness-remote",
+          "summary": "Плагин для DeepSeek Harness, дающий удалённый доступ к локальным рабочим пространствам DSH, Codex, Cursor и Claude Code с ПК, мобильных устройств и веба через P2P-канал с end-to-end шифрованием. Полезен для продолжения сессий и работы с файлами и терминалом с любого устройства без публичного IP."
+        },
+        {
+          "full_name": "spotify/portal-ai-plugins",
+          "description": "",
+          "language": "TypeScript",
+          "stars": 3155,
+          "stars_gained": 227,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/spotify/portal-ai-plugins",
+          "summary": "Плагины для Claude Code, Codex, Cursor и pi, добавляющие рабочие процессы Spotify Portal CLI: настройку аутентификации, поиск по каталогу сервисов, диагностику и безопасный вызов действий. Также включает shunt для делегирования ресурсоёмких задач более дешёвым моделям."
+        }
+      ]
+    }
+  ]
+}
