@@ -1,0 +1,128 @@
+{
+  "date": "2026-11-06",
+  "generated_at": "2026-11-06T08:01:12+01:00",
+  "sections": [
+    {
+      "id": "ai",
+      "title": "ИИ",
+      "repos": [
+        {
+          "full_name": "pbakaus/impeccable",
+          "description": "The design vocabulary for your coding agent. Steer with polish and bolder, review with critique and audit, catch AI slop before it ships.",
+          "language": "Rust",
+          "stars": 104178,
+          "stars_gained": 1280,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/pbakaus/impeccable",
+          "summary": "Набор команд для кодинг-агентов, который даёт словарь дизайн-правок (polish, bolder, critique, audit) и детектор типовых ИИ-шаблонов в интерфейсах по 62 детерминированным правилам без LLM."
+        },
+        {
+          "full_name": "HunYiSage/dsh-purge",
+          "description": "DeepSeek Harness 破甲：让所有模型都能破甲，不同模型可换不同提示词；默认提示词面向国模「小码酱」。Jailbreak for every model — swap prompts per model. 求 Star 收藏 ⭐ 如要二开，请查看署名要求部分",
+          "language": "JavaScript",
+          "stars": 19481,
+          "stars_gained": 1081,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/HunYiSage/dsh-purge",
+          "summary": "Плагин для DeepSeek Harness, снимающий ограничения хост-политики и позволяющий менять джейлбрейк-промпты под разные модели через док-панель. Полезен для red-team оценки и анализа дефолтных политик безопасности."
+        },
+        {
+          "full_name": "github/spec-kit",
+          "description": "💫 Toolkit to help you get started with SDD or any other process!",
+          "language": "Python",
+          "stars": 147985,
+          "stars_gained": 674,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/github/spec-kit",
+          "summary": "Набор инструментов для Spec-Driven Development и других процессов с AI-агентами: шаблоны, расширения, пресеты и рабочие процессы для спецификаций, багфикса и оценки идей."
+        },
+        {
+          "full_name": "scenario-labs/skills",
+          "description": "Get production-ready images, video, audio, and 3D from any AI agent: skills that pick the right model, price before spending, and keep characters and brands consistent through the Scenario MCP, plus expert teams that drive Blender, Maya, ZBrush, Unreal, and Unity.",
+          "language": "Python",
+          "stars": 3241,
+          "stars_gained": 667,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/scenario-labs/skills",
+          "summary": "Набор скиллов для AI-агентов, генерирующих изображения, видео, аудио и 3D через Scenario MCP с подбором модели и контролем консистентности, плюс команды для Blender, Maya, Unreal и Unity."
+        },
+        {
+          "full_name": "microsoft/VibeVoice",
+          "description": "Open-Source Frontier Voice AI",
+          "language": "Python",
+          "stars": 56226,
+          "stars_gained": 223,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/microsoft/VibeVoice",
+          "summary": "Семейство открытых голосовых ИИ-моделей Microsoft: ASR для часовых записей с диаризацией и таймстемпами, стриминговое распознавание и realtime TTS. Полезно для транскрибации и синтеза речи."
+        }
+      ]
+    },
+    {
+      "id": "hot",
+      "title": "Набирают популярность",
+      "repos": [
+        {
+          "full_name": "longbridge/gpui-kit",
+          "description": "Rust GUI components for building fantastic cross-platform desktop application by using GPUI.",
+          "language": "Rust",
+          "stars": 19485,
+          "stars_gained": 285,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/longbridge/gpui-kit",
+          "summary": "Набор Rust-компонентов и фреймворк для создания кроссплатформенных десктопных приложений на GPUI: 75+ готовых UI-элементов, виртуальные таблицы и списки, редактор кода, док-раскладки, поддержка WebAssembly и AccessKit."
+        },
+        {
+          "full_name": "tembo/voxl",
+          "description": "extremely fast web remote desktop streaming",
+          "language": "Rust",
+          "stars": 1249,
+          "stars_gained": 214,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/tembo/voxl",
+          "summary": "Низколатентный стриминг рабочего стола в браузер на Rust: H.264 через WebSocket с декодированием WebCodecs, ввод, буфер обмена, аудио и передача файлов. Полезен для удалённого доступа и веб-терминалов с 60 FPS и задержкой 12–99 мс."
+        },
+        {
+          "full_name": "google/skills",
+          "description": "Agent Skills for Google products and technologies",
+          "language": "Python",
+          "stars": 22517,
+          "stars_gained": 211,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/google/skills",
+          "summary": "Набор Agent Skills для продуктов Google: Cloud, Gemini, BigQuery, GKE и Genkit. Помогает ИИ-ассистентам выполнять задачи по инфраструктуре, деплою агентов и AI/ML-воркфлоу."
+        },
+        {
+          "full_name": "derv82/wifit3",
+          "description": "Wifite but USB-only & cross-platform.",
+          "language": "Python",
+          "stars": 3366,
+          "stars_gained": 206,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/derv82/wifit3",
+          "summary": "Кроссплатформенный аудитор Wi-Fi через USB-адаптеры на чистом Python: сканирование сетей, захват WPA-хендшейков и PMKID, WPS-атаки и WEP без внешних зависимостей."
+        },
+        {
+          "full_name": "tester-army/e2e",
+          "description": "Next generation e2e testing framework for web and mobile apps.",
+          "language": "TypeScript",
+          "stars": 13352,
+          "stars_gained": 193,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/tester-army/e2e",
+          "summary": "Фреймворк e2e-тестирования веб- и мобильных приложений, где цель теста описывается на естественном языке, а ИИ-агент выполняет действия и проверяет результат локаторами и ассертами."
+        }
+      ]
+    }
+  ]
+}
