@@ -1,5 +1,12 @@
 [
   {
+    "date": "2026-11-07",
+    "count": 10,
+    "ai_count": 5,
+    "lead": "cloudflare/security-audit-skill",
+    "lead_gained": 2548
+  },
+  {
     "date": "2026-11-06",
     "count": 10,
     "ai_count": 5,

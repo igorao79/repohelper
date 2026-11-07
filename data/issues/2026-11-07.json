@@ -1,0 +1,128 @@
+{
+  "date": "2026-11-07",
+  "generated_at": "2026-11-07T08:01:14+01:00",
+  "sections": [
+    {
+      "id": "ai",
+      "title": "ИИ",
+      "repos": [
+        {
+          "full_name": "cloudflare/security-audit-skill",
+          "description": "A coding-agent skill for multi-phase security audits with independently verified, machine-readable findings",
+          "language": "JavaScript",
+          "stars": 64455,
+          "stars_gained": 2548,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/cloudflare/security-audit-skill",
+          "summary": "Навык для кодинг-агентов, превращающий их в аудитора безопасности: шесть фаз от разведки до отчёта с независимой проверкой находок и машиночитаемым выводом."
+        },
+        {
+          "full_name": "vercel-labs/agent-browser",
+          "description": "Browser automation CLI for AI agents",
+          "language": "Rust",
+          "stars": 46346,
+          "stars_gained": 622,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/vercel-labs/agent-browser",
+          "summary": "Нативный CLI на Rust для управления браузером из ИИ-агента: открывает страницы, отдаёт их как дерево доступности с ref-метками элементов, а агент кликает и заполняет по одной команде. Полезен для автоматизации веба и интеграции с LLM-агентами через скиллы и MCP."
+        },
+        {
+          "full_name": "ConardLi/garden-skills",
+          "description": "ConardLi's open-source Skills collection, featuring web design, knowledge retrieval, image generation, and more.",
+          "language": "JavaScript",
+          "stars": 14552,
+          "stars_gained": 518,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/ConardLi/garden-skills",
+          "summary": "Набор готовых Agent Skills для Claude Code, Cursor и других ИИ-агентов: генерация видео и презентаций из кода, веб-дизайн, генерация изображений и локальный поиск по базе знаний."
+        },
+        {
+          "full_name": "Anil-matcha/Open-Generative-AI",
+          "description": "Unrestricted Open-source alternative to AI video platforms — Free AI image & video generation studio with 600+ models (Flux, Midjourney, Kling, Sora, Veo). No content filters. Self-hosted, MIT licensed.",
+          "language": "JavaScript",
+          "stars": 32859,
+          "stars_gained": 398,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/Anil-matcha/Open-Generative-AI",
+          "summary": "Самостоятельно размещаемая студия генерации изображений и видео на 600+ моделях (Flux, Midjourney, Kling, Sora, Veo) без контент-фильтров, с открытым исходным кодом по лицензии MIT. Позволяет разработчику развернуть собственный аналог платных AI-платформ или использовать его как основу для white-label продукта."
+        },
+        {
+          "full_name": "elder-plinius/T3MP3ST",
+          "description": "autonomous red teaming platform; multi-agent offensive-security meta-harness",
+          "language": "TypeScript",
+          "stars": 6958,
+          "stars_gained": 242,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/elder-plinius/T3MP3ST",
+          "summary": "Мультиагентная платформа для пентеста: превращает локального ИИ-агента (Claude Code, Codex, Ollama) в автономный инструмент разведки и эксплуатации уязвимостей с отчётами. Работает без API-ключей, воспроизводимые бенчмарки."
+        }
+      ]
+    },
+    {
+      "id": "hot",
+      "title": "Набирают популярность",
+      "repos": [
+        {
+          "full_name": "sherlock-project/sherlock",
+          "description": "Hunt down social media accounts by username across social networks",
+          "language": "Python",
+          "stars": 98875,
+          "stars_gained": 1761,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/sherlock-project/sherlock",
+          "summary": "Инструмент на Python для поиска аккаунтов по одному никнейму в сотнях социальных сетей. Полезен для OSINT, проверки доступности юзернейма и аудита собственного цифрового следа."
+        },
+        {
+          "full_name": "lz4/lz4",
+          "description": "Extremely Fast Compression algorithm",
+          "language": "C",
+          "stars": 12649,
+          "stars_gained": 315,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/lz4/lz4",
+          "summary": "Быстрый алгоритм сжатия без потерь с декодером на скорости нескольких ГБ/с и настраиваемым режимом LZ4_HC для лучшего сжатия. Полезен разработчикам, которым нужна высокоскоростная компрессия данных в приложениях и стриминге."
+        },
+        {
+          "full_name": "zed-industries/zed",
+          "description": "Code at the speed of thought – Zed is a high-performance, multiplayer code editor from the creators of Atom and Tree-sitter.",
+          "language": "Rust",
+          "stars": 93842,
+          "stars_gained": 306,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/zed-industries/zed",
+          "summary": "Высокопроизводительный мультиплеерный редактор кода на Rust от создателей Atom и Tree-sitter, с поддержкой macOS, Linux и Windows. Полезен разработчикам, которым нужен быстрый нативный редактор с совместной работой."
+        },
+        {
+          "full_name": "microsoft/vscode",
+          "description": "Visual Studio Code",
+          "language": "TypeScript",
+          "stars": 195083,
+          "stars_gained": 301,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/microsoft/vscode",
+          "summary": "Открытый исходный код редактора Visual Studio Code: полноценная среда разработки с редактированием, навигацией, отладкой и расширяемой архитектурой. Полезен как база для изучения устройства редактора и создания собственных расширений."
+        },
+        {
+          "full_name": "react/react",
+          "description": "The library for web and native user interfaces.",
+          "language": "JavaScript",
+          "stars": 252309,
+          "stars_gained": 248,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/react/react",
+          "summary": "JavaScript-библиотека для декларативного создания пользовательских интерфейсов на основе компонентов, с рендерингом на сервере и в мобильных приложениях через React Native."
+        }
+      ]
+    }
+  ]
+}
