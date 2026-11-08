@@ -1,0 +1,128 @@
+{
+  "date": "2026-11-08",
+  "generated_at": "2026-11-08T08:00:39+01:00",
+  "sections": [
+    {
+      "id": "ai",
+      "title": "ИИ",
+      "repos": [
+        {
+          "full_name": "morluto/rea",
+          "description": "Reverse engineer anything with agents, from app behavior down to native binaries.",
+          "language": "TypeScript",
+          "stars": 441666,
+          "stars_gained": 3286,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/morluto/rea",
+          "summary": "MCP-сервер для реверс-инжиниринга: агент анализирует нативные бинарники, JavaScript/Electron-приложения, .NET-сборки и сайты, показывая доказательства и ограничения выводов. Работает локально и подключается к Claude Code, Codex, Cursor и другим агентам."
+        },
+        {
+          "full_name": "milind-soni/OpenMausBot",
+          "description": "Open-source Grok Bot alternative with a virtual machine that bots can use",
+          "language": "TypeScript",
+          "stars": 17328,
+          "stars_gained": 1955,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/milind-soni/OpenMausBot",
+          "summary": "Десктоп-приложение с командой ИИ-агентов в чате: каждый бот работает на локальных CLI Claude, Codex или Grok, имеет свою виртуальную машину и подключённые приложения, а опасные действия требуют подтверждения."
+        },
+        {
+          "full_name": "mattpocock/skills",
+          "description": "Skills for Real Engineers. Straight from my .agents directory.",
+          "language": "Shell",
+          "stars": 317951,
+          "stars_gained": 1100,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/mattpocock/skills",
+          "summary": "Набор компактных и компонуемых скиллов для кодинг-агентов (Claude Code, Codex, Copilot и др.), помогающих выравнивать требования через сессии вопросов и вести общий словарь проекта. Устанавливается как плагин и настраивается под трекер задач."
+        },
+        {
+          "full_name": "anthropics/skills",
+          "description": "Public repository for Agent Skills",
+          "language": "Python",
+          "stars": 188949,
+          "stars_gained": 390,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/anthropics/skills",
+          "summary": "Набор открытых Agent Skills для Claude: папки с инструкциями и скриптами, включая production-скиллы для работы с docx, pdf, pptx и xlsx. Полезен как образец для создания собственных скиллов и автоматизации задач."
+        },
+        {
+          "full_name": "jamiepine/voicebox",
+          "description": "The open-source AI voice studio. Clone, dictate, create.",
+          "language": "Python",
+          "stars": 60029,
+          "stars_gained": 378,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/jamiepine/voicebox",
+          "summary": "Локальная студия AI-голоса: клонирование голоса по короткому сэмплу, синтез речи на 8 TTS-движках, диктовка в любое приложение и озвучка MCP-агентов. REST API и MCP-сервер для встраивания голосового ввода-вывода в свои приложения."
+        }
+      ]
+    },
+    {
+      "id": "hot",
+      "title": "Набирают популярность",
+      "repos": [
+        {
+          "full_name": "astral-sh/ruff",
+          "description": "An extremely fast Python linter and code formatter, written in Rust.",
+          "language": "Rust",
+          "stars": 51031,
+          "stars_gained": 350,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/astral-sh/ruff",
+          "summary": "Быстрый линтер и форматтер для Python на Rust, заменяющий Flake8, Black, isort и другие инструменты с ускорением в 10-100 раз. Поддерживает более 900 правил, автоисправления и кэширование."
+        },
+        {
+          "full_name": "rust-lang/rust",
+          "description": "Empowering everyone to build reliable and efficient software.",
+          "language": "Rust",
+          "stars": 121610,
+          "stars_gained": 346,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/rust-lang/rust",
+          "summary": "Основной репозиторий языка Rust: компилятор, стандартная библиотека и документация. Даёт разработчикам быстрый и безопасный по памяти язык с богатой системой типов и инструментами вроде Cargo, rustfmt и Clippy."
+        },
+        {
+          "full_name": "prometheus/prometheus",
+          "description": "The Prometheus monitoring system and time series database.",
+          "language": "Go",
+          "stars": 67491,
+          "stars_gained": 322,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/prometheus/prometheus",
+          "summary": "Система мониторинга и база временных рядов: собирает метрики с целей, вычисляет правила PromQL и шлёт алерты. Полезна для наблюдаемости сервисов и инфраструктуры."
+        },
+        {
+          "full_name": "angular/angular",
+          "description": "Deliver web apps with confidence 🚀",
+          "language": "TypeScript",
+          "stars": 101466,
+          "stars_gained": 305,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/angular/angular",
+          "summary": "Платформа для разработки мобильных и десктопных веб-приложений на TypeScript/JavaScript с CLI, Material-компонентами, SSR и продвинутым тулингом."
+        },
+        {
+          "full_name": "JuliusBrussee/caveman",
+          "description": "🪨 why use many token when few token do trick. Viral skill + proxy for coding agents that cuts 65% of tokens by talking like a caveman.",
+          "language": "Go",
+          "stars": 118202,
+          "stars_gained": 205,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/JuliusBrussee/caveman",
+          "summary": "Прокси и скилл для кодинг-агентов, которые сокращают расход токенов примерно на 65%: агент отвечает лаконично, а логи, JSON и вывод тестов сжимаются до чтения моделью. Код и команды остаются без изменений."
+        }
+      ]
+    }
+  ]
+}
