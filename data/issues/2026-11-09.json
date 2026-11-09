@@ -1,0 +1,128 @@
+{
+  "date": "2026-11-09",
+  "generated_at": "2026-11-09T08:01:17+01:00",
+  "sections": [
+    {
+      "id": "ai",
+      "title": "ИИ",
+      "repos": [
+        {
+          "full_name": "meta/astryx",
+          "description": "An open source design system that's fully customizable and agent ready",
+          "language": "TypeScript",
+          "stars": 17687,
+          "stars_gained": 875,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/meta/astryx",
+          "summary": "Открытая дизайн-система на React 19 и StyleX с 150+ доступными компонентами, темами и CLI, спроектированная так, чтобы люди и ИИ-ассистенты строили интерфейсы одинаково."
+        },
+        {
+          "full_name": "jub0t/Concat",
+          "description": "Beta: The truly free, open-source, local-first, cross-platform video editor. Scriptable through a JSON-RPC API & MCP.",
+          "language": "Rust",
+          "stars": 15916,
+          "stars_gained": 488,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/jub0t/Concat",
+          "summary": "Бесплатный локальный видеоредактор на Rust с GPU-композитором: автосубтитры, TTS, удаление фона, кейфреймы и экспорт до 4K. Управляется через JSON-RPC API и встроенный MCP-сервер для ИИ-агентов."
+        },
+        {
+          "full_name": "ranxianglei/billion-context",
+          "description": "A context-compression plugin for month-long single sessions (billions of tokens) ,small context windows (a 100K context is enough) and token savings (5x fewer tokens) .上下文压缩插件，月级长会话会话， 兼顾小窗口(100k上下文足矣)省token(省5倍token) . billion-context is all you need",
+          "language": "TypeScript",
+          "stars": 5398,
+          "stars_gained": 460,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/ranxianglei/billion-context",
+          "summary": "Прокси-плагин сжатия контекста для агентов: вставляет инструменты compress/decompress/search_context, позволяя вести одну сессию на миллиарды токенов в окне 100K и экономить до 5x токенов."
+        },
+        {
+          "full_name": "rohitg00/ai-engineering-from-scratch",
+          "description": "Learn AI Engineering! Learn it. Build it. Ship it for others.",
+          "language": "Python",
+          "stars": 77884,
+          "stars_gained": 449,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/rohitg00/ai-engineering-from-scratch",
+          "summary": "Учебная программа по AI-инженерии: 542 урока и практические проекты по внутренностям моделей, retrieval-пайплайнам и рантаймам агентов на Python, TypeScript, Rust и Julia."
+        },
+        {
+          "full_name": "storytold/artcraft",
+          "description": "ArtCraft is an intentional crafting engine for artists, designers, and filmmakers",
+          "language": "Rust",
+          "stars": 40019,
+          "stars_gained": 335,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/storytold/artcraft",
+          "summary": "IDE на Rust для интерактивного создания изображений и видео с помощью ИИ: 2D/3D-композитинг, постановка сцен и персонажей, работа с разными моделями генерации. Полезен художникам и дизайнерам для точного и воспроизводимого результата."
+        }
+      ]
+    },
+    {
+      "id": "hot",
+      "title": "Набирают популярность",
+      "repos": [
+        {
+          "full_name": "dsx-ai-factory/nvke",
+          "description": "NVIDIA Kubernetes Engine (NVKE). A management plane for GPU Kubernetes on bare metal.",
+          "language": "Go",
+          "stars": 942,
+          "stars_gained": 345,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/dsx-ai-factory/nvke",
+          "summary": "Платформа управления для запуска managed Kubernetes на собственных GPU-серверах: создаёт изолированные workload-кластеры с отдельными control plane и пулами нод через Cluster API и NVIDIA Infra Controller. Полезно платформенным командам, строящим GPU-инфраструктуру на bare metal."
+        },
+        {
+          "full_name": "hmjz100/LinkSwift",
+          "description": "一个基于 JavaScript 的网盘文件下载地址获取工具。基于【网盘直链下载助手】修改 ，支持 百度网盘 / 阿里云盘 / 中国移动云盘 / 天翼云盘 / 迅雷云盘 / 夸克网盘 / UC网盘 / 123云盘 八大网盘",
+          "language": "JavaScript",
+          "stars": 38928,
+          "stars_gained": 334,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/hmjz100/LinkSwift",
+          "summary": "Пользовательский скрипт для получения прямых ссылок на скачивание файлов из девяти китайских облачных хранилищ (Baidu, Aliyun, Quark, UC и др.) с поддержкой IDM, Aria2 и BitComet."
+        },
+        {
+          "full_name": "tailwindlabs/tailwindcss",
+          "description": "A utility-first CSS framework for rapid UI development.",
+          "language": "TypeScript",
+          "stars": 98649,
+          "stars_gained": 332,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/tailwindlabs/tailwindcss",
+          "summary": "Утилитарный CSS-фреймворк для быстрой сборки кастомных интерфейсов через классы прямо в разметке. Ускоряет вёрстку и упрощает поддержку стилей без написания отдельного CSS."
+        },
+        {
+          "full_name": "Albert-Weasker/niubigeo",
+          "description": "Open-source AI brand visibility and competitor reports. Official website: https://niubigeo.ai/ | Paid services: AI testing by real people and GEO optimization. Pricing: https://niubigeo.ai/pricing",
+          "language": "TypeScript",
+          "stars": 10151,
+          "stars_gained": 228,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/Albert-Weasker/niubigeo",
+          "summary": "Self-hosted-инструмент для GEO-исследований: показывает, как LLM-модели описывают бренд, каких конкурентов упоминают и на какие источники ссылаются, с повторяемыми прогонами и мониторингом ключевых слов."
+        },
+        {
+          "full_name": "ruvnet/RuView",
+          "description": "π RuView turns commodity WiFi signals into real-time spatial intelligence, vital sign monitoring, and presence detection — all without a single pixel of video.",
+          "language": "Rust",
+          "stars": 103113,
+          "stars_gained": 203,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/ruvnet/RuView",
+          "summary": "Платформа WiFi-сенсинга на Rust: по CSI с дешёвых ESP32 определяет присутствие, дыхание, пульс и позу без камер, с интеграцией в Home Assistant и умный дом. Включает обучение моделей и AI-оператора для калибровки и проверки данных."
+        }
+      ]
+    }
+  ]
+}
