@@ -1,0 +1,128 @@
+{
+  "date": "2026-11-10",
+  "generated_at": "2026-11-10T08:01:37+01:00",
+  "sections": [
+    {
+      "id": "ai",
+      "title": "ИИ",
+      "repos": [
+        {
+          "full_name": "debpalash/VoiceStudio",
+          "description": "VoiceStudio is the open-source, fully-local ElevenLabs alternative — voice cloning, voice design, video dubbing, dictation, transcription & audiobook creation in 646 languages.",
+          "language": "Python",
+          "stars": 106481,
+          "stars_gained": 1262,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/debpalash/VoiceStudio",
+          "summary": "Локальная студия синтеза и обработки речи: клонирование и дизайн голоса, дубляж видео, диктовка, транскрипция и аудиокниги на 646 языках без аккаунта и облака."
+        },
+        {
+          "full_name": "HKUDS/DeepTutor",
+          "description": "DeepTutor: Lifelong Personalized Tutoring. https://deeptutor.info/ .",
+          "language": "Python",
+          "stars": 57735,
+          "stars_gained": 710,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/HKUDS/DeepTutor",
+          "summary": "Персонализированная обучающая платформа на Python с ИИ-ассистентом: адаптивные учебные пути, работа с книгами и документами, генерация тестов и практик, поддержка локальных и облачных LLM."
+        },
+        {
+          "full_name": "google-deepmind/mujoco",
+          "description": "Multi-Joint dynamics with Contact. A general purpose physics simulator.",
+          "language": "C++",
+          "stars": 17053,
+          "stars_gained": 574,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/google-deepmind/mujoco",
+          "summary": "Универсальный физический движок для симуляции сочленённых структур с контактами, применяемый в робототехнике, биомеханике и обучении с подкреплением. Даёт C API, Python-биндинги, визуализацию и JAX-ветку MJX для дифференцируемой физики."
+        },
+        {
+          "full_name": "anthropics/claude-quickstarts",
+          "description": "A collection of projects designed to help developers quickly get started with building deployable applications using the Claude API",
+          "language": "Python",
+          "stars": 20159,
+          "stars_gained": 551,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/anthropics/claude-quickstarts",
+          "summary": "Набор готовых примеров приложений на Claude API: агенты поддержки, аналитик данных, автоматизация браузера и рабочего стола, автономный кодинг-агент. Помогает разработчику быстро собрать и адаптировать рабочие прототипы под свои задачи."
+        },
+        {
+          "full_name": "ZhuLinsen/daily_stock_analysis",
+          "description": "LLM 驱动的多市场股票智能分析系统：多源行情、实时新闻、决策看板与自动推送，支持零成本定时运行。 LLM-powered multi-market stock analysis system with multi-source market data, real-time news, decision dashboard, automated notifications, and cost-free scheduled runs.",
+          "language": "Python",
+          "stars": 69235,
+          "stars_gained": 506,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/ZhuLinsen/daily_stock_analysis",
+          "summary": "Система интеллектуального анализа акций на базе LLM для рынков A-акций, Гонконга, США, Японии, Кореи и Тайваня: собирает котировки и новости из нескольких источников, формирует аналитические отчёты и автоматически рассылает их в WeChat, Feishu, Telegram и другие каналы. Работает по расписанию без затрат на сервер."
+        }
+      ]
+    },
+    {
+      "id": "hot",
+      "title": "Набирают популярность",
+      "repos": [
+        {
+          "full_name": "OpenBMB/VoxCPM",
+          "description": "VoxCPM2: Tokenizer-Free TTS for Multilingual Speech Generation, Creative Voice Design, and True-to-Life Cloning",
+          "language": "Python",
+          "stars": 42147,
+          "stars_gained": 387,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/OpenBMB/VoxCPM",
+          "summary": "Бестономичная TTS-система на 2B-параметров с диффузионно-авторегрессионной архитектурой: синтез речи на 30 языках, дизайн голоса по описанию, клонирование и вывод 48kHz. Полезна разработчикам для встраивания качественного многоязычного синтеза речи с потоковой генерацией."
+        },
+        {
+          "full_name": "superplanehq/superplane",
+          "description": "Open source factory for one-shot engineering",
+          "language": "Go",
+          "stars": 9502,
+          "stars_gained": 228,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/superplanehq/superplane",
+          "summary": "Оркестратор, который превращает задачи из бэклога в проверенные pull request'ы силами ИИ-агентов, координируя код, CI, ревью и согласования в одном процессе."
+        },
+        {
+          "full_name": "garrytan/gbrain",
+          "description": "Garry's Opinionated OpenClaw/Hermes Agent Brain",
+          "language": "TypeScript",
+          "stars": 32308,
+          "stars_gained": 216,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/garrytan/gbrain",
+          "summary": "Хранилище явных фактов с источниками и возможностью исправления, дающее агентам общую память с поиском по ключевым словам и семантикой. Полезно для переносимой памяти между ИИ-ассистентами с контролем доступа и графом знаний."
+        },
+        {
+          "full_name": "gosom/google-maps-scraper",
+          "description": "scrape data from Google Maps. Extracts data such as the name, address, phone number, website URL, rating, reviews number, latitude and longitude, reviews,email and more for each place",
+          "language": "Go",
+          "stars": 7805,
+          "stars_gained": 205,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/gosom/google-maps-scraper",
+          "summary": "Скрейпер Google Maps на Go, извлекающий названия, адреса, телефоны, сайты, рейтинги, отзывы и email организаций. Работает через CLI, веб-интерфейс и REST API, подходит для лидогенерации и обогащения данных."
+        },
+        {
+          "full_name": "OpenCut-app/OpenCut",
+          "description": "The open-source CapCut alternative",
+          "language": "TypeScript",
+          "stars": 97968,
+          "stars_gained": 169,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/OpenCut-app/OpenCut",
+          "summary": "Бесплатный открытый видеоредактор для веба, десктопа и мобильных устройств, альтернатива CapCut. Сейчас переписывается с нуля: планируются API редактора, плагины, headless-режим и MCP-сервер для ИИ-агентов."
+        }
+      ]
+    }
+  ]
+}
