@@ -1,0 +1,128 @@
+{
+  "date": "2026-11-12",
+  "generated_at": "2026-11-12T08:01:32+01:00",
+  "sections": [
+    {
+      "id": "ai",
+      "title": "ИИ",
+      "repos": [
+        {
+          "full_name": "Alishahryar1/free-claude-code",
+          "description": "Use Claude Code, Codex, Antigravity, VSCode, Pi, and OpenCode (and 6 other harnesses) for free (1.3B+ free tokens) from your terminal, app, IDE, or phone, and now from the browser with native browser sessions (multi-harness + multi-model) like OpenClaw (voice supported + ToS friendly)",
+          "language": "Python",
+          "stars": 68761,
+          "stars_gained": 636,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/Alishahryar1/free-claude-code",
+          "summary": "Прокси-сервер, который подключает 12 кодинг-агентов (Claude Code, Codex, Aider и др.) к 61 провайдеру моделей, включая бесплатные тарифы на 1.3 млрд токенов в месяц, с фолбэками и оптимизацией расхода токенов."
+        },
+        {
+          "full_name": "experientiallabs/experiential",
+          "description": "Experiential is the open source, zero markup gateway for BYOK, self-hosted and 1000+ marketplace models. It learns from your traffic to cut costs, recommend better models, and train a specialized model you own.",
+          "language": "Python",
+          "stars": 16613,
+          "stars_gained": 589,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/experientiallabs/experiential",
+          "summary": "Шлюз и роутер для агентных воркфлоу с единым OpenAI-совместимым API к hosted, BYOK и локальным моделям, контролем доступа и бюджета, а также оптимизацией роутера и дообучением модели по трафику."
+        },
+        {
+          "full_name": "shadcn/improve",
+          "description": "Use your most capable model to audit your codebase and write plans for cheaper models to execute.",
+          "language": "",
+          "stars": 11163,
+          "stars_gained": 361,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/shadcn/improve",
+          "summary": "Навык для ИИ-агентов, который проводит аудит кодовой базы и пишет самодостаточные планы для исполнения более дешёвыми моделями. Полезен разделением дорогого анализа и дешёвого исполнения."
+        },
+        {
+          "full_name": "multica-ai/multica",
+          "description": "Make humans and AI agents work as one team — open-source and self-hostable.",
+          "language": "Go",
+          "stars": 55795,
+          "stars_gained": 200,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/multica-ai/multica",
+          "summary": "Самохостируемое рабочее пространство, где задачи из трекера назначаются AI-агентам (Claude Code, Codex, Cursor и др.) как коллегам: они берут issue, комментируют прогресс и отдают результат на ревью. Полезно для команд, которые хотят управлять несколькими агентами из одного места с логами запусков и контролем доступа."
+        },
+        {
+          "full_name": "browser-use/browser-use",
+          "description": "Open-source Python library for AI browser agents, plus Browser Use Cloud: stealth browsers and a hosted agent API.",
+          "language": "Python",
+          "stars": 120780,
+          "stars_gained": 172,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/browser-use/browser-use",
+          "summary": "Python-библиотека для ИИ-агентов, управляющих реальным браузером через Chrome DevTools Protocol: модель пишет код в REPL и выполняет задачи вроде бронирования или заполнения форм. Работает с любым LLM, локально или в облаке."
+        }
+      ]
+    },
+    {
+      "id": "hot",
+      "title": "Набирают популярность",
+      "repos": [
+        {
+          "full_name": "soxoj/maigret",
+          "description": "🕵️‍♂️ Collect a dossier on a person by username from 6K websites",
+          "language": "Python",
+          "stars": 40431,
+          "stars_gained": 260,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/soxoj/maigret",
+          "summary": "Инструмент OSINT для поиска аккаунтов по нику на 5900 сайтах с извлечением данных из профилей, рекурсивным поиском и отчётами. Полезен для разведки и анализа цифрового следа."
+        },
+        {
+          "full_name": "LibreSpark/LibreTV",
+          "description": "一分钟搭建影视站，支持Docker等部署方式",
+          "language": "TypeScript",
+          "stars": 24511,
+          "stars_gained": 198,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/LibreSpark/LibreTV",
+          "summary": "Платформа для агрегации и просмотра онлайн-видео на Next.js 15 и TypeScript: параллельный поиск по нескольким источникам, HLS-плеер, IPTV, синхронизация прогресса и развёртывание через Docker."
+        },
+        {
+          "full_name": "GoogleChrome/modern-web-guidance-src",
+          "description": "",
+          "language": "TypeScript",
+          "stars": 2000,
+          "stars_gained": 159,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/GoogleChrome/modern-web-guidance-src",
+          "summary": "Набор скиллов и CLI, которые внедряют в контекст кодинг-агентов экспертные гайды по современным веб-API, CSS и доступности, чтобы те не генерировали устаревший код."
+        },
+        {
+          "full_name": "rustdesk/rustdesk",
+          "description": "An open-source remote desktop application designed for self-hosting, as an alternative to TeamViewer.",
+          "language": "Rust",
+          "stars": 129117,
+          "stars_gained": 157,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/rustdesk/rustdesk",
+          "summary": "Кроссплатформенное приложение для удалённого доступа, написанное на Rust, с возможностью развернуть собственный сервер вместо TeamViewer. Полезно разработчикам, которым нужен самостоятельный контроль над данными и инфраструктурой удалённых подключений."
+        },
+        {
+          "full_name": "dream-num/univer",
+          "description": "Build your own AI office with Univer Office SDK. Bring editing, calculation, collaboration, and file processing into your product for people and AI agents. Built on an extensible open-source core.",
+          "language": "TypeScript",
+          "stars": 23326,
+          "stars_gained": 138,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/dream-num/univer",
+          "summary": "Открытый Office SDK на TypeScript для встраивания редактирования таблиц и документов в свои продукты: модели контента, формулы, рендеринг, команды и Facade API для приложений и ИИ-агентов."
+        }
+      ]
+    }
+  ]
+}
