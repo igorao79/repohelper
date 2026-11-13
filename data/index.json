@@ -1,5 +1,12 @@
 [
   {
+    "date": "2026-11-13",
+    "count": 10,
+    "ai_count": 5,
+    "lead": "openai/codex-security",
+    "lead_gained": 643
+  },
+  {
     "date": "2026-11-12",
     "count": 10,
     "ai_count": 5,

@@ -1,0 +1,128 @@
+{
+  "date": "2026-11-13",
+  "generated_at": "2026-11-13T08:01:34+01:00",
+  "sections": [
+    {
+      "id": "ai",
+      "title": "ИИ",
+      "repos": [
+        {
+          "full_name": "openai/codex-security",
+          "description": "OpenAI's Codex Security CLI and TypeScript SDK for finding, validating, and fixing security vulnerabilities. npm: https://www.npmjs.com/package/@openai/codex-security",
+          "language": "TypeScript",
+          "stars": 12655,
+          "stars_gained": 643,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/openai/codex-security",
+          "summary": "CLI и TypeScript SDK для поиска, проверки и исправления уязвимостей в коде: сканирование репозиториев и диффов, генерация патчей, отчёты и интеграции с трекерами."
+        },
+        {
+          "full_name": "CopilotKit/OpenBot",
+          "description": "Open-source AI coworkers that each get a computer of their own: a browser, files and tools, with every action decided before it happens and recorded after. Bring any AG-UI agent.",
+          "language": "TypeScript",
+          "stars": 11842,
+          "stars_gained": 298,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/CopilotKit/OpenBot",
+          "summary": "Модульное self-hosted рабочее пространство для ИИ-сотрудников: каждый агент получает браузер, файлы и инструменты, действия согласуются и логируются. Подключает любые AG-UI-агенты, поддерживает выбор моделей и развёртывание на своей инфраструктуре."
+        },
+        {
+          "full_name": "NVIDIA/SkillSpector",
+          "description": "Security scanner for AI agent skills. Detect vulnerabilities, malicious patterns, security risks, prompt injection, data exfiltration, and supply-chain risks in Claude Code, Codex, and MCP skills before you install them.",
+          "language": "Python",
+          "stars": 25743,
+          "stars_gained": 297,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/NVIDIA/SkillSpector",
+          "summary": "Сканер безопасности для скиллов ИИ-агентов (Claude Code, Codex, MCP): находит уязвимости, prompt injection, утечку данных и риски supply-chain до установки. Поддерживает статический анализ, опциональную LLM-проверку и отчёты в JSON, Markdown и SARIF."
+        },
+        {
+          "full_name": "coreyhaines31/marketingskills",
+          "description": "Marketing skills for Claude Code and AI agents. CRO, copywriting, SEO, analytics, and growth engineering.",
+          "language": "JavaScript",
+          "stars": 60018,
+          "stars_gained": 208,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/coreyhaines31/marketingskills",
+          "summary": "Набор markdown-скиллов для ИИ-агентов (Claude Code, Cursor и др.) по маркетингу: CRO, копирайтинг, SEO, аналитика и growth-инженерия. Помогает агенту применять готовые фреймворки к маркетинговым задачам."
+        },
+        {
+          "full_name": "PurpleDoubleD/locally-uncensored",
+          "description": "The all-in-one local AI studio for your desktop: chat, image and video generation and a coding agent in one free, open source app. Windows and Linux. No Docker, no terminal, no cloud required.",
+          "language": "TypeScript",
+          "stars": 4119,
+          "stars_gained": 197,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/PurpleDoubleD/locally-uncensored",
+          "summary": "Десктопная студия локального ИИ: чат, генерация изображений и видео, а также кодинг-агент в одном приложении без Docker и облака. Полезна разработчикам, которым нужен приватный офлайн-инструмент для работы с моделями на своей машине."
+        }
+      ]
+    },
+    {
+      "id": "hot",
+      "title": "Набирают популярность",
+      "repos": [
+        {
+          "full_name": "pookjw/HermesEnabler",
+          "description": "Enable Hermès Watch Faces on any Apple Watch devices",
+          "language": "Objective-C",
+          "stars": 1648,
+          "stars_gained": 218,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/pookjw/HermesEnabler",
+          "summary": "Утилита для включения циферблатов Hermès на любых Apple Watch через подмену MobileGestalt; требует сайдлоадинга IPA и Developer Mode, поддерживается только watchOS 27.0–27.3 beta 1."
+        },
+        {
+          "full_name": "Tencent/LoopForge",
+          "description": "Self-hosted workflows for coding-agent delivery. Orchestrate CodeBuddy, Codex and Claude Code with scripts and human approval gates. Includes Local workflows for coding assistants.",
+          "language": "Go",
+          "stars": 625,
+          "stars_gained": 184,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/Tencent/LoopForge",
+          "summary": "Self-hosted платформа для оркестрации coding-агентов (CodeBuddy, Codex, Claude Code) в Docker-песочницах: роли, SOP-воркфлоу с human-approval гейтами, трейсы и логи. Позволяет команде воспроизводимо доставлять код и PR с ревью на своей инфраструктуре."
+        },
+        {
+          "full_name": "ggml-org/llama.cpp",
+          "description": "LLM inference in C/C++",
+          "language": "C++",
+          "stars": 134713,
+          "stars_gained": 176,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/ggml-org/llama.cpp",
+          "summary": "Высокопроизводительный инференс LLM и VLM на C/C++ без зависимостей, с квантованием и поддержкой CPU, CUDA, Metal, Vulkan и других бэкендов. Позволяет запускать модели локально и поднимать OpenAI-совместимый API-сервер."
+        },
+        {
+          "full_name": "tailscale/tailcat",
+          "description": "like netcat, but over Tailscale's data plane, without Tailscale's control plane",
+          "language": "Go",
+          "stars": 9116,
+          "stars_gained": 173,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/tailscale/tailcat",
+          "summary": "Утилита и Go-библиотека в духе netcat, но поверх data plane Tailscale: даёт WireGuard-шифрованные P2P-туннели без аккаунта и control plane, с пробросом портов и обменом stdin/stdout."
+        },
+        {
+          "full_name": "n8n-io/n8n",
+          "description": "Fair-code workflow automation platform with native AI capabilities. Combine visual building with custom code, self-host or cloud, 400+ integrations.",
+          "language": "TypeScript",
+          "stars": 210350,
+          "stars_gained": 167,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/n8n-io/n8n",
+          "summary": "Платформа автоматизации воркфлоу с визуальным конструктором, кодом на JS/Python и 1500+ интеграциями. Позволяет строить и разворачивать AI-агентов и многошаговые пайплайны self-hosted или в облаке."
+        }
+      ]
+    }
+  ]
+}
