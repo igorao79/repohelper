@@ -1,5 +1,12 @@
 [
   {
+    "date": "2026-11-15",
+    "count": 10,
+    "ai_count": 5,
+    "lead": "ChromeDevTools/chrome-devtools-mcp",
+    "lead_gained": 664
+  },
+  {
     "date": "2026-11-14",
     "count": 10,
     "ai_count": 5,

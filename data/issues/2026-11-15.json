@@ -1,0 +1,128 @@
+{
+  "date": "2026-11-15",
+  "generated_at": "2026-11-15T08:00:34+01:00",
+  "sections": [
+    {
+      "id": "ai",
+      "title": "ИИ",
+      "repos": [
+        {
+          "full_name": "ChromeDevTools/chrome-devtools-mcp",
+          "description": "Chrome DevTools for coding agents",
+          "language": "TypeScript",
+          "stars": 56463,
+          "stars_gained": 664,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/ChromeDevTools/chrome-devtools-mcp",
+          "summary": "MCP-сервер и CLI, дающие ИИ-агентам управлять живым Chrome: записывать трейсы производительности, отлаживать сеть и консоль, автоматизировать действия через Puppeteer."
+        },
+        {
+          "full_name": "tradermonty/claude-trading-skills",
+          "description": "Claude Code skills for equity investors and traders — market analysis, technical charting, economic calendars, screeners, and trading strategy development.",
+          "language": "Python",
+          "stars": 4996,
+          "stars_gained": 553,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/tradermonty/claude-trading-skills",
+          "summary": "Набор скиллов Claude Code для инвесторов и трейдеров: анализ рынка, технические графики, скринеры и разработка торговых стратегий. Помогает выстроить дисциплинированный процесс принятия решений, а не автоматизировать торговлю."
+        },
+        {
+          "full_name": "backnotprop/plannotator",
+          "description": "The workspace to stay in the loop and on top of agents - shape, decide, plan, annotate, review code, share with team, and send all feedback to agents with one click.",
+          "language": "TypeScript",
+          "stars": 11361,
+          "stars_gained": 408,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/backnotprop/plannotator",
+          "summary": "Локальный браузерный интерфейс для ревью работы ИИ-агентов: аннотирование планов, спецификаций, HTML и диффов с отправкой правок обратно агенту в один клик. Поддерживает Claude Code, Codex, Copilot CLI и другие через плагины, хуки и MCP."
+        },
+        {
+          "full_name": "block/buzz",
+          "description": "A hive mind communication platform",
+          "language": "Rust",
+          "stars": 37454,
+          "stars_gained": 277,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/block/buzz",
+          "summary": "Самохостинговый воркспейс на Nostr-релее, где люди и ИИ-агенты работают в общих каналах: патчи, ревью, воркфлоу и git-события в едином журнале с аудитом. Полезен командам, желающим встроить агентов в разработку без потери контроля."
+        },
+        {
+          "full_name": "anthropics/claude-plugins-official",
+          "description": "Official, Anthropic-managed directory of high quality Claude Code Plugins.",
+          "language": "Python",
+          "stars": 47324,
+          "stars_gained": 136,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/anthropics/claude-plugins-official",
+          "summary": "Официальный каталог плагинов Anthropic для Claude Code: команды, агенты, скиллы и MCP-серверы, устанавливаемые через встроенный менеджер плагинов."
+        }
+      ]
+    },
+    {
+      "id": "hot",
+      "title": "Набирают популярность",
+      "repos": [
+        {
+          "full_name": "louislam/uptime-kuma",
+          "description": "A fancy self-hosted monitoring tool",
+          "language": "JavaScript",
+          "stars": 94323,
+          "stars_gained": 430,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/louislam/uptime-kuma",
+          "summary": "Самостоятельно размещаемый инструмент мониторинга доступности сервисов: проверки HTTP, TCP, ping, DNS и Docker-контейнеров с уведомлениями в 90+ сервисов и удобным веб-интерфейсом."
+        },
+        {
+          "full_name": "martin-olivier/airgorah",
+          "description": "A WiFi security auditing software",
+          "language": "Rust",
+          "stars": 6027,
+          "stars_gained": 270,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/martin-olivier/airgorah",
+          "summary": "Инструмент аудита безопасности WiFi на Rust с GTK4-интерфейсом: перехват трафика, поиск клиентов, деаутентификация, захват хендшейков и PMKID, подбор паролей точек доступа."
+        },
+        {
+          "full_name": "NVIDIA/SkillEvaluator",
+          "description": "Multi-tier framework for evaluating AI agent skills with quality gates, semantic overlap detection, synthetic evaluation dataset generation, and live agent evaluation that measures how skills affect agent behavior.",
+          "language": "Python",
+          "stars": 1278,
+          "stars_gained": 133,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/NVIDIA/SkillEvaluator",
+          "summary": "Фреймворк для оценки навыков ИИ-агентов: статические проверки качества, поиск семантических пересечений, генерация синтетических датасетов и живое сравнение поведения агента с навыком и без него."
+        },
+        {
+          "full_name": "LibreTranslate/LibreTranslate",
+          "description": "Free and Open Source Machine Translation API. Self-hosted, offline capable and easy to setup.",
+          "language": "Python",
+          "stars": 17729,
+          "stars_gained": 130,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/LibreTranslate/LibreTranslate",
+          "summary": "Самостоятельно размещаемый API машинного перевода на базе открытого движка Argos Translate, без зависимости от Google или Azure. Позволяет развернуть офлайн-перевод в своём приложении."
+        },
+        {
+          "full_name": "elementalsouls/Claude-BugHunter",
+          "description": "A Claude Code skill bundle for bug hunting and external red-team work - 82 skills, 15 slash commands, 681 disclosed-report patterns curated across 24 core vulnerability classes, plus enterprise identity + infrastructure attack matrices.",
+          "language": "Python",
+          "stars": 5862,
+          "stars_gained": 124,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/elementalsouls/Claude-BugHunter",
+          "summary": "Набор скиллов и слэш-команд для Claude Code, превращающий ассистента в пентестера: 83 навыка по веб-уязвимостям, шаблоны цепочек CVE и матрицы атак на корпоративную инфраструктуру. Полезен для баг-хантинга и red-team в рамках авторизованных программ."
+        }
+      ]
+    }
+  ]
+}
