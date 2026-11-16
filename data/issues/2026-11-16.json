@@ -1,0 +1,128 @@
+{
+  "date": "2026-11-16",
+  "generated_at": "2026-11-16T08:01:16+01:00",
+  "sections": [
+    {
+      "id": "ai",
+      "title": "ИИ",
+      "repos": [
+        {
+          "full_name": "tashfeenahmed/freellmapi",
+          "description": "10.1 billion tokens per month. 87 free LLM providers. 1,313 free model endpoints. All behind one /v1 endpoint, plus any custom OpenAI-compatible endpoint. Smart routing, automatic failover, encrypted keys. Personal experimentation only.",
+          "language": "TypeScript",
+          "stars": 53018,
+          "stars_gained": 579,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/tashfeenahmed/freellmapi",
+          "summary": "Агрегатор бесплатных тарифов 87 LLM-провайдеров за одним OpenAI-совместимым /v1 эндпоинтом: умная маршрутизация, автоматический failover и шифрование ключей. Позволяет подключать любые OpenAI-клиенты и кодинг-агенты к общему пулу бесплатных моделей."
+        },
+        {
+          "full_name": "ag-ui-protocol/ag-ui",
+          "description": "AG-UI: the Agent-User Interaction Protocol. Bring Agents into Frontend Applications.",
+          "language": "TypeScript",
+          "stars": 18159,
+          "stars_gained": 355,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/ag-ui-protocol/ag-ui",
+          "summary": "Открытый событийный протокол для подключения ИИ-агентов к фронтенд-приложениям: стриминг чата, синхронизация состояния, генеративный UI и human-in-the-loop. Совместим с LangChain, CrewAI, Google ADK и другими фреймворками."
+        },
+        {
+          "full_name": "google-labs-code/stitch-skills",
+          "description": "A library of Agent Skills designed to work with the Stitch MCP server. Each skill follows the Agent Skills open standard, for compatibility with coding agents such as Antigravity, Gemini CLI, Claude Code, Cursor.",
+          "language": "TypeScript",
+          "stars": 9464,
+          "stars_gained": 247,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/google-labs-code/stitch-skills",
+          "summary": "Набор Agent Skills и плагинов для работы с Google Stitch через MCP-сервер: генерация и редактирование дизайнов, извлечение DESIGN.md и статического HTML, конвертация кода в дизайн. Совместим с Codex, Claude Code, Cursor, Gemini CLI и другими кодинг-агентами."
+        },
+        {
+          "full_name": "davila7/claude-code-templates",
+          "description": "Open-source registry and CLI for Claude Code components: agents, commands, skills, hooks, MCPs, settings and mods",
+          "language": "Python",
+          "stars": 33792,
+          "stars_gained": 174,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/davila7/claude-code-templates",
+          "summary": "Каталог и CLI для установки компонентов Claude Code: скиллов, субагентов, слэш-команд, хуков, MCP-серверов и настроек одной командой с корректным слиянием конфигурации."
+        },
+        {
+          "full_name": "andrewyng/openworker",
+          "description": "",
+          "language": "Python",
+          "stars": 19362,
+          "stars_gained": 139,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/andrewyng/openworker",
+          "summary": "Десктопное приложение с ИИ-агентом для исследования, написания текстов и ревью кода, плюс SDK для встраивания агентных возможностей в свои приложения. Поддерживает локальные и облачные модели, одобрения действий и песочницу."
+        }
+      ]
+    },
+    {
+      "id": "hot",
+      "title": "Набирают популярность",
+      "repos": [
+        {
+          "full_name": "maillab/cloud-mail",
+          "description": "An all-in-one email service platform powered by Cloudflare | 基于 Cloudflare 的一站式邮箱服务平台 | Cloudflare Email 邮箱 Mail",
+          "language": "JavaScript",
+          "stars": 16237,
+          "stars_gained": 316,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/maillab/cloud-mail",
+          "summary": "Самостоятельно размещаемая почтовая платформа на Cloudflare Workers: несколько доменов и ящиков, отправка и приём писем, вложения в R2, API и админ-панель. Снижает затраты на сервер и подходит для собственного почтового сервиса."
+        },
+        {
+          "full_name": "antithesishq/bombadil",
+          "description": "Property-based testing for web and terminal UIs",
+          "language": "Rust",
+          "stars": 2011,
+          "stars_gained": 202,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/antithesishq/bombadil",
+          "summary": "Инструмент property-based тестирования для веб- и терминальных интерфейсов: автономно исследует UI и проверяет корректность свойств, помогая находить сложные баги раньше. Работает локально, в CI и в Antithesis."
+        },
+        {
+          "full_name": "SnailSploit/Claude-Red",
+          "description": "claude-red is a curated library of offensive security skills designed for the Claude skills system. Each skill is a structured SKILL.md file that primes Claude with expert-level methodology for a specific attack surface — from SQLi to shellcode, EDR evasion to exploit development.",
+          "language": "Python",
+          "stars": 11056,
+          "stars_gained": 131,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/SnailSploit/Claude-Red",
+          "summary": "Набор SKILL.md-файлов для системы Claude Skills, дающих ассистенту методологию по наступательной безопасности: от SQLi и XSS до EDR evasion и exploit development. Полезен пентестерам и red team для быстрого подключения экспертных скиллов по конкретной поверхности атаки."
+        },
+        {
+          "full_name": "bojieli/ai-infra-book",
+          "description": "《深入理解 AI Infra：量化分析与系统设计》（李博杰 著）开源书稿：从硬件约束和模型架构出发，量化推导 LLM 推理与训练系统设计。含全书正文、PDF、配套计算工具与实验",
+          "language": "Python",
+          "stars": 7850,
+          "stars_gained": 127,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/bojieli/ai-infra-book",
+          "summary": "Открытая книга о проектировании AI-инфраструктуры: от аппаратных ограничений и архитектуры моделей к количественным оценкам систем инференса и обучения LLM. Полезна разработчикам, желающим понять, почему модели работают медленно и как снизить затраты."
+        },
+        {
+          "full_name": "motion-canvas/motion-canvas",
+          "description": "Visualize Your Ideas With Code",
+          "language": "TypeScript",
+          "stars": 19964,
+          "stars_gained": 111,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/motion-canvas/motion-canvas",
+          "summary": "Инструмент для создания информативных векторных анимаций кодом на TypeScript с генераторами и редактором с превью в реальном времени, синхронизацией с озвучкой."
+        }
+      ]
+    }
+  ]
+}
