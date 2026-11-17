@@ -1,0 +1,128 @@
+{
+  "date": "2026-11-17",
+  "generated_at": "2026-11-17T08:01:08+01:00",
+  "sections": [
+    {
+      "id": "ai",
+      "title": "ИИ",
+      "repos": [
+        {
+          "full_name": "google-research/paper-orchestra",
+          "description": "PaperOrchestra is a multi-agent framework for automated AI research paper writing.",
+          "language": "Python",
+          "stars": 1824,
+          "stars_gained": 313,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/google-research/paper-orchestra",
+          "summary": "Мультиагентный фреймворк, который превращает идеи и логи экспериментов в готовые к подаче LaTeX-статьи: генерирует обзор литературы, разделы, графики и схемы. Полезен исследователям для автоматизации черновиков научных работ."
+        },
+        {
+          "full_name": "ifixai-ai/iFixAi",
+          "description": "Independent Auditing of AI Agents. Run by human or the agent itself, to answer the most crucial question in the AI Agent Economy. Is the agent doing what is supposed to do? With iFixAi you can have this answer in less than 120 seconds.",
+          "language": "Python",
+          "stars": 46128,
+          "stars_gained": 311,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/ifixai-ai/iFixAi",
+          "summary": "Инструмент для независимого аудита ИИ-агентов: запускает агента в симуляции бизнеса, проверяет соответствие роли и выдаёт отчёт с оценкой за минуты. Полезен для контроля надёжности и безопасности агентов."
+        },
+        {
+          "full_name": "elie222/rakazo",
+          "description": "Open-source Grok Bot alternative. Choose your own model and sandbox.",
+          "language": "TypeScript",
+          "stars": 8898,
+          "stars_gained": 266,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/elie222/rakazo",
+          "summary": "Самостоятельно размещаемый аналог Grok Bot: постоянные ИИ-напарники с памятью, расписаниями, браузером и собственным компьютером в песочнице, работающие на любой модели с вашими ключами. Полезен разработчикам для сборки приватных ИИ-агентов с интеграциями приложений и MCP."
+        },
+        {
+          "full_name": "hieunc229/mailflare",
+          "description": "Email for professionals and teams",
+          "language": "TypeScript",
+          "stars": 6721,
+          "stars_gained": 254,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/hieunc229/mailflare",
+          "summary": "Самохостинговый аналог Google Workspace: почта на своём домене, календарь, файлы и бронирование с AI-агентами. Запускается на Cloudflare Workers или в Docker, поддерживает разные БД и хранилища."
+        },
+        {
+          "full_name": "mvanhorn/last30days-skill",
+          "description": "AI agent skill that researches any topic across Reddit, X, YouTube, HN, Polymarket, and the web - then synthesizes a grounded summary",
+          "language": "Python",
+          "stars": 68361,
+          "stars_gained": 135,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/mvanhorn/last30days-skill",
+          "summary": "Навык для ИИ-агентов, который параллельно ищет информацию по теме на Reddit, X, YouTube, HN, Polymarket и других площадках, оценивает по вовлечённости и собирает связный обзор за последние 30 дней."
+        }
+      ]
+    },
+    {
+      "id": "hot",
+      "title": "Набирают популярность",
+      "repos": [
+        {
+          "full_name": "rust-lang/rust",
+          "description": "Empowering everyone to build reliable and efficient software.",
+          "language": "Rust",
+          "stars": 122105,
+          "stars_gained": 159,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/rust-lang/rust",
+          "summary": "Основной репозиторий языка Rust: компилятор, стандартная библиотека и документация. Полезен разработчикам, которым нужна производительность, безопасность памяти и надёжность благодаря системе типов и модели владения."
+        },
+        {
+          "full_name": "huggingface/transformers",
+          "description": "🤗 Transformers: the model-definition framework for state-of-the-art machine learning models in text, vision, audio, and multimodal models, for both inference and training.",
+          "language": "Python",
+          "stars": 169105,
+          "stars_gained": 132,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/huggingface/transformers",
+          "summary": "Фреймворк для определения и запуска современных ML-моделей (текст, зрение, аудио, мультимодальные) для инференса и обучения, совместимый с большинством тренировочных и инференс-движков."
+        },
+        {
+          "full_name": "mrdoob/three.js",
+          "description": "JavaScript 3D Library.",
+          "language": "JavaScript",
+          "stars": 118693,
+          "stars_gained": 129,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/mrdoob/three.js",
+          "summary": "Лёгкая кроссплатформенная 3D-библиотека на JavaScript с рендерерами WebGL и WebGPU, позволяющая быстро создавать сцены, камеры и анимацию в браузере."
+        },
+        {
+          "full_name": "openai/whisper",
+          "description": "Robust Speech Recognition via Large-Scale Weak Supervision",
+          "language": "Python",
+          "stars": 112879,
+          "stars_gained": 126,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/openai/whisper",
+          "summary": "Модель распознавания речи на базе Transformer: транскрипция, перевод на английский и определение языка для аудио, с готовыми весами разных размеров и CLI."
+        },
+        {
+          "full_name": "agent-substrate/substrate",
+          "description": "Agent Substrate: the core system",
+          "language": "Go",
+          "stars": 6912,
+          "stars_gained": 118,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/agent-substrate/substrate",
+          "summary": "Защищённый zero-trust рантайм на Kubernetes для песочниц агентов: изоляция через gVisor и microVM, снапшоты простаивающих акторов и высокая плотность запуска. Полезен для безопасного выполнения недоверенного кода ИИ-агентов без утечки креденшелов."
+        }
+      ]
+    }
+  ]
+}
