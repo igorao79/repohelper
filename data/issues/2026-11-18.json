@@ -1,0 +1,128 @@
+{
+  "date": "2026-11-18",
+  "generated_at": "2026-11-18T08:01:00+01:00",
+  "sections": [
+    {
+      "id": "ai",
+      "title": "ИИ",
+      "repos": [
+        {
+          "full_name": "obra/superpowers",
+          "description": "An agentic skills framework & software development methodology that works.",
+          "language": "Shell",
+          "stars": 319545,
+          "stars_gained": 1917,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/obra/superpowers",
+          "summary": "Фреймворк навыков и методология разработки для кодинг-агентов: агент сначала уточняет спецификацию, затем ведёт задачи через TDD и субагентов. Подключается как плагин к Claude Code, Codex, Cursor, Gemini CLI и другим."
+        },
+        {
+          "full_name": "stablyai/orca",
+          "description": "Orca lets you run a fleet of coding agents (e.g. Claude Code, Codex) with your own subscription. Available on desktop, mobile and remote runtime.",
+          "language": "TypeScript",
+          "stars": 128168,
+          "stars_gained": 1066,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/stablyai/orca",
+          "summary": "Оркестратор для параллельного запуска кодинг-агентов (Claude Code, Codex и др.) в изолированных worktree с чатом, терминалом, диффами и мобильным приложением. Позволяет распределять задачи между агентами и ревьюить их вывод."
+        },
+        {
+          "full_name": "pbakaus/impeccable",
+          "description": "The design vocabulary for your coding agent. Steer with polish and bolder, review with critique and audit, catch AI slop before it ships.",
+          "language": "Rust",
+          "stars": 112409,
+          "stars_gained": 748,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/pbakaus/impeccable",
+          "summary": "Набор команд для кодинг-агентов, задающий словарь дизайна: steer, review, polish и детектор типовых ИИ-ошибок в вёрстке. Помогает улучшать существующие интерфейсы и проверять доступность, производительность и адаптивность."
+        },
+        {
+          "full_name": "Graphify-Labs/graphify",
+          "description": "Turn any codebase, with its docs, SQL schemas, configs, and PDFs, into a queryable knowledge graph. A /graphify skill for Claude Code, Cursor, Codex, and Gemini CLI: local deterministic AST parsing, every edge explained, no vector store.",
+          "language": "Python",
+          "stars": 149793,
+          "stars_gained": 649,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/Graphify-Labs/graphify",
+          "summary": "Превращает кодовую базу с документацией, SQL-схемами, конфигами и PDF в граф знаний для запросов вместо grep. Локальный детерминированный разбор AST на tree-sitter, каждый рёбро помечено как извлечённое или выведенное, без векторного хранилища."
+        },
+        {
+          "full_name": "milind-soni/OpenMausBot",
+          "description": "Open-source Grok Bot alternative with a virtual machine that bots can use",
+          "language": "TypeScript",
+          "stars": 24993,
+          "stars_gained": 640,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/milind-soni/OpenMausBot",
+          "summary": "Открытая альтернатива Grok Bot: команда AI-ботов в чат-приложении, каждый со своей моделью, виртуальной машиной и подключёнными приложениями, работающая локально на ваших CLI-агентах."
+        }
+      ]
+    },
+    {
+      "id": "hot",
+      "title": "Набирают популярность",
+      "repos": [
+        {
+          "full_name": "getarcaneapp/arcane",
+          "description": "Modern Docker Management, Designed for Everyone",
+          "language": "Go",
+          "stars": 9470,
+          "stars_gained": 618,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/getarcaneapp/arcane",
+          "summary": "Современный веб-интерфейс для управления Docker: контейнеры, образы и окружения в одном месте. Упрощает работу с Docker для разработчиков любого уровня."
+        },
+        {
+          "full_name": "DuarteSantos8/openGym",
+          "description": "Open-source gym & body-weight tracker, now in the App Store (iPhone + Apple Watch) and as an Android APK. Plan routines, log workouts, see which muscles are trained, import from Strong/Hevy/FitNotes. Self-host it or use it on the phone alone.",
+          "language": "JavaScript",
+          "stars": 22603,
+          "stars_gained": 487,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/DuarteSantos8/openGym",
+          "summary": "Открытый трекер тренировок и упражнений с собственным сервером: планирование рутин, журнал подходов, карта мышц, прогрессия и импорт из Strong/Hevy/FitNotes. Работает как приложение на iPhone, Apple Watch и Android или через docker compose."
+        },
+        {
+          "full_name": "sveltejs/svelte",
+          "description": "web development for the rest of us",
+          "language": "JavaScript",
+          "stars": 89660,
+          "stars_gained": 477,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/sveltejs/svelte",
+          "summary": "Компилятор для создания веб-приложений: превращает декларативные компоненты в эффективный JavaScript, точечно обновляющий DOM. Полезен разработчикам, которым нужен лёгкий и быстрый фронтенд-фреймворк без виртуального DOM."
+        },
+        {
+          "full_name": "nightly-labs/openbot",
+          "description": "A local-first desktop workspace for persistent AI teammates. Run Codex, Claude, and Grok with dedicated workspaces, task queues, file sharing, browser control, and agent-to-agent collaboration.",
+          "language": "TypeScript",
+          "stars": 8739,
+          "stars_gained": 343,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/nightly-labs/openbot",
+          "summary": "Локальное десктоп-приложение для постоянных ИИ-напарников: запускает Codex, Claude, Grok и другие CLI-агенты в отдельных воркспейсах с очередями задач, обменом файлами, встроенным браузером и общением агентов между собой."
+        },
+        {
+          "full_name": "usestrix/strix",
+          "description": "Open-source AI penetration testing tool to find and fix your app’s vulnerabilities.",
+          "language": "Python",
+          "stars": 76387,
+          "stars_gained": 337,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/usestrix/strix",
+          "summary": "Автономные ИИ-агенты для пентеста: динамически запускают код, находят уязвимости и подтверждают их рабочими PoC, с автопатчами и отчётами. Полезен для быстрого security-тестирования приложений и интеграции в CI/CD."
+        }
+      ]
+    }
+  ]
+}
