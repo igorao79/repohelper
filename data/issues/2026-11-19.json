@@ -1,0 +1,128 @@
+{
+  "date": "2026-11-19",
+  "generated_at": "2026-11-19T08:00:55+01:00",
+  "sections": [
+    {
+      "id": "ai",
+      "title": "ИИ",
+      "repos": [
+        {
+          "full_name": "pingdotgg/t3code",
+          "description": "The best way to control Claude Code, Codex and more from any computer or phone",
+          "language": "TypeScript",
+          "stars": 65546,
+          "stars_gained": 1220,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/pingdotgg/t3code",
+          "summary": "Открытая панель управления для агентов-кодеров (Claude Code, Codex и других): запускает их на вашей машине и даёт единый интерфейс на десктопе, в вебе и на телефоне, с встроенным Git и удалённым доступом."
+        },
+        {
+          "full_name": "jingyaogong/minimind",
+          "description": "🧠 两小时从 0 训出你的 64M 大模型。Train your own 64M LLM from scratch in 2 hours.",
+          "language": "Python",
+          "stars": 66564,
+          "stars_gained": 687,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/jingyaogong/minimind",
+          "summary": "Учебный проект по обучению собственной LLM с нуля: минимальная модель 64M параметров, полный пайплайн от претрейна до RLHF и агентов на чистом PyTorch. Полезен разработчикам, желающим разобраться во внутренностях LLM без абстракций фреймворков."
+        },
+        {
+          "full_name": "p-e-w/heretic",
+          "description": "Training-free language model modification: Remove censorship, suppress slop, reduce sycophancy, and more",
+          "language": "Python",
+          "stars": 42055,
+          "stars_gained": 515,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/p-e-w/heretic",
+          "summary": "Инструмент для модификации языковых моделей без обучения: убирает цензуру и отказы, снижает сикофантию и «слоп», управляя поведением через скореры. Работает на локальном железе за десятки минут."
+        },
+        {
+          "full_name": "HKUDS/CLI-Anything",
+          "description": "\"CLI-Anything: Making ALL Software Agent-Native\" -- CLI-Hub: https://clianything.cc/",
+          "language": "Python",
+          "stars": 60002,
+          "stars_gained": 389,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/HKUDS/CLI-Anything",
+          "summary": "Инструмент, превращающий любое ПО в CLI-интерфейсы, которыми могут управлять ИИ-агенты (Cursor, Claude Code и др.). Позволяет подключать десктопные приложения к агентным пайплайнам через единый хаб готовых CLI."
+        },
+        {
+          "full_name": "cursor/plugins",
+          "description": "Cursor plugin specification and official plugins",
+          "language": "TypeScript",
+          "stars": 17325,
+          "stars_gained": 314,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/cursor/plugins",
+          "summary": "Спецификация и официальные плагины для Cursor: скиллы и агентские воркфлоу для код-ревью, оркестрации задач, работы с GitHub, Google-сервисами и другими инструментами."
+        }
+      ]
+    },
+    {
+      "id": "hot",
+      "title": "Набирают популярность",
+      "repos": [
+        {
+          "full_name": "XiaoYouChR/Ghost-Downloader-3",
+          "description": "The only downloader you need. 下载器的集大成者。",
+          "language": "Python",
+          "stars": 12216,
+          "stars_gained": 432,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/XiaoYouChR/Ghost-Downloader-3",
+          "summary": "Кроссплатформенный менеджер загрузок на Python/Qt с поддержкой HTTP, BitTorrent, FTP, M3U8, DASH, eD2k, YouTube и Bilibili, умным чанкингом и браузерными TLS-отпечатками. Есть CLI, aria2-совместимый RPC и плагины."
+        },
+        {
+          "full_name": "jquery/jquery",
+          "description": "jQuery JavaScript Library",
+          "language": "JavaScript",
+          "stars": 60057,
+          "stars_gained": 266,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/jquery/jquery",
+          "summary": "Классическая JavaScript-библиотека для работы с DOM, AJAX и анимациями, упрощающая кроссбраузерную разработку. Поддерживает сборку кастомных версий с исключением ненужных модулей."
+        },
+        {
+          "full_name": "astral-sh/uv",
+          "description": "An extremely fast Python package and project manager, written in Rust.",
+          "language": "Rust",
+          "stars": 92308,
+          "stars_gained": 258,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/astral-sh/uv",
+          "summary": "Написанный на Rust менеджер пакетов и проектов для Python, заменяющий pip, poetry, pyenv и virtualenv. Работает в 10-100 раз быстрее pip, поддерживает lockfile, скрипты, инструменты и управление версиями Python."
+        },
+        {
+          "full_name": "nvm-sh/nvm",
+          "description": "Node Version Manager - POSIX-compliant bash script to manage multiple active node.js versions.",
+          "language": "Shell",
+          "stars": 96186,
+          "stars_gained": 237,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/nvm-sh/nvm",
+          "summary": "Менеджер версий Node.js на POSIX-совместимом bash: позволяет устанавливать, переключать и закреплять разные версии node и npm в рамках одной машины. Полезен для работы с проектами, требующими разных версий рантайма."
+        },
+        {
+          "full_name": "ethanplusai/sellbird",
+          "description": "Sellbird (formerly Harvey): the open-source outreach platform that runs on your Claude or ChatGPT plan. Finds companies and decision makers, verifies emails, writes personal cold email, sends it and handles the replies.",
+          "language": "Python",
+          "stars": 6565,
+          "stars_gained": 237,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/ethanplusai/sellbird",
+          "summary": "Открытая платформа для холодных рассылок: находит компании и контакты, проверяет email, пишет персональные письма и обрабатывает ответы, работая через подписку Claude или ChatGPT без API-ключей."
+        }
+      ]
+    }
+  ]
+}
