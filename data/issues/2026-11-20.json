@@ -1,0 +1,128 @@
+{
+  "date": "2026-11-20",
+  "generated_at": "2026-11-20T08:00:38+01:00",
+  "sections": [
+    {
+      "id": "ai",
+      "title": "ИИ",
+      "repos": [
+        {
+          "full_name": "DietrichGebert/ponytail",
+          "description": "Makes your AI agent think like the laziest senior dev in the room. The best code is the code you never wrote.",
+          "language": "JavaScript",
+          "stars": 195060,
+          "stars_gained": 878,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/DietrichGebert/ponytail",
+          "summary": "Промпт-скилл для ИИ-агентов, который заставляет писать минимальный код: переиспользовать существующее вместо нового, не жертвуя валидацией, безопасностью и тестами. Есть команды ревью и аудита кода."
+        },
+        {
+          "full_name": "firecrawl/firecrawl",
+          "description": "Knowledge infrastructure to make your agents smarter. Search, scrape and 550+ data providers through one API.",
+          "language": "TypeScript",
+          "stars": 204525,
+          "stars_gained": 825,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/firecrawl/firecrawl",
+          "summary": "Инфраструктура знаний для ИИ-агентов: скрапинг, краулинг и поиск по сайтам с выдачей в markdown через единый API, локально или в облаке, плюс MCP-сервер для интеграции с ассистентами."
+        },
+        {
+          "full_name": "microsoft/markitdown",
+          "description": "Python tool for converting files and office documents to Markdown.",
+          "language": "Python",
+          "stars": 197092,
+          "stars_gained": 434,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/microsoft/markitdown",
+          "summary": "Легковесная утилита на Python для конвертации PDF, Office-документов, изображений, аудио и других форматов в Markdown с сохранением структуры — удобно для пайплайнов анализа текста и LLM."
+        },
+        {
+          "full_name": "mjmirza/app-store-compliance",
+          "description": "Avoid common App Store and Google Play rejections. Open playbook and pre-submission guard with 117 documented rejection patterns and fixes, privacy manifest and Data safety checks, 95 tracked deadlines (EU AI Act, DSA, COPPA, age laws), and a skill for AI coding agents.",
+          "language": "Shell",
+          "stars": 2119,
+          "stars_gained": 377,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/mjmirza/app-store-compliance",
+          "summary": "Плейбук и автоматический скрипт-проверка для iOS и Android, которые помогают избежать отклонения приложений в App Store и Google Play: 117 задокументированных причин отказов с исправлениями, проверки приватности и дедлайны по законам. Есть скилл для ИИ-ассистентов, запускающий проверку перед отправкой."
+        },
+        {
+          "full_name": "appwrite/appwrite",
+          "description": "The open-source cloud for agents & devs. Including Auth, Databases, Storage, Functions, Messaging, Hosting, Realtime, WAF and more",
+          "language": "TypeScript",
+          "stars": 58417,
+          "stars_gained": 325,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/appwrite/appwrite",
+          "summary": "Открытая облачная платформа с Auth, базами данных, хранилищем, функциями, мессенджингом и хостингом, доступная как облако или для self-hosting. Включает MCP-сервер, чтобы кодинг-агенты могли работать с живым проектом."
+        }
+      ]
+    },
+    {
+      "id": "hot",
+      "title": "Набирают популярность",
+      "repos": [
+        {
+          "full_name": "solidjs/solid",
+          "description": "A declarative, efficient, and flexible JavaScript library for building user interfaces.",
+          "language": "TypeScript",
+          "stars": 36839,
+          "stars_gained": 459,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/solidjs/solid",
+          "summary": "Декларативная JS-библиотека для интерфейсов: компилирует JSX в реальный DOM и обновляет его через мелкозернистую реактивность без виртуального DOM. Полезна разработчикам, которым нужны render-once компоненты, стриминговый SSR и TypeScript-first подход."
+        },
+        {
+          "full_name": "cathrynlavery/diagram-design",
+          "description": "Editorial diagram design for Claude Code, Codex, GitHub Copilot, Cursor, Factory Droid, Qoder, and Pi. 45 diagram types. Self-contained HTML + SVG. No shadows. No Mermaid slop.",
+          "language": "HTML",
+          "stars": 68837,
+          "stars_gained": 271,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/cathrynlavery/diagram-design",
+          "summary": "Скилл для ИИ-ассистентов (Claude Code, Cursor, Copilot и др.), который генерирует диаграммы 51 типа в виде одного самодостаточного HTML+SVG в вашем брендинге. Полезен разработчикам, которым нужны аккуратные диаграммы без Mermaid."
+        },
+        {
+          "full_name": "anomalyco/opencode",
+          "description": "The open source coding agent.",
+          "language": "TypeScript",
+          "stars": 228103,
+          "stars_gained": 249,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/anomalyco/opencode",
+          "summary": "Открытый ИИ-агент для программирования с встроенными режимами build и plan, десктопным приложением и установкой через npm, brew, pacman и другие пакетные менеджеры. Помогает анализировать код и планировать изменения прямо в терминале."
+        },
+        {
+          "full_name": "openvinotoolkit/openvino",
+          "description": "OpenVINO™ is an open source toolkit for optimizing and deploying AI inference",
+          "language": "C++",
+          "stars": 11621,
+          "stars_gained": 246,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/openvinotoolkit/openvino",
+          "summary": "Тулкит для оптимизации и развёртывания инференса глубоких моделей на CPU, GPU и NPU с поддержкой PyTorch, TensorFlow, ONNX и LLM. Ускоряет и упрощает запуск моделей от edge до облака."
+        },
+        {
+          "full_name": "Imbad0202/academic-research-skills",
+          "description": "Academic Research Skills for Claude Code: research → write → review → revise → finalize",
+          "language": "Python",
+          "stars": 57804,
+          "stars_gained": 244,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/Imbad0202/academic-research-skills",
+          "summary": "Набор скиллов для Claude Code, покрывающих полный цикл академического исследования: от поиска литературы и написания до рецензирования и финальной проверки цитат. Помогает автоматизировать рутину и контролировать галлюцинации ИИ при работе с источниками."
+        }
+      ]
+    }
+  ]
+}
