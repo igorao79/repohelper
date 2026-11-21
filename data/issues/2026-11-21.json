@@ -1,0 +1,128 @@
+{
+  "date": "2026-11-21",
+  "generated_at": "2026-11-21T08:01:14+01:00",
+  "sections": [
+    {
+      "id": "ai",
+      "title": "ИИ",
+      "repos": [
+        {
+          "full_name": "Tencent/LoopForge",
+          "description": "Self-hosted workflows for coding-agent delivery. Orchestrate CodeBuddy, Codex and Claude Code with scripts and human approval gates. Includes Local workflows for coding assistants.",
+          "language": "Go",
+          "stars": 5339,
+          "stars_gained": 1216,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/Tencent/LoopForge",
+          "summary": "Self-hosted платформа для оркестрации coding-агентов (Codex, Claude Code, CodeBuddy и др.) через Docker-песочницы, роли, SOP-воркфлоу и human approval gates. Позволяет команде воспроизводимо доставлять код с проверками и наблюдаемостью."
+        },
+        {
+          "full_name": "zhouxiaoka/autoclip",
+          "description": "AutoClip｜一个链接，一键出片。开源 AI 视频剪辑桌面工具，将播客、访谈、课程等长视频自动剪成短视频，生成字幕、封面和发布文案，适配抖音、小红书、TikTok、Reels 与 YouTube Shorts。Open-source AI video clipping & content repurposing.",
+          "language": "Python",
+          "stars": 12359,
+          "stars_gained": 979,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/zhouxiaoka/autoclip",
+          "summary": "Открытый десктопный инструмент на Python, который по ссылке на длинное видео (подкаст, интервью, лекция) автоматически нарезает короткие ролики с субтитрами, обложками и текстом для публикации под TikTok, Reels, Shorts и другие платформы. Рендеринг идёт локально, анализ — через выбираемые облачные или локальные модели, есть CLI и MCP для интеграции с агентами."
+        },
+        {
+          "full_name": "toeverything/AFFiNE",
+          "description": "There can be more than Notion and Miro. AFFiNE(pronounced [ə‘fain]) is a next-gen knowledge base that brings planning, sorting and creating all together. Privacy first, open-source, customizable and ready to use.",
+          "language": "TypeScript",
+          "stars": 75927,
+          "stars_gained": 676,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/toeverything/AFFiNE",
+          "summary": "Открытая локальная альтернатива Notion и Miro: документы, бесконечный холст и базы данных в одном рабочем пространстве с совместной работой в реальном времени. Включает ИИ-помощника для генерации слайдов, саммари и майндмапов."
+        },
+        {
+          "full_name": "Tracer-Cloud/opensre",
+          "description": "The open-source agent for CI/CD reliability.",
+          "language": "Python",
+          "stars": 13710,
+          "stars_gained": 466,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/Tracer-Cloud/opensre",
+          "summary": "CLI-агент для надёжности CI/CD: разбирает упавшие сборки, находит причину и предлагает исправление на ревью. Работает на собственной инфраструктуре с вашими моделями."
+        },
+        {
+          "full_name": "FlashML-org/FreeVideo",
+          "description": "Make videos on the computer you already own. FreeVideo runs MiniMax H3 in as little as 8 GB of VRAM and 16 GB of RAM, and adapts its acceleration path to your hardware.",
+          "language": "Python",
+          "stars": 3917,
+          "stars_gained": 293,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/FlashML-org/FreeVideo",
+          "summary": "Локальный движок генерации видео на MiniMax H3 для потребительских GPU: запускается от 8 ГБ VRAM и 16 ГБ RAM, подстраивает размещение весов и точность под железо. Работает как плагин ComfyUI с лаунчерами для Windows, macOS и Linux."
+        }
+      ]
+    },
+    {
+      "id": "hot",
+      "title": "Набирают популярность",
+      "repos": [
+        {
+          "full_name": "rustdesk/rustdesk",
+          "description": "An open-source remote desktop application designed for self-hosting, as an alternative to TeamViewer.",
+          "language": "Rust",
+          "stars": 130546,
+          "stars_gained": 250,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/rustdesk/rustdesk",
+          "summary": "Кроссплатформенное приложение для удалённого доступа к рабочему столу на Rust с возможностью самостоятельного развёртывания сервера ретрансляции — открытая альтернатива TeamViewer."
+        },
+        {
+          "full_name": "nginx/nginx",
+          "description": "The official NGINX Open Source repository.",
+          "language": "C",
+          "stars": 32618,
+          "stars_gained": 246,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/nginx/nginx",
+          "summary": "Официальный репозиторий NGINX — высокопроизводительного веб-сервера, обратного прокси, балансировщика нагрузки и кэша. Полезен разработчикам для развёртывания и настройки инфраструктуры под высокой нагрузкой."
+        },
+        {
+          "full_name": "phone-harness/phone-harness",
+          "description": "let your agent control your phone",
+          "language": "Python",
+          "stars": 5399,
+          "stars_gained": 198,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/phone-harness/phone-harness",
+          "summary": "Позволяет ИИ-агентам управлять реальным телефоном: скроллить, тапать, вводить текст и читать экран через iPhone Mirroring или adb, без джейлбрейка и установки приложений на устройство."
+        },
+        {
+          "full_name": "multica-ai/multica",
+          "description": "Make humans and AI agents work as one team — open-source and self-hostable.",
+          "language": "Go",
+          "stars": 56972,
+          "stars_gained": 173,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/multica-ai/multica",
+          "summary": "Самохостинговое рабочее пространство, где задачи из трекера назначаются AI-агентам (Claude Code, Codex, Cursor и др.) как коллегам: они берут issue, отчитываются о прогрессе и отдают результат на ревью."
+        },
+        {
+          "full_name": "github/spec-kit",
+          "description": "💫 Toolkit to help you get started with SDD or any other process!",
+          "language": "Python",
+          "stars": 150856,
+          "stars_gained": 166,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/github/spec-kit",
+          "summary": "Набор инструментов для организации spec-driven разработки с ИИ-агентами: шаблоны, процессы, расширения и пресеты для планирования фич, багфикса и оценки идей."
+        }
+      ]
+    }
+  ]
+}
