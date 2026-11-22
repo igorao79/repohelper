@@ -1,0 +1,128 @@
+{
+  "date": "2026-11-22",
+  "generated_at": "2026-11-22T08:00:56+01:00",
+  "sections": [
+    {
+      "id": "ai",
+      "title": "ИИ",
+      "repos": [
+        {
+          "full_name": "affaan-m/ECC",
+          "description": "The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond.",
+          "language": "JavaScript",
+          "stars": 308507,
+          "stars_gained": 583,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/affaan-m/ECC",
+          "summary": "Система оптимизации работы агентов для Claude Code, Codex, Cursor и других харнессов: 72 агента, 328 скиллов, память, хуки, правила и сканер безопасности AgentShield. Помогает выстроить цикл plan-test-implement-review-verify и переиспользовать удачные сценарии."
+        },
+        {
+          "full_name": "earendil-works/pi",
+          "description": "AI agent toolkit: unified LLM API, agent loop, TUI, coding agent CLI",
+          "language": "TypeScript",
+          "stars": 123233,
+          "stars_gained": 129,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/earendil-works/pi",
+          "summary": "Минималистичный расширяемый агентный каркас с единым API к LLM, циклом агента, TUI и CLI для кодинга; настраивается расширениями, скиллами и шаблонами промптов."
+        },
+        {
+          "full_name": "rtk-ai/rtk",
+          "description": "CLI proxy that reduces LLM token consumption by 60-90% on common dev commands. Single Rust binary, zero dependencies",
+          "language": "Rust",
+          "stars": 87440,
+          "stars_gained": 125,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/rtk-ai/rtk",
+          "summary": "CLI-прокси на Rust, который сжимает вывод популярных dev-команд (git, тесты, линтеры, docker и др.) на 60–90%, снижая расход токенов LLM-агентов без изменения привычного рабочего процесса."
+        },
+        {
+          "full_name": "superdesigndev/treg",
+          "description": "OpenRouter for agent tools. Join community here: https://discord.gg/6mQYYfFMAn",
+          "language": "Python",
+          "stars": 8721,
+          "stars_gained": 121,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/superdesigndev/treg",
+          "summary": "Шлюз к инструментам для агентов: единый URL и токен дают доступ к каталогу тысяч платных API (SEO, соцсети, скрапинг, генерация медиа) с оплатой за вызов, плюс собственные ключи и CLI команды без раскрытия секретов."
+        },
+        {
+          "full_name": "Fission-AI/OpenSpec",
+          "description": "Spec-driven development (SDD) for AI coding assistants.",
+          "language": "TypeScript",
+          "stars": 75434,
+          "stars_gained": 89,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/Fission-AI/OpenSpec",
+          "summary": "Фреймворк spec-driven разработки для ИИ-ассистентов: помогает формулировать требования и план в Markdown до написания кода, поддерживает 30+ инструментов и работу с несколькими репозиториями."
+        }
+      ]
+    },
+    {
+      "id": "hot",
+      "title": "Набирают популярность",
+      "repos": [
+        {
+          "full_name": "datazip-inc/olake-go",
+          "description": "OLake Go: open-source replication from databases, Kafka and S3 to Apache Iceberg and Parquet. Sources: Postgres, MySQL, MongoDB, Oracle, MSSQL, DB2, Kafka, S3. Formerly datazip-inc/olake. Table maintenance lives in datazip-inc/olake-fusion.",
+          "language": "Go",
+          "stars": 2223,
+          "stars_gained": 93,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/datazip-inc/olake-go",
+          "summary": "Движок репликации данных из Postgres, MySQL, MongoDB, Oracle, MSSQL, DB2, Kafka и S3 в Apache Iceberg или Parquet с полной и CDC-синхронизацией без Spark, Flink и Debezium. Полезен для быстрой потоковой загрузки в открытый lakehouse."
+        },
+        {
+          "full_name": "colbymchenry/codegraph",
+          "description": "Pre-indexed code knowledge graph, auto syncs on code changes, for Claude Code, Codex, Gemini, Cursor, OpenCode, AntiGravity, Kiro, CoPilot, and Hermes Agent — fewer tokens, fewer tool calls, 100% local",
+          "language": "TypeScript",
+          "stars": 78349,
+          "stars_gained": 86,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/colbymchenry/codegraph",
+          "summary": "Локальный граф знаний о коде с автосинхронизацией при изменениях, подключаемый к ИИ-агентам через MCP для экономии токенов и вызовов инструментов."
+        },
+        {
+          "full_name": "lbjlaq/Antigravity-Manager",
+          "description": "Professional Antigravity Account Manager & Switcher. One-click seamless account switching for Antigravity Tools. Built with Tauri v2 + React (Rust).专业的 Antigravity 账号管理与切换工具。为 Antigravity 提供一键无缝账号切换功能。",
+          "language": "Rust",
+          "stars": 33584,
+          "stars_gained": 86,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/lbjlaq/Antigravity-Manager",
+          "summary": "Десктопное приложение на Tauri и React для управления несколькими аккаунтами AI-сервисов: переключение в один клик, мониторинг квот и локальный прокси, приводящий Web-сессии Google и Anthropic к форматам OpenAI, Anthropic и Gemini API."
+        },
+        {
+          "full_name": "agentscope-ai/agentscope",
+          "description": "Build and run agents you can see, understand and trust.",
+          "language": "Python",
+          "stars": 36449,
+          "stars_gained": 60,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/agentscope-ai/agentscope",
+          "summary": "Фреймворк для создания и запуска агентов на LLM с инструментами, памятью, песочницами и поддержкой MCP, ориентированный на прозрачность и контроль."
+        },
+        {
+          "full_name": "vercel-labs/agent-skills",
+          "description": "Vercel's official collection of agent skills",
+          "language": "JavaScript",
+          "stars": 34682,
+          "stars_gained": 60,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/vercel-labs/agent-skills",
+          "summary": "Набор официальных скиллов Vercel для ИИ-агентов: инструкции и скрипты для оптимизации проектов, React/Next.js, React Native, веб-дизайна и документации. Расширяют возможности кодинг-ассистентов готовыми правилами и аудитами."
+        }
+      ]
+    }
+  ]
+}
