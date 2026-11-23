@@ -1,0 +1,128 @@
+{
+  "date": "2026-11-23",
+  "generated_at": "2026-11-23T08:00:51+01:00",
+  "sections": [
+    {
+      "id": "ai",
+      "title": "ИИ",
+      "repos": [
+        {
+          "full_name": "elementalsouls/Claude-BugHunter",
+          "description": "A Claude Code skill bundle for bug hunting and external red-team work - 82 skills, 15 slash commands, 681 disclosed-report patterns curated across 24 core vulnerability classes, plus enterprise identity + infrastructure attack matrices.",
+          "language": "Python",
+          "stars": 18362,
+          "stars_gained": 1716,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/elementalsouls/Claude-BugHunter",
+          "summary": "Набор скиллов для Claude Code по баг-хантингу и red-team: 83 навыка, 15 слэш-команд и 681 паттерн из раскрытых отчётов по 24 классам уязвимостей, плюс цепочки CVE для корпоративных платформ."
+        },
+        {
+          "full_name": "vxcontrol/pentagi",
+          "description": "Fully autonomous AI Agents system capable of performing complex penetration testing tasks",
+          "language": "Go",
+          "stars": 34828,
+          "stars_gained": 73,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/vxcontrol/pentagi",
+          "summary": "Самостоятельно разворачиваемая мультиагентная система на Go для автономного пентеста: агенты планируют работу, запускают nmap, Metasploit, sqlmap в изолированном Docker-песочнице и формируют отчёт. Поддерживает 10+ LLM-провайдеров, локальные модели, REST/GraphQL API и граф знаний."
+        },
+        {
+          "full_name": "bendlang/bend",
+          "description": "Bend 2: a fast language that blocks AI mistakes via proof. Install: curl -fsSL https://bend-lang.com/install.sh | sh",
+          "language": "TypeScript",
+          "stars": 25790,
+          "stars_gained": 53,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/bendlang/bend",
+          "summary": "Функциональный язык с зависимыми типами и доказательствами: компилятор проверяет законы LAWS.bend, чтобы блокировать ошибки ИИ-агентов, и параллельно исполняет код на CPU и GPU."
+        },
+        {
+          "full_name": "twentyhq/twenty",
+          "description": "The open alternative to Salesforce, designed for AI.",
+          "language": "TypeScript",
+          "stars": 61349,
+          "stars_gained": 43,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/twentyhq/twenty",
+          "summary": "Открытая CRM-альтернатива Salesforce для технических команд: объекты, поля и представления описываются как код и версионируются вместе со стеком. Включает агентов, скиллы для ИИ-ассистентов и расширяемые приложения."
+        },
+        {
+          "full_name": "opensandbox-group/OpenSandbox",
+          "description": "Secure, Fast, and Extensible Sandbox runtime for AI agents.",
+          "language": "Go",
+          "stars": 17813,
+          "stars_gained": 41,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/opensandbox-group/OpenSandbox",
+          "summary": "Среда изолированного исполнения для ИИ-агентов: запуск кода, команд, файлов и браузеров в песочницах на Docker или Kubernetes с единым API, SDK и CLI. Позволяет безопасно выполнять код агентов и контролировать сетевой доступ."
+        }
+      ]
+    },
+    {
+      "id": "hot",
+      "title": "Набирают популярность",
+      "repos": [
+        {
+          "full_name": "michael-denyer/pstack-claude",
+          "description": "Antigravity, Claude Code, Codex, Copilot, DeepSeek Harness, Gemini, Grok Build, Kimi Code, MiniMax Code, Muse, OMP, OpenCode, Pi, Prime Agent, etc versions of Poteto's pstack. Rigorous agent workflows with Cursor primitives translated for other harnesses.",
+          "language": "JavaScript",
+          "stars": 4732,
+          "stars_gained": 37,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/michael-denyer/pstack-claude",
+          "summary": "Порт набора скиллов pstack для Claude Code, Codex, Copilot и других агентских обвязок: маршрутизирует задачи через poteto-mode и подбирает подходящий workflow с проверкой кода."
+        },
+        {
+          "full_name": "SWE-agent/mini-swe-agent",
+          "description": "The 100 line AI agent that solves GitHub issues or helps you in your command line. Radically simple, no huge configs, no giant monorepo—but scores >74% on SWE-bench verified!",
+          "language": "Python",
+          "stars": 9987,
+          "stars_gained": 36,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/SWE-agent/mini-swe-agent",
+          "summary": "Минималистичный ИИ-агент на ~100 строк Python, решающий GitHub-issues и задачи в командной строке через bash без кастомных инструментов; набирает >74% на SWE-bench verified."
+        },
+        {
+          "full_name": "gastownhall/beads",
+          "description": "Beads - A memory upgrade for your coding agent",
+          "language": "Go",
+          "stars": 28939,
+          "stars_gained": 35,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/gastownhall/beads",
+          "summary": "Распределённый графовый трекер задач на Dolt, дающий кодинг-агентам постоянную структурированную память с зависимостями и синхронизацией между машинами. Помогает вести длинные задачи без потери контекста и конфликтов при слиянии."
+        },
+        {
+          "full_name": "janhq/jan",
+          "description": "Jan is an open source alternative to ChatGPT that runs 100% offline on your computer.",
+          "language": "Rust",
+          "stars": 46037,
+          "stars_gained": 34,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/janhq/jan",
+          "summary": "Десктопное приложение для запуска LLM полностью локально и офлайн, с поддержкой моделей из HuggingFace, облачных провайдеров и OpenAI-совместимого API. Полезно разработчикам, которым нужен приватный ИИ-ассистент с полным контролем над данными."
+        },
+        {
+          "full_name": "t8y2/dbx",
+          "description": "25 MB lightweight cross-platform database client for 100+ databases, including MySQL, PostgreSQL, SQLite, Redis, MongoDB, DuckDB, SQL Server, and Dameng. Built-in AI, MCP Server, CLI, desktop and Docker. | 轻量级跨平台数据库管理工具，支持 MySQL、PostgreSQL、SQLite、Redis、MongoDB、达梦等 100+ 数据库，提供桌面端、Docker、CLI、内置 AI 助手和 MCP。",
+          "language": "Rust",
+          "stars": 31182,
+          "stars_gained": 34,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/t8y2/dbx",
+          "summary": "Лёгкий кроссплатформенный клиент для 100+ баз данных (MySQL, PostgreSQL, SQLite, Redis, MongoDB и др.) с CLI, Docker и встроенным ИИ-ассистентом для генерации SQL. Поддерживает MCP, чтобы ИИ-агенты могли обращаться к базам через готовые подключения."
+        }
+      ]
+    }
+  ]
+}
