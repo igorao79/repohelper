@@ -1,5 +1,12 @@
 [
   {
+    "date": "2026-11-25",
+    "count": 10,
+    "ai_count": 5,
+    "lead": "mvanhorn/last30days-skill",
+    "lead_gained": 703
+  },
+  {
     "date": "2026-11-24",
     "count": 10,
     "ai_count": 5,

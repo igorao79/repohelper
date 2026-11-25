@@ -1,0 +1,128 @@
+{
+  "date": "2026-11-25",
+  "generated_at": "2026-11-25T08:01:33+01:00",
+  "sections": [
+    {
+      "id": "ai",
+      "title": "ИИ",
+      "repos": [
+        {
+          "full_name": "mvanhorn/last30days-skill",
+          "description": "AI agent skill that researches any topic across Reddit, X, YouTube, HN, Polymarket, and the web - then synthesizes a grounded summary",
+          "language": "Python",
+          "stars": 74518,
+          "stars_gained": 703,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/mvanhorn/last30days-skill",
+          "summary": "Навык для ИИ-агентов, который параллельно ищет информацию по теме на Reddit, X, YouTube, HN, Polymarket и других площадках, оценивает по вовлечённости и синтезирует сводку за последние 30 дней."
+        },
+        {
+          "full_name": "google-research/paper-orchestra",
+          "description": "PaperOrchestra is a multi-agent framework for automated AI research paper writing.",
+          "language": "Python",
+          "stars": 6332,
+          "stars_gained": 160,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/google-research/paper-orchestra",
+          "summary": "Мультиагентный фреймворк, который превращает идеи и логи экспериментов в готовые к подаче LaTeX-статьи: генерирует обзор литературы, разделы, графики и схемы. Полезен исследователям для автоматизации черновиков научных работ."
+        },
+        {
+          "full_name": "hieunc229/mailflare",
+          "description": "Email for professionals and teams",
+          "language": "TypeScript",
+          "stars": 7618,
+          "stars_gained": 82,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/hieunc229/mailflare",
+          "summary": "Самохостинговый аналог Google Workspace: почта на своём домене, календарь, файлы, бронирование и встроенные ИИ-агенты. Разворачивается на Cloudflare Workers или в Docker, поддерживает разные БД и импорт из Gmail."
+        },
+        {
+          "full_name": "agent-substrate/substrate",
+          "description": "Agent Substrate: the core system",
+          "language": "Go",
+          "stars": 8308,
+          "stars_gained": 68,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/agent-substrate/substrate",
+          "summary": "Защищённый zero-trust рантайм на Kubernetes для песочниц агентов: изоляция через gVisor и microVM, снапшоты простаивающих акторов и высокая плотность запуска. Полезен для безопасного выполнения недоверенного кода ИИ-агентов."
+        },
+        {
+          "full_name": "TencentCloud/CubeSandbox",
+          "description": "Instant, Concurrent, Secure & Lightweight Sandbox for AI Agents.",
+          "language": "Go",
+          "stars": 13444,
+          "stars_gained": 26,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/TencentCloud/CubeSandbox",
+          "summary": "Высокопроизводительный sandbox-сервис на RustVMM и KVM для ИИ-агентов: холодный старт менее 60 мс, аппаратная изоляция MicroVM, совместимость с E2B SDK и снапшоты с откатом."
+        }
+      ]
+    },
+    {
+      "id": "hot",
+      "title": "Набирают популярность",
+      "repos": [
+        {
+          "full_name": "qqxpee/antigravity2-cn",
+          "description": "🚀 Antigravity 2.0 Chinese Localization Suite & Injector. 专为 2.0 新版 Electron 架构量身定制的零依赖中文汉化包。基于 ASAR 物理层动态包注入机制，完美汉化界面、系统菜单、任务栏托盘及设置面板，支持一键极速安装与无痕还原。",
+          "language": "JavaScript",
+          "stars": 2334,
+          "stars_gained": 219,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/qqxpee/antigravity2-cn",
+          "summary": "Набор для полной китайской локализации приложения Antigravity 2.0: через инъекцию в app.asar переводит интерфейс, меню, трей и системные диалоги, поддерживает установку и откат одной командой. Полезен разработчикам, которым нужен русскоязычный или китайский интерфейс без правки бинарников."
+        },
+        {
+          "full_name": "putyy/res-downloader",
+          "description": "视频号、小程序、抖音、快手、小红书、直播流、m3u8、酷狗、QQ音乐等常见网络资源下载!",
+          "language": "Go",
+          "stars": 21538,
+          "stars_gained": 48,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/putyy/res-downloader",
+          "summary": "Кроссплатформенный загрузчик медиаресурсов на Go и Wails: перехватывает трафик через прокси и сохраняет видео, аудио, m3u8 и стримы с Douyin, Kuaishou, Xiaohongshu, WeChat и музыкальных сервисов."
+        },
+        {
+          "full_name": "odoo/odoo",
+          "description": "Odoo. Open Source Apps To Grow Your Business.",
+          "language": "Python",
+          "stars": 56082,
+          "stars_gained": 31,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/odoo/odoo",
+          "summary": "Набор веб-приложений для бизнеса на Python: CRM, eCommerce, склад, бухгалтерия, HR и другие модули, которые интегрируются в полноценную open source ERP-систему."
+        },
+        {
+          "full_name": "apache/airflow",
+          "description": "Apache Airflow - A platform to programmatically author, schedule, and monitor workflows",
+          "language": "Python",
+          "stars": 47657,
+          "stars_gained": 29,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/apache/airflow",
+          "summary": "Платформа для программирования, планирования и мониторинга рабочих процессов (DAG) на Python. Позволяет описывать пайплайны кодом, версионировать их и оркестрировать задачи на воркерах с удобным веб-интерфейсом."
+        },
+        {
+          "full_name": "awslabs/cli-agent-orchestrator",
+          "description": "Multi-agent orchestration for AI coding CLIs — Claude Code, Kiro, Codex, and more, coordinated in isolated tmux sessions",
+          "language": "Python",
+          "stars": 1674,
+          "stars_gained": 23,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/awslabs/cli-agent-orchestrator",
+          "summary": "Оркестратор для AI-кодинг-CLI: запускает Claude Code, Kiro, Codex и другие в изолированных tmux-сессиях, а супервизор распределяет задачи между агентами параллельно или последовательно."
+        }
+      ]
+    }
+  ]
+}
