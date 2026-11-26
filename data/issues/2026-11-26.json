@@ -1,0 +1,128 @@
+{
+  "date": "2026-11-26",
+  "generated_at": "2026-11-26T08:01:02+01:00",
+  "sections": [
+    {
+      "id": "ai",
+      "title": "ИИ",
+      "repos": [
+        {
+          "full_name": "obra/superpowers",
+          "description": "An agentic skills framework & software development methodology that works.",
+          "language": "Shell",
+          "stars": 326838,
+          "stars_gained": 903,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/obra/superpowers",
+          "summary": "Фреймворк навыков и методология разработки для кодинг-агентов: агент сначала уточняет спецификацию, затем строит план и ведёт задачи через субагентов с TDD и ревью. Работает как плагин для Claude Code, Cursor, Gemini CLI, Copilot и других."
+        },
+        {
+          "full_name": "samuelgursky/davinci-resolve-mcp",
+          "description": "MCP server integration for DaVinci Resolve Studio",
+          "language": "Python",
+          "stars": 4377,
+          "stars_gained": 27,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/samuelgursky/davinci-resolve-mcp",
+          "summary": "MCP-сервер, дающий ИИ-ассистентам управлять DaVinci Resolve Studio через официальный Scripting API: монтаж, медиапул, рендер, грейдинг, Fusion и Fairlight."
+        },
+        {
+          "full_name": "tianma-if/edgeever",
+          "description": "AI-native note-taking app & Evernote/Obsidian alternative. Instant all-platform sync, rich notes (tables, mind maps, diagrams, posters), web clipper & MCP. 100% free on Cloudflare or Docker.",
+          "language": "TypeScript",
+          "stars": 3564,
+          "stars_gained": 23,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/tianma-if/edgeever",
+          "summary": "AI-нативное приложение для заметок и базы знаний с трёхпанельным интерфейсом, мгновенной синхронизацией, веб-клиппером и MCP-интеграцией для ИИ-агентов. Бесплатно разворачивается на Cloudflare или в Docker."
+        },
+        {
+          "full_name": "0xPlaygrounds/rig",
+          "description": "⚙️🦀 Build modular and scalable LLM Applications in Rust",
+          "language": "Rust",
+          "stars": 9269,
+          "stars_gained": 14,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/0xPlaygrounds/rig",
+          "summary": "Rust-библиотека для создания LLM-приложений: единый интерфейс к 20+ провайдерам моделей и векторным хранилищам, агенты с инструментами и стримингом, плюс расширяемый терминальный кодинг-агент на плагинах."
+        },
+        {
+          "full_name": "vllm-project/vllm-ascend",
+          "description": "Community maintained hardware plugin for vLLM on Huawei Ascend",
+          "language": "Python",
+          "stars": 3153,
+          "stars_gained": 8,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/vllm-project/vllm-ascend",
+          "summary": "Аппаратный плагин для запуска vLLM на NPU Huawei Ascend: позволяет прогонять трансформеры, MoE, эмбеддинги и мультимодальные LLM на Ascend без изменения кода."
+        }
+      ]
+    },
+    {
+      "id": "hot",
+      "title": "Набирают популярность",
+      "repos": [
+        {
+          "full_name": "sveltejs/svelte",
+          "description": "web development for the rest of us",
+          "language": "JavaScript",
+          "stars": 89936,
+          "stars_gained": 136,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/sveltejs/svelte",
+          "summary": "Компилятор для декларативных UI-компонентов, превращающий их в эффективный JavaScript с точечным обновлением DOM. Упрощает разработку быстрых веб-приложений без виртуального DOM."
+        },
+        {
+          "full_name": "getarcaneapp/arcane",
+          "description": "Modern Docker Management, Designed for Everyone",
+          "language": "Go",
+          "stars": 10509,
+          "stars_gained": 79,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/getarcaneapp/arcane",
+          "summary": "Современный веб-интерфейс для управления Docker: контейнеры, образы, сети и тома в одном месте. Упрощает работу с Docker для разработчиков и небольших команд."
+        },
+        {
+          "full_name": "malisper/pgrust",
+          "description": "Postgres rewritten in Rust, now faster than Postgres and Clickhouse",
+          "language": "Rust",
+          "stars": 6081,
+          "stars_gained": 28,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/malisper/pgrust",
+          "summary": "Совместимая с Postgres 18 СУБД, переписанная на Rust для быстрой аналитики: векторный JIT-движок, потоковая модель конкурентности и собственный менеджер памяти. Работает с существующими драйверами, ORM и psql без изменений."
+        },
+        {
+          "full_name": "juspay/hyperswitch",
+          "description": "Open source, composable payments platform | PCI compliant | SaaS and Self-host options | Enables connectivity to multiple payment, payout, fraud, vault and tokenization providers | Uplifts authorization with intelligent routing and revenue recovery | Reduce payment processing costs with cost observability | Reduces payment ops with reconciliation",
+          "language": "Rust",
+          "stars": 45917,
+          "stars_gained": 25,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/juspay/hyperswitch",
+          "summary": "Модульная платёжная инфраструктура на Rust: умная маршрутизация через 120+ PSP, ретраи для возврата выручки, PCI-совместимый vault и сверка платежей. Позволяет снизить комиссии и отказаться от вендор-лока."
+        },
+        {
+          "full_name": "wealthfolio/wealthfolio",
+          "description": "A beautiful, private, local-first personal finance tracker. Investments, net worth, spending, and simulations.",
+          "language": "Rust",
+          "stars": 9768,
+          "stars_gained": 17,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/wealthfolio/wealthfolio",
+          "summary": "Локальный open-source трекер личных финансов: инвестиции, капитал, расходы, бюджеты и симуляции, с опциональной синхронизацией брокеров и системой аддонов на TypeScript."
+        }
+      ]
+    }
+  ]
+}
