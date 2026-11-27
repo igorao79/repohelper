@@ -1,0 +1,128 @@
+{
+  "date": "2026-11-27",
+  "generated_at": "2026-11-27T08:00:55+01:00",
+  "sections": [
+    {
+      "id": "ai",
+      "title": "ИИ",
+      "repos": [
+        {
+          "full_name": "HKUDS/CLI-Anything",
+          "description": "\"CLI-Anything: Making ALL Software Agent-Native\" -- CLI-Hub: https://clianything.cc/",
+          "language": "Python",
+          "stars": 66552,
+          "stars_gained": 746,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/HKUDS/CLI-Anything",
+          "summary": "Набор CLI-обёрток и хаб для установки, превращающих десктопные программы (CAD, GIS, редакторы, мессенджеры) в инструменты, которыми ИИ-агенты управляют из командной строки."
+        },
+        {
+          "full_name": "jingyaogong/minimind",
+          "description": "🧠 两小时从 0 训出你的 64M 大模型。Train your own 64M LLM from scratch in 2 hours.",
+          "language": "Python",
+          "stars": 71866,
+          "stars_gained": 702,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/jingyaogong/minimind",
+          "summary": "Проект для обучения собственной компактной LLM (64M) с нуля за пару часов на одной GPU: полный пайплайн от претрейна и SFT до RLHF, LoRA и агентных сценариев на чистом PyTorch. Полезен как учебный и воспроизводимый пример устройства LLM без высокоуровневых абстракций."
+        },
+        {
+          "full_name": "cursor/plugins",
+          "description": "Cursor plugin specification and official plugins",
+          "language": "TypeScript",
+          "stars": 19845,
+          "stars_gained": 270,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/cursor/plugins",
+          "summary": "Официальные плагины для Cursor: скиллы и агентные воркфлоу для ревью кода, оркестрации задач, работы с GitHub, Google-сервисами и другими инструментами. Помогает расширить возможности ИИ-ассистента под конкретные задачи разработчика."
+        },
+        {
+          "full_name": "p-e-w/heretic",
+          "description": "Training-free language model modification: Remove censorship, suppress slop, reduce sycophancy, and more",
+          "language": "Python",
+          "stars": 43372,
+          "stars_gained": 134,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/p-e-w/heretic",
+          "summary": "Инструмент для модификации языковых моделей без обучения: убирает цензуру, снижает сикофантию и «слоп» через математические методы и плагины-скоринги. Позволяет менять поведение LLM на своём железе за считанные часы."
+        },
+        {
+          "full_name": "wonderwhy-er/DesktopCommanderMCP",
+          "description": "This is MCP server for Claude that gives it terminal control, file system search and diff file editing capabilities",
+          "language": "JavaScript",
+          "stars": 10439,
+          "stars_gained": 16,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/wonderwhy-er/DesktopCommanderMCP",
+          "summary": "MCP-сервер для Claude, дающий ИИ управление терминалом, поиск по файловой системе и точечное редактирование файлов, включая Excel, PDF и DOCX. Позволяет автоматизировать задачи и запускать код прямо из чата."
+        }
+      ]
+    },
+    {
+      "id": "hot",
+      "title": "Набирают популярность",
+      "repos": [
+        {
+          "full_name": "XiaoYouChR/Ghost-Downloader-3",
+          "description": "The only downloader you need. 下载器的集大成者。",
+          "language": "Python",
+          "stars": 19381,
+          "stars_gained": 889,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/XiaoYouChR/Ghost-Downloader-3",
+          "summary": "Кроссплатформенный менеджер загрузок на Python с поддержкой HTTP, BitTorrent, FTP, M3U8, DASH, YouTube и Bilibili, умным чанкингом и CLI. Полезен как единый инструмент для скачивания и автоматизации через aria2-совместимый RPC."
+        },
+        {
+          "full_name": "egoist/mygo",
+          "description": "Develop desktop apps with native UI or web frontend in Go",
+          "language": "Go",
+          "stars": 6992,
+          "stars_gained": 54,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/egoist/mygo",
+          "summary": "Фреймворк для десктопных приложений на Go: окна с нативным UI на GPU или веб-фронтендом в системном webview, типизированный IPC, сборка в один бинарник без cgo, поддержка iOS и Android."
+        },
+        {
+          "full_name": "louis-e/arnis",
+          "description": "Generate any location from the real world in Minecraft with a high level of detail.",
+          "language": "Rust",
+          "stars": 18863,
+          "stars_gained": 24,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/louis-e/arnis",
+          "summary": "Генерирует детализированные миры Minecraft по реальным координатам, используя геоданные OpenStreetMap и рельеф. Полезен для создания карт городов и ландшафтов в игре."
+        },
+        {
+          "full_name": "jquery/jquery",
+          "description": "jQuery JavaScript Library",
+          "language": "JavaScript",
+          "stars": 60190,
+          "stars_gained": 22,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/jquery/jquery",
+          "summary": "Классическая JavaScript-библиотека для работы с DOM, AJAX и анимациями, упрощающая кросс-браузерную разработку. Позволяет собирать кастомные сборки с нужными модулями и поддерживает Node и расширения браузеров."
+        },
+        {
+          "full_name": "nats-io/nats-server",
+          "description": "High-Performance server for NATS.io, the cloud and edge native messaging system.",
+          "language": "Go",
+          "stars": 21174,
+          "stars_gained": 13,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/nats-io/nats-server",
+          "summary": "Высокопроизводительный сервер системы обмена сообщениями NATS для облака и edge-устройств, часть CNCF. Подходит для построения распределённых систем с поддержкой 40+ клиентских языков."
+        }
+      ]
+    }
+  ]
+}
