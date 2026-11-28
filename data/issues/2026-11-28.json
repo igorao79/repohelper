@@ -1,0 +1,128 @@
+{
+  "date": "2026-11-28",
+  "generated_at": "2026-11-28T08:01:28+01:00",
+  "sections": [
+    {
+      "id": "ai",
+      "title": "ИИ",
+      "repos": [
+        {
+          "full_name": "firecrawl/firecrawl",
+          "description": "Knowledge infrastructure to make your agents smarter. Search, scrape and access 550+ data providers through one API.",
+          "language": "TypeScript",
+          "stars": 211846,
+          "stars_gained": 822,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/firecrawl/firecrawl",
+          "summary": "Инфраструктура знаний для ИИ-агентов: превращает сайты в чистый markdown, поддерживает scrape, crawl, map, поиск и доступ к 550+ источникам данных через единый API. Работает локально одним бинарником или как облачный сервис, подключается к агентам через MCP."
+        },
+        {
+          "full_name": "cathrynlavery/diagram-design",
+          "description": "Editorial diagram design for Claude Code, Codex, GitHub Copilot, Cursor, Factory Droid, Qoder, and Pi. 52 diagram types. Self-contained HTML + SVG. No shadows. No Mermaid slop.",
+          "language": "HTML",
+          "stars": 74574,
+          "stars_gained": 725,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/cathrynlavery/diagram-design",
+          "summary": "Навык для ИИ-агентов, который генерирует диаграммы 52 типов как один самодостаточный HTML+SVG файл в вашем брендинге. Работает с Claude Code, Cursor, Codex и другими хостами Agent Skills."
+        },
+        {
+          "full_name": "DietrichGebert/ponytail",
+          "description": "Makes your AI agent think like the laziest senior dev in the room. The best code is the code you never wrote.",
+          "language": "JavaScript",
+          "stars": 200283,
+          "stars_gained": 713,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/DietrichGebert/ponytail",
+          "summary": "Промпт-скилл для ИИ-агентов, который заставляет их писать минимальный код, переиспользуя существующие компоненты, не жертвуя валидацией, безопасностью и тестами. Есть команды ревью и аудита кода, а также панель с метриками затрат и токенов."
+        },
+        {
+          "full_name": "mjmirza/app-store-compliance",
+          "description": "Avoid common App Store and Google Play rejections. Open playbook and pre-submission guard with 125 documented rejection patterns and fixes, privacy manifest and Data safety checks, 117 tracked deadlines (EU AI Act, DSA, COPPA, age laws), and a skill for AI coding agents.",
+          "language": "Shell",
+          "stars": 8054,
+          "stars_gained": 530,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/mjmirza/app-store-compliance",
+          "summary": "Плейбук и pre-submission сканер для iOS/Android: 125 задокументированных причин отклонения в App Store и Google Play с исправлениями, проверки privacy manifest и Data safety, отслеживание дедлайнов регуляторов и скилл для ИИ-агентов."
+        },
+        {
+          "full_name": "anomalyco/opencode",
+          "description": "The open source coding agent.",
+          "language": "TypeScript",
+          "stars": 229667,
+          "stars_gained": 277,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/anomalyco/opencode",
+          "summary": "Открытый ИИ-агент для программирования с режимами build и plan, поддержкой сложных многошаговых задач и установкой через пакетные менеджеры или десктоп-приложение."
+        }
+      ]
+    },
+    {
+      "id": "hot",
+      "title": "Набирают популярность",
+      "repos": [
+        {
+          "full_name": "NYLLON-SOFTWARE/SignuDoc",
+          "description": "Open-source document signature platform. Not affiliated with DocuSign.",
+          "language": "TypeScript",
+          "stars": 3588,
+          "stars_gained": 197,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/NYLLON-SOFTWARE/SignuDoc",
+          "summary": "Открытая платформа для электронной подписи документов: загрузка PDF, расстановка полей, отправка ссылок на подпись и хранение подписанных копий с аудит-сертификатом. Разворачивается на своём Vercel-аккаунте без оплаты за места и лимитов на конверты."
+        },
+        {
+          "full_name": "microsoft/markitdown",
+          "description": "Python tool for converting files and office documents to Markdown.",
+          "language": "Python",
+          "stars": 198789,
+          "stars_gained": 167,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/microsoft/markitdown",
+          "summary": "Легковесная Python-утилита для конвертации PDF, Office-документов, изображений, аудио и других форматов в Markdown с сохранением структуры — удобно для подачи текста в LLM и пайплайны анализа."
+        },
+        {
+          "full_name": "Imbad0202/academic-research-skills",
+          "description": "Academic Research Skills for Claude Code: research → write → review → revise → finalize",
+          "language": "Python",
+          "stars": 58892,
+          "stars_gained": 162,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/Imbad0202/academic-research-skills",
+          "summary": "Набор скиллов для Claude Code, покрывающих полный цикл академического исследования: от планирования и поиска литературы до написания, рецензирования и финализации статьи. Помогает автоматизировать рутину — проверку цитат, форматирование и контроль целостности данных."
+        },
+        {
+          "full_name": "openvinotoolkit/openvino",
+          "description": "OpenVINO™ is an open source toolkit for optimizing and deploying AI inference",
+          "language": "C++",
+          "stars": 12977,
+          "stars_gained": 151,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/openvinotoolkit/openvino",
+          "summary": "Тулкит для оптимизации и развёртывания инференса глубоких моделей на CPU, GPU и NPU Intel: конвертация из PyTorch, TensorFlow, ONNX и других фреймворков, ускорение LLM и генеративного ИИ."
+        },
+        {
+          "full_name": "appwrite/appwrite",
+          "description": "The open-source cloud for agents & devs. Including Auth, Databases, Storage, Functions, Messaging, Hosting, Realtime, WAF and more",
+          "language": "TypeScript",
+          "stars": 58612,
+          "stars_gained": 55,
+          "gained_label": "за день",
+          "topics": [],
+          "url": "https://github.com/appwrite/appwrite",
+          "summary": "Открытая self-hosted облачная платформа с Auth, базами данных, хранилищем, функциями, мессенджингом, хостингом и realtime, плюс MCP-сервер для работы кодинг-агентов с проектом."
+        }
+      ]
+    }
+  ]
+}
